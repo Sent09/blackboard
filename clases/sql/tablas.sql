@@ -1,6 +1,6 @@
-CREATE DATABASE usuarios;
+CREATE DATABASE blackboard;
 
-USE usuarios;
+USE blackboard;
 
 CREATE TABLE usuario (
     login VARCHAR(30) NOT NULL PRIMARY KEY,
@@ -19,7 +19,7 @@ CREATE TABLE usuario (
 CREATE TABLE post (
     idpost INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     descripcion VARCHAR(200) NOT NULL PRIMARY KEY,
-    like INT,
+    gusta INT,
     fechapost DATETIME,
     idusuario VARCHAR(60),
     login VARCHAR(30) NOT NULL,
@@ -35,9 +35,9 @@ CREATE TABLE archivospost (
 )engine=innodb charset=utf8 collate=utf8_unicode_ci;
 
 CREATE TABLE notificaciones (
-    idusuario INT NOT NULL,
-    idanuncioseguido INT NOT NULL,
+    loginusuario varchar(30) NOT NULL,
+    loginanuncioseguido varchar(30) NOT NULL,
     nuevosposts INT NOT NULL,
-    FOREIGN KEY (idusuario) REFERENCES usuario(idusuario),
-    FOREIGN KEY (idanuncioseguido) REFERENCES usuario(idusuario)
-)engine=innodb charset=utf8 collate=utf8_unicode_ci;
+    FOREIGN KEY (loginusuario) REFERENCES usuario(login),
+    FOREIGN KEY (loginanuncioseguido) REFERENCES usuario(login)
+)engine=innodb charset=utf8 collate=utf8_unicode_ci
