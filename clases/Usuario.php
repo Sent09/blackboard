@@ -3,7 +3,7 @@
 class Usuario {
     private $login, $clave, $nombre, $apellidos, $email, $fechaalta, $isactivo, $isroot, $rol, $fechalogin;
     function __construct($login=null, $clave=null, $nombre=null, $apellidos=null,
-            $email=null, $fechaalta=null, $isactivo=0, $isroot=0, $rol='usuario', $fechalogin=null) {
+            $email=null, $fechaalta=null, $isactivo=0, $isroot=0, $rol='usuario', $fechalogin=null, $urlfoto=null) {
         $this->login = $login;
         $this->clave = $clave;
         $this->nombre = $nombre;
@@ -14,6 +14,7 @@ class Usuario {
         $this->isroot = $isroot;
         $this->rol = $rol;
         $this->fechalogin = $fechalogin;
+        $this->urlfoto = $urlfoto;
     }
     function set($datos, $inicio=0){
         $this->login = $datos[0+$inicio];
@@ -26,6 +27,7 @@ class Usuario {
         $this->isroot = $datos[7+$inicio];
         $this->rol = $datos[8+$inicio];
         $this->fechalogin = $datos[9+$inicio];
+        $this->urlfoto = $datos[10+$inicio];
     }
     public function getLogin() {
         return $this->login;
@@ -106,7 +108,15 @@ class Usuario {
     public function setFechalogin($fechalogin) {
         $this->fechalogin = $fechalogin;
     }
-    
+
+    public function getUrlfoto() {
+        return $this->urlfoto;
+    }
+
+    public function setUrlfoto($urlfoto) {
+        $this->urlfoto = $urlfoto;
+    }
+
     public function getJSON(){
         $prop = get_object_vars($this);//todas las variables de instancia de esta clase
         $resp = '{';
