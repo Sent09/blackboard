@@ -1,7 +1,7 @@
 <?php
 class Configuracion {
     const SERVIDOR = "localhost";
-    const BASEDATOS = "usuarios";
+    const BASEDATOS = "blackboard";
     const USUARIO = "root";
     const CLAVE = "";
     const PEZARANA = "pez araña";

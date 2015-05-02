@@ -158,7 +158,9 @@ class ModeloUsuario {
         }
         return $this->bd->getNumeroFila();
     }
-    
+    /***
+     * Comprueba que el usuario exista y esté activo. En ese caso se efectua el login.
+     */
     function login($login, $clave){
         $sql = "select * from $this->tabla where login=:login and clave=:clave and isactivo=1";
         $parametros["login"] = $login;
@@ -173,8 +175,6 @@ class ModeloUsuario {
             }else{
                 return false;
             }
-            
-            
         }else{
             return false;
         }

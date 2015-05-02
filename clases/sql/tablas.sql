@@ -41,4 +41,4 @@ CREATE TABLE notificaciones (
     nuevosposts INT NOT NULL,
     FOREIGN KEY (loginusuario) REFERENCES usuario(login),
     FOREIGN KEY (loginanuncioseguido) REFERENCES usuario(login)
-)engine=innodb charset=utf8 collate=utf8_unicode_ci
+)engine=innodb charset=utf8 collate=utf8_unicode_ci;
