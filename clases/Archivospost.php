@@ -1,6 +1,6 @@
 <?php
 
-class Usuario {
+class Archivospost {
     private $idarchivospost, $url, $extension, $idpost;
     function __construct($idarchivospost, $url, $extension, $idpost) {
         $this->idarchivospost = $idarchivospost;
@@ -9,7 +9,7 @@ class Usuario {
         $this->idpost = $idpost;
     }
 
-        function set($datos, $inicio=0){
+    function set($datos, $inicio=0){
         $this->idarchivospost = $datos[0+$inicio];
         $this->url = $datos[1+$inicio];
         $this->extension = $datos[2+$inicio];

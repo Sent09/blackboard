@@ -35,6 +35,7 @@ CREATE TABLE archivospost (
 )engine=innodb charset=utf8 collate=utf8_unicode_ci;
 
 CREATE TABLE notificaciones (
+    idnotificaciones INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     loginusuario varchar(30) NOT NULL,
     loginanuncioseguido varchar(30) NOT NULL,
     nuevosposts INT NOT NULL,

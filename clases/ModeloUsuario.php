@@ -10,7 +10,7 @@ class ModeloUsuario {
     
     function add(Usuario $usuario){
         $consultaSql = "insert into $this->tabla values(:login, :clave, :nombre, :apellidos, :email, curdate(), 
-            :isactivo, :isroot, :rol, null);";
+            :isactivo, :isroot, :rol, null, :urlfoto);";
         $parametros["login"] = $usuario->getLogin();
         $parametros["clave"] = sha1($usuario->getClave());
         $parametros["nombre"] = $usuario->getNombre();
@@ -19,6 +19,7 @@ class ModeloUsuario {
         $parametros["isactivo"] =$usuario->getIsactivo();
         $parametros["isroot"] = $usuario->getIsroot();
         $parametros["rol"] = $usuario->getRol();
+        $parametros["urlfoto"] = $usuario->getUrlfoto();
         $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if(!$resultado){
             return -1;
@@ -40,7 +41,7 @@ class ModeloUsuario {
     function edit(Usuario $usuario, $loginpk){        
         $consultaSql = "update $this->tabla set login=:login, clave=:clave,
             nombre=:nombre, apellidos=:apellidos, email=:email,
-            isactivo=:isactivo, isroot=:isroot, rol=:rol where login=:loginpk;";
+            isactivo=:isactivo, isroot=:isroot, rol=:rol, urlfoto=:urlfoto where login=:loginpk;";
         $parametros["login"] = $usuario->getLogin();
         $parametros["clave"] = $usuario->getClave();
         $parametros["nombre"] = $usuario->getNombre();
@@ -49,6 +50,7 @@ class ModeloUsuario {
         $parametros["isactivo"] =$usuario->getIsactivo();
         $parametros["isroot"] = $usuario->getIsroot();
         $parametros["rol"] = $usuario->getRol();
+        $parametros["urlfoto"] = $usuario->getUrlfoto();
         $parametros["loginpk"] = $loginpk;
         $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if(!$resultado){

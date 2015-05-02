@@ -1,7 +1,7 @@
 <?php
 
 class Usuario {
-    private $login, $clave, $nombre, $apellidos, $email, $fechaalta, $isactivo, $isroot, $rol, $fechalogin;
+    private $login, $clave, $nombre, $apellidos, $email, $fechaalta, $isactivo, $isroot, $rol, $fechalogin, $urlfoto;
     function __construct($login=null, $clave=null, $nombre=null, $apellidos=null,
             $email=null, $fechaalta=null, $isactivo=0, $isroot=0, $rol='usuario', $fechalogin=null, $urlfoto=null) {
         $this->login = $login;

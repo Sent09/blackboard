@@ -1,6 +1,6 @@
 <?php
 
-class Usuario {
+class Post {
     private $idpost, $descripcion, $gusta, $fechapost, $idusuario, $login;
     function __construct($idpost, $descripcion, $gusta, $fechapost, $idusuario, $login) {
         $this->idpost = $idpost;
