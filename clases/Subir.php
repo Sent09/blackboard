@@ -17,12 +17,12 @@ class Subir {
      */
     function __construct($input) {
         $this->input = $input;
-        $this->destino = "../img/";
+        $this->destino = "img/";
         $this->nombre = "";
         $this->accion = Subir::RENOMBRAR;
         $this->maximo = 20 * 1014 * 1024;
         $this->crearCarpeta = false;
-        $this->extensiones = array("jpg","png","JPG", "gif", "jpeg");
+        $this->extensiones = array("jpg","png","JPG","gif","jpeg","doc","docx","pdf");
         $this->errorPHP = UPLOAD_ERR_OK;
         $this->motivoError = "";
         $this->error = 0;

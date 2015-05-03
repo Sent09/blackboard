@@ -10,6 +10,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <?php require 'require/comun2.php'; 
+        if(!$sesion->isAutentificado()){
+        ?>
         Login
         <form action="usuario/phplogin.php" method="POST">            
             User<input type="text" name="login" value="" />
@@ -48,7 +51,24 @@ and open the template in the editor.
                 <tr>
                     <td><input type="submit" class="btn btn-success" name="boton" value="Enviar" required/></td>
                 </tr>
-            </form>
+            </form>        
         </table>
+        <?php }else{ ?>
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="#">Me Gusta</a></li>
+                <li><a href="#">Mis post</a></li>
+                <li><a href="#">Panel de administración</a></li>
+                <li><a href="usuario/phpcerrarsesion.php">Desloguear</a></li>
+            </ul>
+        </nav>
+        Nuevo post
+        <form action="" enctype="multipart/form-data">
+            <textarea name="mensaje"></textarea>
+            <input type="file" name="archivos" multiple />
+            <input type="submit"/>
+        </form>
+        <?php }?>
     </body>
 </html>
