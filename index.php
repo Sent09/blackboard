@@ -64,9 +64,9 @@ and open the template in the editor.
             </ul>
         </nav>
         Nuevo post
-        <form action="" enctype="multipart/form-data">
+        <form action="post/phpcrearpost.php" enctype="multipart/form-data" method="POST">
             <textarea name="mensaje"></textarea>
-            <input type="file" name="archivos" multiple />
+            <input type="file" name="archivos[]" multiple />
             <input type="submit"/>
         </form>
         <?php }?>

@@ -32,10 +32,14 @@ class ModeloArchivospost {
     function deleteForIdPost($idpost){
         return $this->delete(new Archivospost(null, null, null, $idpost));
     }
-    
-    function get($idarchivospost){
-        $consultaSql = "select * from $this->tabla where idarchivospost=:idarchivospost";
-        $arrayConsulta["idarchivospost"] = $idarchivospost;
+    /**
+     * Hay que cambiar el idpost por idpostarchivos
+     * @param type $idpost
+     * @return \Archivospost
+     */
+    function get($idpost){
+        $consultaSql = "select * from $this->tabla where idpost=:idpost";
+        $arrayConsulta["idpost"] = $idpost;
         $resultado = $this->bd->setConsulta($consultaSql, $arrayConsulta);
         if($resultado){
             $archivospost = new Archivospost();
@@ -73,6 +77,22 @@ class ModeloArchivospost {
         $list = array();
         $principio = $pagina*$rpp;
         $sql = "select * from $this->tabla where $condicion order by $orderby limit $principio, $rpp";
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $archivospost = new Archivospost();
+                $archivospost->set($datos);
+                $list[] = $archivospost;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
+    function getListTotal($idpost){
+        $list = array();
+        $sql = "select * from $this->tabla where idpost=:idpost";
+        $parametros["idpost"] = $idpost;
         $r = $this->bd->setConsulta($sql, $parametros);
         if($r){
             while($datos = $this->bd->getFila()){

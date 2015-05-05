@@ -18,10 +18,9 @@ CREATE TABLE usuario (
 
 CREATE TABLE post (
     idpost INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    descripcion VARCHAR(200) NOT NULL PRIMARY KEY,
+    descripcion VARCHAR(200) NOT NULL,
     gusta INT,
     fechapost DATETIME,
-    idusuario VARCHAR(60),
     login VARCHAR(30) NOT NULL,
     FOREIGN KEY (login) REFERENCES usuario(login)
 )engine=innodb charset=utf8 collate=utf8_unicode_ci;

@@ -24,7 +24,11 @@ class Util {
             $enlaces["actual"]= "<li><a href='".$href.$signo."p=2'>3 </a></li>"; 
             $enlaces["cuarto"]= "<li><a href='".$href.$signo."p=3'>4 </a></li>";
             $enlaces["quinto"]= "<li><a href='".$href.$signo."p=4'>5 </a></li>"; 
-            $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=1'>&gt; </a></li>"; 
+            if($p < $ultimo){
+                $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=1'>&gt; </a></li>"; 
+            }else{
+                $enlaces["siguiente"] = "<li style='display:none;'></li>";
+            }
        }elseif ($p==1){ 
             $enlaces["anterior"] = "<li><a href='".$href.$signo."p=0'>&lt; </a></li>";
             $enlaces["primero"]= "<li><a href='".$href.$signo."p=0'>1 </a></li>";
@@ -32,8 +36,13 @@ class Util {
             $enlaces["actual"]= "<li><a href='".$href.$signo."p=2'>3 </a></li>"; 
             $enlaces["cuarto"]= "<li><a href='".$href.$signo."p=3'>4 </a></li>";
             $enlaces["quinto"]= "<li><a href='".$href.$signo."p=4'>5 </a></li>"; 
-            $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=2'>&gt; </a></li>";  
-        }elseif ($p==$ultimo){ 
+            if($p < $ultimo){
+                $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=2'>&gt; </a></li>";  
+            }else{
+                $enlaces["siguiente"] = "<li style='display:none;'></li>";
+            }
+                
+        }elseif (($p==$ultimo)&&($p!=2)&&($p!=3)){ 
             $anterior = $ultimo-1;
             $enlaces["anterior"] = "<li><a href='".$href.$signo."p=$anterior'>&lt; </a></li>"; 
             $primero= $ultimo-4;
@@ -52,7 +61,7 @@ class Util {
             $quintoNumero = $ultimo+1;
             $enlaces["quinto"]= "<li class='active'><a href='".$href.$signo."p=".$quinto."'>$quintoNumero </a></li>"; 
             $siguiente = $ultimo;
-            $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=".$siguiente."'>&gt; </a></li>"; 
+            $enlaces["siguiente"] = "<li style='display:none;'></li>";
         }elseif ($p==$ultimo-1){ 
             $anterior = $ultimo-2;
             $enlaces["anterior"] = "<li><a href='".$href.$signo."p=$anterior'>&lt; </a></li>"; 
@@ -92,7 +101,11 @@ class Util {
             $quintoNumero = $p+3;
             $enlaces["quinto"]= "<li><a href='".$href.$signo."p=".$quinto."'>$quintoNumero </a></li>"; 
             $siguiente = $p+1;
-            $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=".$siguiente."'>&gt; </a></li>"; 
+            if($p < $ultimo){
+                $enlaces["siguiente"] = "<li><a href='".$href.$signo."p=".$siguiente."'>&gt; </a></li>"; 
+            }else{
+                $enlaces["siguiente"] = "<li style='display:none;'></li>";
+            }
         }
         return $enlaces;
    }

@@ -2,7 +2,7 @@
 
 class Archivospost {
     private $idarchivospost, $url, $extension, $idpost;
-    function __construct($idarchivospost, $url, $extension, $idpost) {
+    function __construct($idarchivospost=null, $url=null, $extension=null, $idpost=null) {
         $this->idarchivospost = $idarchivospost;
         $this->url = $url;
         $this->extension = $extension;

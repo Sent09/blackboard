@@ -8,12 +8,10 @@ class ModeloPost {
         $this->bd = $bd;
     }
     function add(Post $post){
-        $consultaSql = "insert into $this->tabla values(:idpost, :descripcion, :gusta, curdate(), :idusuario, 
-            :login);";
+        $consultaSql = "insert into $this->tabla values(:idpost, :descripcion, :gusta, curdate(), :login);";
         $parametros["idpost"] = $post->getIdpost();
         $parametros["descripcion"] = $post->getDescripcion();
         $parametros["gusta"] = $post->getGusta();
-        $parametros["idusuario"] = $post->getIdusuario();
         $parametros["login"] = $post->getLogin();
         $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if(!$resultado){
