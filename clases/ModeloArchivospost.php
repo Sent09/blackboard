@@ -20,8 +20,8 @@ class ModeloArchivospost {
         return $resultado;
     }
     function delete(Archivospost $archivospost){
-        $consultaSql = "delete from $this->tabla where idpost=:idpost";
-        $arrayConsulta["idpost"] = $archivospost->getIdpost();
+        $consultaSql = "delete from $this->tabla where idarchivospost=:idarchivospost";
+        $arrayConsulta["idarchivospost"] = $archivospost->getIdarchivospost();
         $resultado = $this->bd->setConsulta($consultaSql, $arrayConsulta);
         if(!$resultado){
             return -1;

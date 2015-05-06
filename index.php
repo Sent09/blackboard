@@ -58,7 +58,7 @@ and open the template in the editor.
             <ul>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="#">Me Gusta</a></li>
-                <li><a href="#">Mis post</a></li>
+                <li><a href="post/mispost.php">Mis post</a></li>
                 <li><a href="#">Panel de administración</a></li>
                 <li><a href="usuario/phpcerrarsesion.php">Desloguear</a></li>
             </ul>

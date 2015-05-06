@@ -26,9 +26,10 @@
             <?php echo $post->getFechapost(); ?><br>
             <?php echo $post->getDescripcion(); ?><br>
             <?php echo $post->getGusta(); ?>
+            <a href="phpborrarpost.php?idpost=<?php echo $post->getIdpost(); ?>">Borrar</a>
         </div>
             <?php foreach ($archivos as $key => $archivo) { ?>
-                <a style="color:red;" target="_blank" href="../img/<?php echo $archivo->getUrl(); ?>">archivico</a>
+                <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
             <?php } ?>
         <?php
         }

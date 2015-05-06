@@ -17,7 +17,7 @@ class Subir {
      */
     function __construct($input) {
         $this->input = $input;
-        $this->destino = "../img/";
+        $this->destino = "../archivos/";
         $this->nombre = "";
         $this->accion = Subir::RENOMBRAR;
         $this->maximo = 20 * 1014 * 1024;
@@ -351,7 +351,7 @@ class Subir {
                                 $destino = $destino = $this->destino . $this->nombre . "_$i." . $extension;
                                 $i++;
                             }
-                            $imagen = substr($destino, 7);
+                            $imagen = substr($destino, 12);
                             $this->nombresFotos[] = $imagen;
                             move_uploaded_file($origen, $destino);
                         }else{
