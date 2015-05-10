@@ -4,7 +4,9 @@
     $bd = new BaseDatos();
     $p = Leer::get("p");
     $modeloPost = new ModeloPost($bd);
-    $posts=$modeloPost->getList($p, 10);
+    $usuario = $sesion->getUsuario();
+    $login = $usuario->getLogin();
+    $posts=$modeloPost->getList($p, 10, "login='$login'");
     $numeroRegistros = $modeloPost->count();    
     $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
     
@@ -16,6 +18,15 @@
         <title></title>
     </head>
     <body>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="#">Me Gusta</a></li>
+                <li><a href="mispost.php">Mis post</a></li>
+                <li><a href="#">Panel de administración</a></li>
+                <li><a href="../usuario/phpcerrarsesion.php">Desloguear</a></li>
+            </ul>
+        </nav>
         <?php 
         foreach ($posts as $key => $post) {
             $idpost = $post->getIdpost();

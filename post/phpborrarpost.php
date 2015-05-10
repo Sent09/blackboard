@@ -16,6 +16,7 @@ if($postBuscado->getLogin() == $usuario->getLogin()){
     }
     $modeloPost2 = new ModeloPost($bd);
     $modeloPost2->delete($postBuscado);
+    header("Location: ../post/mispost.php");
 }else{
     header("Location: ../index.php");
 }

@@ -36,8 +36,8 @@ CREATE TABLE archivospost (
 CREATE TABLE notificaciones (
     idnotificaciones INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     loginusuario varchar(30) NOT NULL,
-    loginanuncioseguido varchar(30) NOT NULL,
+    loginusuarioseguido varchar(30) NOT NULL,
     nuevosposts INT NOT NULL,
     FOREIGN KEY (loginusuario) REFERENCES usuario(login),
-    FOREIGN KEY (loginanuncioseguido) REFERENCES usuario(login)
+    FOREIGN KEY (loginusuarioseguido) REFERENCES usuario(login)
 )engine=innodb charset=utf8 collate=utf8_unicode_ci;

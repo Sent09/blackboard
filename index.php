@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <script src="js/js.js"></script>
         <title></title>
     </head>
     <body>
@@ -61,6 +62,11 @@ and open the template in the editor.
                 <li><a href="post/mispost.php">Mis post</a></li>
                 <li><a href="#">Panel de administración</a></li>
                 <li><a href="usuario/phpcerrarsesion.php">Desloguear</a></li>
+                <li>
+                    <form action="javascript:enviar(this.buscar)" name="buscar" method="post">
+                        <input type="text" placeholder="Buscar" name="texto">
+                    </form>
+                </li>
             </ul>
         </nav>
         Nuevo post
