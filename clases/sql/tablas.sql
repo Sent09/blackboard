@@ -41,3 +41,10 @@ CREATE TABLE notificaciones (
     FOREIGN KEY (loginusuario) REFERENCES usuario(login),
     FOREIGN KEY (loginusuarioseguido) REFERENCES usuario(login)
 )engine=innodb charset=utf8 collate=utf8_unicode_ci;
+
+CREATE TABLE megusta (
+    login VARCHAR(30) NOT NULL,
+    idpost INT NOT NULL,
+    FOREIGN KEY (login) REFERENCES usuario(login),
+    FOREIGN KEY (idpost) REFERENCES post(idpost)
+)engine=innodb charset=utf8 collate=utf8_unicode_ci;

@@ -85,4 +85,30 @@ class ModeloPost {
         }
         return $list;
     }
+    function postYoSigo($pagina=0, $rpp=10,$login=null, $parametros=array()){
+        $list = array();
+        $principio = $pagina*$rpp;
+        $sql = "select * from post INNER JOIN notificaciones ON post.login=notificaciones.loginusuarioseguido where notificaciones.loginusuario='$login' order by post.fechapost DESC limit $principio, $rpp";
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $post = new Post();
+                $post->set($datos);
+                $list[] = $post;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
+    function edit(Post $post){        
+        $consultaSql = "update $this->tabla set gusta=:gusta where idpost=:idpost;";
+        $parametros["gusta"] = $post->getGusta();
+        $parametros["idpost"] = $post->getIdpost();
+        $resultado = $this->bd->setConsulta($consultaSql, $parametros);
+        if(!$resultado){
+            return -1;
+        }
+        return $this->bd->getNumeroFila();
+    }
 }

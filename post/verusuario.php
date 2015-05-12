@@ -22,8 +22,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <script src="../js/jquery-1.11.3.min.js" ></script>
-        <script src="../js/js.js" ></script>
         <title></title>
     </head>
     <body>
@@ -43,28 +41,40 @@
             Seguidores: <?php echo $seguidoresmios; ?><br>
             Siguiendo: <?php echo $siguiendo; ?><br><br>
             <?php if($comprobarsiguiendo == 1){ ?>
-            <a id="algo" href="javascript:seguir()">Siguiendo</a>
+            <a id="seguir" href="javascript:seguir('<?php echo $loginsesion; ?>','<?php echo $login; ?>')">Siguiendo</a>
             <?php }else{ ?>
-            <a id="algo" href="javascript:seguir()">Seguir</a>
+            <a id="seguir" href="javascript:seguir('<?php echo $loginsesion; ?>','<?php echo $login; ?>')">Seguir</a>
             <?php } ?>
         </div>
         <div>
             Posts:
             <?php 
+            $contador = 0;
             foreach ($posts as $key => $post) {
                 $idpost = $post->getIdpost();
                 $modeloArchivo = new ModeloArchivospost($bd);
                 $archivos = $modeloArchivo->getListTotal($idpost);
+                
+                $megusta = new Megusta($loginsesion, $idpost);
+                $modelomegusta = new ModeloMegusta($bd);
+                $countmegusta = $modelomegusta->count($megusta);               
+                $idelemento = "seguir".$contador;
             ?>
             <div>
                 <?php echo $post->getFechapost(); ?><br>
                 <?php echo $post->getDescripcion(); ?><br>
                 <?php echo $post->getGusta(); ?>
+                <?php if($countmegusta>0){ ?>
+                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>')">No me gusta</a>
+                <?php }else{ ?>
+                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>')">Me gusta</a>
+                <?php } ?>
             </div>
                 <?php foreach ($archivos as $key => $archivo) { ?>
                     <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
                 <?php } ?>
             <?php
+                $contador++;
             }
             $bd->closeConsulta(); ?>
             <br><br>
@@ -83,6 +93,8 @@
                 ?>
 
             </ul>
-        </div>        
+        </div>   
+        <script src="../js/jquery-1.7.2.min.js" ></script>
+        <script src="../js/js.js" ></script>
     </body>
 </html>

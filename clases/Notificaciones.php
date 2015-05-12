@@ -1,18 +1,18 @@
 <?php
 
 class Notificaciones {
-    private $idnotificaciones, $loginusuario, $loginanuncioseguido, $nuevosposts;
-    function __construct($idnotificaciones, $loginusuario, $loginanuncioseguido, $nuevosposts) {
+    private $idnotificaciones, $loginusuario, $loginusuarioseguido, $nuevosposts;
+    function __construct($idnotificaciones=null, $loginusuario=null, $loginusuarioseguido=null, $nuevosposts=null) {
         $this->idnotificaciones = $idnotificaciones;
         $this->loginusuario = $loginusuario;
-        $this->loginanuncioseguido = $loginanuncioseguido;
+        $this->loginusuarioseguido = $loginusuarioseguido;
         $this->nuevosposts = $nuevosposts;
     }
     function set($datos, $inicio=0){
-        $this->idnotificaciones = [0+$inicio];
-        $this->loginusuario = [1+$inicio];
-        $this->loginanuncioseguido = [2+$inicio];
-        $this->nuevosposts = [3+$inicio];
+        $this->idnotificaciones = $datos[0+$inicio];
+        $this->loginusuario = $datos[1+$inicio];
+        $this->loginusuarioseguido = $datos[2+$inicio];
+        $this->nuevosposts = $datos[3+$inicio];
     }
     
     function getIdnotificaciones() {
@@ -27,8 +27,8 @@ class Notificaciones {
         return $this->loginusuario;
     }
 
-    function getLoginanuncioseguido() {
-        return $this->loginanuncioseguido;
+    function getLoginusuarioseguido() {
+        return $this->loginusuarioseguido;
     }
 
     function getNuevosposts() {
@@ -39,8 +39,8 @@ class Notificaciones {
         $this->loginusuario = $loginusuario;
     }
 
-    function setLoginanuncioseguido($loginanuncioseguido) {
-        $this->loginanuncioseguido = $loginanuncioseguido;
+    function setLoginusuarioseguido($loginusuarioseguido) {
+        $this->loginusuarioseguido = $loginusuarioseguido;
     }
 
     function setNuevosposts($nuevosposts) {

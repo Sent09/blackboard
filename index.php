@@ -1,3 +1,18 @@
+<?php 
+    require 'require/comun2.php';
+    $sesionusuario = $sesion->getUsuario();
+    $login = $sesionusuario->getLogin();
+    $bd = new BaseDatos();
+    $p = Leer::get("p");
+    $modeloPost = new ModeloPost($bd);
+
+    $posts=$modeloPost->postYoSigo($p, 10, $login);
+    $numeroRegistros = $modeloPost->count();    
+    $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
+    $modeloNotificaciones = new ModeloNotificaciones($bd);
+    $seguidoresmios = $modeloNotificaciones->count("loginusuarioseguido='$login'");
+    $siguiendo = $modeloNotificaciones->count("loginusuario='$login'");
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -11,7 +26,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php require 'require/comun2.php'; 
+        <?php
         if(!$sesion->isAutentificado()){
         ?>
         Login
@@ -75,6 +90,72 @@ and open the template in the editor.
             <input type="file" name="archivos[]" multiple />
             <input type="submit"/>
         </form>
+        Datos del usuario:<br>
+        Nombre: <?php echo $sesionusuario->getNombre()." ".$sesionusuario->getApellidos(); ?>
+        <img src="ararchivos/<?php echo $sesionusuario->getUrlfoto(); ?>"/><br>
+        Seguidores: <?php echo $seguidoresmios; ?><br>
+        Siguiendo: <?php echo $siguiendo; ?><br><br>
+        
+        
+        Posts:
+        <br><br>
+            <?php 
+            $contador = 0;
+            foreach ($posts as $key => $post) {
+                $idpost = $post->getIdpost();
+                $modeloArchivo = new ModeloArchivospost($bd);
+                $archivos = $modeloArchivo->getListTotal($idpost);
+                
+                $megusta = new Megusta($login, $idpost);
+                $modelomegusta = new ModeloMegusta($bd);
+                $countmegusta = $modelomegusta->count($megusta);               
+                $idelemento = "seguir".$contador;
+            ?>
+            <div>
+                <?php echo $post->getFechapost(); ?><br>
+                <?php echo $post->getDescripcion(); ?><br>
+                <?php echo $post->getGusta(); ?>
+                <?php if($countmegusta>0){ ?>
+                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">No me gusta</a>
+                <?php }else{ ?>
+                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">Me gusta</a>
+                <?php } ?>
+            </div>
+                <?php foreach ($archivos as $key => $archivo) { ?>
+                    <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
+                <?php } ?>
+            <?php
+                $contador++;
+            }
+            $bd->closeConsulta(); ?>
+            <br><br>
+            <ul>
+                <?php 
+                    echo $lista["inicio"];
+                    echo $lista["anterior"];
+                    echo $lista["primero"];
+                    echo $lista["segundo"]; 
+                    echo $lista["actual"]; 
+                    echo $lista["cuarto"];
+                    echo $lista["quinto"]; 
+                    echo $lista["siguiente"];
+                    echo $lista["ultimo"];
+                    $bd->closeConexion();
+                ?>
+
+            </ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <?php }?>
+        <script src="../js/js.js" ></script>
     </body>
 </html>

@@ -8,11 +8,11 @@ class ModeloNotificaciones {
         $this->bd = $bd;
     }
     function add(Notificaciones $notificaciones){
-        $consultaSql = "insert into $this->tabla values(:idnotificaciones, :loginusuario, :loginanuncioseguido, :nuevosposts);";
+        $consultaSql = "insert into $this->tabla values(:idnotificaciones, :loginusuario, :loginusuarioseguido, :nuevosposts);";
         $parametros["idnotificaciones"] = $notificaciones->getIdnotificaciones();
-        $parametros["loginusuario"] = $notificaciones->getIdarchivospost();
-        $parametros["loginanuncioseguido"] = $notificaciones->getUrl();
-        $parametros["nuevosposts"] = $notificaciones->getExtension();
+        $parametros["loginusuario"] = $notificaciones->getLoginusuario();
+        $parametros["loginusuarioseguido"] = $notificaciones->getLoginusuarioseguido();
+        $parametros["nuevosposts"] = $notificaciones->getNuevosposts();
         $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if(!$resultado){
             return -1;
@@ -37,6 +37,17 @@ class ModeloNotificaciones {
         $consultaSql = "select * from $this->tabla where idnotificaciones=:idnotificaciones";
         $arrayConsulta["idarchivospost"] = $idnotificaciones;
         $resultado = $this->bd->setConsulta($consultaSql, $arrayConsulta);
+        if($resultado){
+            $notificaciones = new Notificaciones();
+            $notificaciones->set($this->bd->getFila());
+            return $notificaciones;
+        }else{
+            return null;
+        }
+    }
+    function getCondicion($condicion="1=1", $parametros=array()){
+        $consultaSql = "select * from $this->tabla where $condicion";
+        $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if($resultado){
             $notificaciones = new Notificaciones();
             $notificaciones->set($this->bd->getFila());
@@ -86,8 +97,8 @@ class ModeloNotificaciones {
         return $list;
     }
     function notificar($loginusuario){        
-        $consultaSql = "update $this->tabla set nuevosposts=nuevosposts+1 where loginanuncioseguido=:loginusuario;";
-        $parametros["loginpk"] = $loginusuario;
+        $consultaSql = "update $this->tabla set nuevosposts=nuevosposts+1 where loginusuarioseguido=:loginusuario;";
+        $parametros["loginusuario"] = $loginusuario;
         $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if(!$resultado){
             return -1;
@@ -95,10 +106,10 @@ class ModeloNotificaciones {
         return $this->bd->getNumeroFila();
     }
     
-    function notificacionA0($loginusuario, $loginanuncioseguido){        
-        $consultaSql = "update $this->tabla set nuevosposts=0 where (loginusuario=:loginusuario) AND (loginanuncioseguido=:loginanuncioseguido);";
+    function notificacionA0($loginusuario, $loginusuarioseguido){        
+        $consultaSql = "update $this->tabla set nuevosposts=0 where (loginusuario=:loginusuario) AND (loginusuarioseguido=:loginusuarioseguido);";
         $parametros["loginusuario"] = $loginusuario;
-        $parametros["loginanuncioseguido"] = $loginanuncioseguido;
+        $parametros["loginusuarioseguido"] = $loginusuarioseguido;
         $resultado = $this->bd->setConsulta($consultaSql, $parametros);
         if(!$resultado){
             return -1;
