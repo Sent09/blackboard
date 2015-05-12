@@ -6,7 +6,7 @@
     $modeloPost = new ModeloPost($bd);
     $usuario = $sesion->getUsuario();
     $login = $usuario->getLogin();
-    $posts=$modeloPost->getList($p, 10, "login='$login'");
+    $posts=$modeloPost->postMeGustan($p, 10, $login);
     $numeroRegistros = $modeloPost->count();    
     $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
     
@@ -37,7 +37,6 @@
             <?php echo $post->getFechapost(); ?><br>
             <?php echo $post->getDescripcion(); ?><br>
             <?php echo $post->getGusta(); ?>
-            <a href="phpborrarpost.php?idpost=<?php echo $post->getIdpost(); ?>">Borrar</a>
         </div>
             <?php foreach ($archivos as $key => $archivo) { ?>
                 <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>

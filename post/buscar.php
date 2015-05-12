@@ -1,7 +1,7 @@
 <?php
     require '../require/comun.php';
     $bd = new BaseDatos();
-    
+    $value = Leer::get("value");
     $p = Leer::get("p");
     $modeloPost = new ModeloPost($bd);
     $usuario = $sesion->getUsuario();

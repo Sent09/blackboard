@@ -14,11 +14,6 @@
     $siguiendo = $modeloNotificaciones->count("loginusuario='$login'");
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -73,7 +68,7 @@ and open the template in the editor.
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="#">Me Gusta</a></li>
+                <li><a href="post/megusta.php">Me Gusta</a></li>
                 <li><a href="post/mispost.php">Mis post</a></li>
                 <li><a href="#">Panel de administración</a></li>
                 <li><a href="usuario/phpcerrarsesion.php">Desloguear</a></li>
@@ -92,7 +87,7 @@ and open the template in the editor.
         </form>
         Datos del usuario:<br>
         Nombre: <?php echo $sesionusuario->getNombre()." ".$sesionusuario->getApellidos(); ?>
-        <img src="ararchivos/<?php echo $sesionusuario->getUrlfoto(); ?>"/><br>
+        <img src="archivos/<?php echo $sesionusuario->getUrlfoto(); ?>"/><br>
         Seguidores: <?php echo $seguidoresmios; ?><br>
         Siguiendo: <?php echo $siguiendo; ?><br><br>
         
@@ -122,7 +117,7 @@ and open the template in the editor.
                 <?php } ?>
             </div>
                 <?php foreach ($archivos as $key => $archivo) { ?>
-                    <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
+                    <a style="color:red;" target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
                 <?php } ?>
             <?php
                 $contador++;
