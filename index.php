@@ -1,17 +1,5 @@
 <?php 
     require 'require/comun2.php';
-    $sesionusuario = $sesion->getUsuario();
-    $login = $sesionusuario->getLogin();
-    $bd = new BaseDatos();
-    $p = Leer::get("p");
-    $modeloPost = new ModeloPost($bd);
-
-    $posts=$modeloPost->postYoSigo($p, 10, $login);
-    $numeroRegistros = $modeloPost->count();    
-    $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
-    $modeloNotificaciones = new ModeloNotificaciones($bd);
-    $seguidoresmios = $modeloNotificaciones->count("loginusuarioseguido='$login'");
-    $siguiendo = $modeloNotificaciones->count("loginusuario='$login'");
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +52,19 @@
                 </tr>
             </form>        
         </table>
-        <?php }else{ ?>
+        <?php }else{ 
+            $sesionusuario = $sesion->getUsuario();
+            $login = $sesionusuario->getLogin();
+            $bd = new BaseDatos();
+            $p = Leer::get("p");
+            $modeloPost = new ModeloPost($bd);
+            $posts=$modeloPost->postYoSigo($p, 10, $login);
+            $numeroRegistros = $modeloPost->count();    
+            $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
+            $modeloNotificaciones = new ModeloNotificaciones($bd);
+            $seguidoresmios = $modeloNotificaciones->count("loginusuarioseguido='$login'");
+            $siguiendo = $modeloNotificaciones->count("loginusuario='$login'");
+        ?>
         <nav>
             <ul>
                 <li><a href="index.php">Inicio</a></li>
