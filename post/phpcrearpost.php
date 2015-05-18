@@ -10,6 +10,8 @@ $modelo->add($post);
 $postinsertado = $baseDatos->getAutonumerico();
 $subir = new Subir("archivos");
 $nombres = $subir->subir();
+$modeloNotificar = new ModeloNotificaciones($baseDatos);
+$modeloNotificar->notificar($usuario->getLogin());
 foreach($nombres as $key => $urlfoto) {
     $modeloArchivo = new ModeloArchivospost($baseDatos);
     $extension = substr($urlfoto, strpos($urlfoto, "."));

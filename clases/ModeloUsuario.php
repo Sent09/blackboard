@@ -134,7 +134,21 @@ class ModeloUsuario {
         }
         return $list;
     }
-    
+    function getListScroll($pagina=0, $rpp=10,$condicion="1=1",$parametros=array(), $orderby = "1"){
+        $list = array();
+        $sql = "select * from $this->tabla where $condicion order by $orderby limit $pagina, $rpp";
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $usuario = new Usuario();
+                $usuario->set($datos);
+                $list[] = $usuario;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
 //    function selectHtml($id,$name,$condicion, $parametros, $valorSeleccionado="",$blanco=true, $textoBlanco="&nbsp;"){
 //        $select = "<select name='$name' id='$id'>";
 //        if($blanco){

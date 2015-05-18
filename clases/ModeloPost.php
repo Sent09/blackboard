@@ -85,6 +85,23 @@ class ModeloPost {
         }
         return $list;
     }
+    
+    function getListScroll($pagina=0, $rpp=10,$condicion="1=1",$parametros=array(), $orderby = "1"){
+        $list = array();
+        $sql = "select * from $this->tabla where $condicion order by $orderby limit $pagina, $rpp";
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $post = new Post();
+                $post->set($datos);
+                $list[] = $post;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
+    
     function postYoSigo($pagina=0, $rpp=10,$login=null, $parametros=array()){
         $list = array();
         $principio = $pagina*$rpp;

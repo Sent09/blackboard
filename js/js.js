@@ -1,7 +1,13 @@
 function enviar(formulario) {
-    var texto = formulario.texto.value
+    var texto = formulario.texto.value;
     if (texto.length > 0) {
-        window.location.assign('post/buscar.php?value=' + texto);
+        window.location.assign('buscaruser.php?value=' + texto);
+    }
+}
+function enviarIndex(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('post/buscaruser.php?value=' + texto);
     }
 }
 

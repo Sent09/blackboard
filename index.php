@@ -73,7 +73,7 @@
                 <li><a href="#">Panel de administración</a></li>
                 <li><a href="usuario/phpcerrarsesion.php">Desloguear</a></li>
                 <li>
-                    <form action="javascript:enviar(this.buscar)" name="buscar" method="post">
+                    <form action="javascript:enviarIndex(this.buscar)" name="buscar" method="post">
                         <input type="text" placeholder="Buscar" name="texto">
                     </form>
                 </li>
@@ -137,7 +137,6 @@
                     echo $lista["ultimo"];
                     $bd->closeConexion();
                 ?>
-
             </ul>
         
         
