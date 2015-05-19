@@ -119,6 +119,21 @@ class ModeloPost {
         return $list;
     }
     
+    function postYoSigoScroll($pagina=0, $rpp=10,$login=null, $parametros=array()){
+        $list = array();
+        $sql = "select * from post INNER JOIN notificaciones ON post.login=notificaciones.loginusuarioseguido where notificaciones.loginusuario='$login' order by post.fechapost DESC limit $pagina, $rpp";
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $post = new Post();
+                $post->set($datos);
+                $list[] = $post;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
     
     function postMeGustan($pagina=0, $rpp=10,$login=null, $parametros=array()){
         $list = array();
@@ -137,6 +152,21 @@ class ModeloPost {
         return $list;
     }
     
+    function postMeGustanScroll($pagina=0, $rpp=10,$login=null, $parametros=array()){
+        $list = array();
+        $sql = "select * from post INNER JOIN megusta ON post.idpost=megusta.idpost where megusta.login='$login' order by post.fechapost DESC limit $pagina, $rpp";
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $post = new Post();
+                $post->set($datos);
+                $list[] = $post;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
     
     function edit(Post $post){        
         $consultaSql = "update $this->tabla set gusta=:gusta where idpost=:idpost;";

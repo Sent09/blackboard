@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <?php
     require '../require/comun.php';
+    $sesion->autentificado("../index.php");
+    unset($_SESSION["cantidadcargadas"]);
+    unset($_SESSION["contador"]);
     $bd = new BaseDatos();
-    $p = Leer::get("p");
     $modeloPost = new ModeloPost($bd);
     $usuario = $sesion->getUsuario();
     $login = $usuario->getLogin();
-    $posts=$modeloPost->postMeGustan($p, 10, $login);
-    $numeroRegistros = $modeloPost->count();    
-    $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
-    
+    $posts=$modeloPost->postMeGustan(0, 10, $login);    
 ?>
 
 <html>
@@ -17,6 +16,7 @@
         <meta charset="UTF-8">
         <title></title>
         <script type="text/javascript" src="../js/js.js"></script>
+        <script type="text/javascript" src="../js/javascriptscroll.js"></script>
     </head>
     <body>
         <nav>
@@ -33,39 +33,41 @@
                 </li>
             </ul>
         </nav>
+        <div id="lista_posts">
         <?php 
+        if(count($posts) == 0) echo "No hay posts para mostrar"; 
+        $contador = 0;
         foreach ($posts as $key => $post) {
             $idpost = $post->getIdpost();
             $modeloArchivo = new ModeloArchivospost($bd);
             $archivos = $modeloArchivo->getListTotal($idpost);
+            $megusta = new Megusta($login, $idpost);
+            $modelomegusta = new ModeloMegusta($bd);
+            $countmegusta = $modelomegusta->count($megusta); 
+            $idelemento = "seguir".$contador;
         ?>
         <div>
             <?php echo $post->getFechapost(); ?><br>
             <?php echo $post->getDescripcion(); ?><br>
             <?php echo $post->getGusta(); ?>
-        </div>
-            <?php foreach ($archivos as $key => $archivo) { ?>
-                <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
+            <?php if($countmegusta>0){ ?>
+                <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">No me gusta</a>
+            <?php }else{ ?>
+                <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">Me gusta</a>
             <?php } ?>
+        </div>
+        <?php foreach ($archivos as $key => $archivo) { ?>
+            <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
+        <?php } ?>
         <?php
-        }
+        $contador++;
+        }if(count($posts) > 0){ 
+        ?>
+            <br>
+            <input type="button" id="mas" onclick="javascript:cargarMeGusta('<?php echo $login; ?>');" value="Cargar más">
+        <?php }
         $bd->closeConsulta(); ?>
-        <br><br>
-        <ul>
-            <?php 
-                echo $lista["inicio"];
-                echo $lista["anterior"];
-                echo $lista["primero"];
-                echo $lista["segundo"]; 
-                echo $lista["actual"]; 
-                echo $lista["cuarto"];
-                echo $lista["quinto"]; 
-                echo $lista["siguiente"];
-                echo $lista["ultimo"];
-                $bd->closeConexion();
-            ?>
-
-        </ul>
+            </div>
     </body>
 </html>
 <?php $bd->closeConexion(); ?>

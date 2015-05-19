@@ -1,5 +1,6 @@
 <?php
     require '../require/comun.php';
+    $sesion->autentificado("../index.php");
     unset($_SESSION["cantidadcargadas"]);
     $bd = new BaseDatos();
     $value = Leer::get("value");
@@ -26,7 +27,7 @@
                 <li><a href="#">Panel de administración</a></li>
                 <li><a href="../usuario/phpcerrarsesion.php">Desloguear</a></li>
                 <li>
-                    <form action="javascript:enviar(this.buscar)" name="buscar" method="post">
+                    <form action="javascript:enviarPost(this.buscar)" name="buscar" method="post">
                         <input type="text" placeholder="Buscar" name="texto">
                     </form>
                 </li>

@@ -6,6 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <script src="js/js.js"></script>
+        <script src="js/javascriptscroll.js"></script>
         <title></title>
     </head>
     <body>
@@ -53,14 +54,14 @@
             </form>        
         </table>
         <?php }else{ 
+            unset($_SESSION["cantidadcargadas"]);
+            unset($_SESSION["contador"]);
             $sesionusuario = $sesion->getUsuario();
             $login = $sesionusuario->getLogin();
             $bd = new BaseDatos();
-            $p = Leer::get("p");
             $modeloPost = new ModeloPost($bd);
-            $posts=$modeloPost->postYoSigo($p, 10, $login);
-            $numeroRegistros = $modeloPost->count();    
-            $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
+            $posts=$modeloPost->postYoSigo(0, 10, $login);
+
             $modeloNotificaciones = new ModeloNotificaciones($bd);
             $seguidoresmios = $modeloNotificaciones->count("loginusuarioseguido='$login'");
             $siguiendo = $modeloNotificaciones->count("loginusuario='$login'");
@@ -94,8 +95,10 @@
         
         Posts:
         <br><br>
+        <div id="lista_posts">
             <?php 
             $contador = 0;
+            if(count($posts) == 0) echo "No hay posts para mostrar"; 
             foreach ($posts as $key => $post) {
                 $idpost = $post->getIdpost();
                 $modeloArchivo = new ModeloArchivospost($bd);
@@ -122,34 +125,12 @@
             <?php
                 $contador++;
             }
+            if(count($posts) > 0){ 
+            ?>
+                <input type="button" id="mas" onclick="javascript:cargarIndex('<?php echo $login; ?>');" value="Cargar más">
+            <?php }
             $bd->closeConsulta(); ?>
-            <br><br>
-            <ul>
-                <?php 
-                    echo $lista["inicio"];
-                    echo $lista["anterior"];
-                    echo $lista["primero"];
-                    echo $lista["segundo"]; 
-                    echo $lista["actual"]; 
-                    echo $lista["cuarto"];
-                    echo $lista["quinto"]; 
-                    echo $lista["siguiente"];
-                    echo $lista["ultimo"];
-                    $bd->closeConexion();
-                ?>
-            </ul>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <?php }?>
-        <script src="../js/js.js" ></script>
+        </div>
     </body>
 </html>

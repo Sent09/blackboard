@@ -1,5 +1,6 @@
 <?php
     require '../require/comun.php';
+    $sesion->autentificado("../index.php");
     unset($_SESSION["cantidadcargadas"]);
     $bd = new BaseDatos();
     $value = Leer::get("value");

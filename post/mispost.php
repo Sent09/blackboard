@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <?php
     require '../require/comun.php';
+    unset($_SESSION["cantidadcargadas"]);
+    $sesion->autentificado("../index.php");
     $bd = new BaseDatos();
-    $p = Leer::get("p");
     $modeloPost = new ModeloPost($bd);
     $usuario = $sesion->getUsuario();
     $login = $usuario->getLogin();
-    $posts=$modeloPost->getList($p, 10, "login='$login'");
-    $numeroRegistros = $modeloPost->count();    
-    $lista = Util::getEnlacesPaginacion($p, 10, $numeroRegistros);
+    $posts=$modeloPost->getList(0, 10, "login='$login'");
     
 ?>
 
@@ -17,6 +16,7 @@
         <meta charset="UTF-8">
         <title></title>
         <script type="text/javascript" src="../js/js.js"></script>
+        <script type="text/javascript" src="../js/javascriptscroll.js"></script>
     </head>
     <body>
         <nav>
@@ -33,7 +33,9 @@
                 </li>
             </ul>
         </nav>
+        <div id="lista_posts">
         <?php 
+        if(count($posts) == 0) echo "No hay posts para mostrar";
         foreach ($posts as $key => $post) {
             $idpost = $post->getIdpost();
             $modeloArchivo = new ModeloArchivospost($bd);
@@ -50,23 +52,13 @@
             <?php } ?>
         <?php
         }
+        if(count($posts) > 0){
+        ?>
+            <input type="button" id="mas" onclick="javascript:cargarMisPosts('<?php echo $login; ?>');" value="Cargar más">
+        <?php    
+        }
         $bd->closeConsulta(); ?>
-        <br><br>
-        <ul>
-            <?php 
-                echo $lista["inicio"];
-                echo $lista["anterior"];
-                echo $lista["primero"];
-                echo $lista["segundo"]; 
-                echo $lista["actual"]; 
-                echo $lista["cuarto"];
-                echo $lista["quinto"]; 
-                echo $lista["siguiente"];
-                echo $lista["ultimo"];
-                $bd->closeConexion();
-            ?>
-
-        </ul>
+        </div>
     </body>
 </html>
 <?php $bd->closeConexion(); ?>
