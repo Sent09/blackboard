@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2015 a las 18:50:11
+-- Tiempo de generación: 21-05-2015 a las 20:44:17
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `archivospost` (
   `url` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `extension` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `idpost` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `archivospost`
@@ -39,9 +39,7 @@ CREATE TABLE IF NOT EXISTS `archivospost` (
 
 INSERT INTO `archivospost` (`idarchivospost`, `url`, `extension`, `idpost`) VALUES
 (1, 'archivo_1.pdf', '.pdf', 23),
-(2, 'archivo_1.jpg', '.jpg', 24),
-(5, 'archivo_3.pdf', '.pdf', 26),
-(6, 'archivo_3.jpg', '.jpg', 26);
+(2, 'archivo_1.jpg', '.jpg', 24);
 
 -- --------------------------------------------------------
 
@@ -59,11 +57,7 @@ CREATE TABLE IF NOT EXISTS `megusta` (
 --
 
 INSERT INTO `megusta` (`login`, `idpost`) VALUES
-('usuario', 5),
-('usuario', 9),
-('usuario', 12),
-('usuario', 25),
-('usuario', 10);
+('usuario', 27);
 
 -- --------------------------------------------------------
 
@@ -76,14 +70,14 @@ CREATE TABLE IF NOT EXISTS `notificaciones` (
   `loginusuario` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `loginusuarioseguido` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `nuevosposts` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `notificaciones`
 --
 
 INSERT INTO `notificaciones` (`idnotificaciones`, `loginusuario`, `loginusuarioseguido`, `nuevosposts`) VALUES
-(4, 'usuario', 'usuario', 2);
+(6, 'usuario', 'usuario', 0);
 
 -- --------------------------------------------------------
 
@@ -107,12 +101,12 @@ INSERT INTO `post` (`idpost`, `descripcion`, `gusta`, `fechapost`, `login`) VALU
 (2, 'qweqw eqw eqw eqwe ', 0, '2015-05-04 00:00:00', 'usuario'),
 (3, 'qweqw eqw eqw eqwe ', 0, '2015-05-04 00:00:00', 'usuario'),
 (4, 'wqe qwe qwe qwe', 0, '2015-05-04 00:00:00', 'usuario'),
-(5, 'wqe qwe qwe qwe', 1, '2015-05-04 00:00:00', 'usuario'),
+(5, 'wqe qwe qwe qwe', 0, '2015-05-04 00:00:00', 'usuario'),
 (6, 'qwe qwe qwe qw', 0, '2015-05-04 00:00:00', 'usuario'),
 (8, 'qwe qwe qwe', 0, '2015-05-04 00:00:00', 'usuario'),
-(9, 'qwe qwe qwe', 1, '2015-05-04 00:00:00', 'usuario'),
-(10, 'qweqweqwe', 1, '2015-05-04 00:00:00', 'usuario'),
-(12, 'qwerqwe', 1, '2015-05-04 00:00:00', 'usuario'),
+(9, 'qwe qwe qwe', 0, '2015-05-04 00:00:00', 'usuario'),
+(10, 'qweqweqwe', 0, '2015-05-04 00:00:00', 'usuario'),
+(12, 'qwerqwe', 0, '2015-05-04 00:00:00', 'usuario'),
 (13, 'qweqweqwe qw eqw', 0, '2015-05-04 00:00:00', 'usuario'),
 (14, 'qweqw e qwe', 0, '2015-05-04 00:00:00', 'usuario'),
 (15, 'qweqw e qwe', 0, '2015-05-04 00:00:00', 'usuario'),
@@ -124,9 +118,9 @@ INSERT INTO `post` (`idpost`, `descripcion`, `gusta`, `fechapost`, `login`) VALU
 (22, 'qwe qwe qwe qwe qwe', 0, '2015-05-04 00:00:00', 'usuario'),
 (23, 'qwe qwe qwe ', 0, '2015-05-04 00:00:00', 'usuario'),
 (24, 'nuevo post', 0, '2015-05-10 00:00:00', 'usuario'),
-(25, 'Yessi es mongola', 1, '2015-05-11 00:00:00', 'usuario'),
+(25, 'Yessi es mongola', 0, '2015-05-11 00:00:00', 'usuario'),
 (26, 'Quiero mucho a Eu', 0, '2015-05-16 00:00:00', 'usuario'),
-(27, 'qweqweqwe', 0, '2015-05-17 00:00:00', 'usuario'),
+(27, 'qweqweqwe', 1, '2015-05-17 00:00:00', 'usuario'),
 (28, 'qweqweqwee qwe qwe', 0, '2015-05-17 00:00:00', 'usuario');
 
 -- --------------------------------------------------------
@@ -155,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`login`, `clave`, `nombre`, `apellidos`, `email`, `fechaalta`, `isactivo`, `isroot`, `rol`, `fechalogin`, `urlfoto`) VALUES
 ('user', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'nombre', 'apellido', 'andresfuentesfernandez@gmail.com', '2015-05-02', 1, 0, 'usuario', '2015-05-02 00:00:00', NULL),
-('usuario', 'b665e217b51994789b02b1838e730d6b93baa30f', 'Nombre', 'Apellidos', 'qwe@gmail.com', '2015-05-02', 1, 0, 'usuario', '2015-05-18 00:00:00', NULL);
+('usuario', 'b665e217b51994789b02b1838e730d6b93baa30f', 'Nombre', 'Apellidos', 'qwe@gmail.com', '2015-05-02', 1, 0, 'usuario', '2015-05-19 00:00:00', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -199,12 +193,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `archivospost`
 --
 ALTER TABLE `archivospost`
-MODIFY `idarchivospost` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `idarchivospost` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-MODIFY `idnotificaciones` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `idnotificaciones` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `post`
 --
