@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Blackboard</title>
     </head>
     <body>
         <div style="margin:0 auto;width: 400px;" >

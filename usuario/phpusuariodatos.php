@@ -22,6 +22,6 @@ if($usuario->getEmail() != $email){
 }
 $resultado = $modelo->edit($usuario, $login);
 $sesion->setUsuario($usuario, $bd);
-header("Location: ../viewperfil.php?r=$resultado");
+header("Location: viewperfil.php?r=$resultado");
 
 

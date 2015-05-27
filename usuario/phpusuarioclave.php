@@ -11,8 +11,8 @@ if(sha1($claveVieja)==$usuario->getClave() && $clave1 == $clave2){
     $claveCodificada = sha1($clave1);
     $usuario->setClave($claveCodificada);
     $resultado = $modelo->edit($usuario, $login);
-    header("Location: ../viewperfil.php?r=$resultado");
+    header("Location: viewperfil.php?r=$resultado");
 }else{
-    header("Location: ../viewperfil.php?r=-1");
+    header("Location: viewperfil.php?r=-1");
 }
 

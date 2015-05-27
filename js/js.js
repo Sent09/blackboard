@@ -18,6 +18,13 @@ function enviarPost(formulario) {
     }
 }
 
+function enviarUsuario(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('../post/buscarposts.php?value=' + texto);
+    }
+}
+
 function seguir(loginsesion, login) {
     var seguir = document.getElementById("seguir");
     if (window.XMLHttpRequest) {

@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Blackboard</title>
         <script type="text/javascript" src="../js/js.js"></script>
         <script type="text/javascript" src="../js/javascriptscroll.js"></script>
     </head>
@@ -31,7 +31,7 @@
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="#">Me Gusta</a></li>
                 <li><a href="mispost.php">Mis post</a></li>
-                <li><a href="#">Panel de administración</a></li>
+                <li><a href="../usuario/viewperfil.php">Panel de administración</a></li>
                 <li><a href="../usuario/phpcerrarsesion.php">Desloguear</a></li>
                 <li>
                     <form action="javascript:enviar(this.buscar)" name="buscar" method="post">

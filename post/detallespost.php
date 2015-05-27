@@ -17,7 +17,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Blackboard</title>
         <script src="../js/js.js"></script>
     </head>
     <body>
@@ -26,7 +26,7 @@
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="megusta.php">Me Gusta</a></li>
                 <li><a href="mispost.php">Mis post</a></li>
-                <li><a href="#">Panel de administración</a></li>
+                <li><a href="../usuario/viewperfil.php">Panel de administración</a></li>
                 <li><a href="../usuario/phpcerrarsesion.php">Desloguear</a></li>
                 <li>
                     <form action="javascript:enviar(this.buscar)" name="buscar" method="post">
