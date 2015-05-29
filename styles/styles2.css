@@ -1,0 +1,261 @@
+@font-face {
+	font-family:'HeydingsIcons-Regular';
+	src: url('../font/HeydingsIcons_gdi.eot');
+	src: url('../font/HeydingsIcons_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/HeydingsIcons_gdi.woff') format('woff'),
+		url('../font/HeydingsIcons_gdi.ttf') format('truetype'),
+		url('../font/HeydingsIcons_gdi.otf') format('opentype'),
+		url('../font/HeydingsIcons_gdi.svg#HeydingsIcons-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0021-0079;
+}
+
+@font-face {
+	font-family:'Oxygen-Bold';
+	src: url('../font/Oxygen-Bold_gdi.eot');
+	src: url('../font/Oxygen-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/Oxygen-Bold_gdi.woff') format('woff'),
+		url('../font/Oxygen-Bold_gdi.ttf') format('truetype'),
+		url('../font/Oxygen-Bold_gdi.otf') format('opentype'),
+		url('../font/Oxygen-Bold_gdi.svg#Oxygen-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'Oxygen-Light';
+	src: url('../font/Oxygen-Light_gdi.eot');
+	src: url('../font/Oxygen-Light_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/Oxygen-Light_gdi.woff') format('woff'),
+		url('../font/Oxygen-Light_gdi.ttf') format('truetype'),
+		url('../font/Oxygen-Light_gdi.otf') format('opentype'),
+		url('../font/Oxygen-Light_gdi.svg#Oxygen-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'Oxygen-Regular';
+	src: url('../font/Oxygen-Regular_gdi.eot');
+	src: url('../font/Oxygen-Regular_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/Oxygen-Regular_gdi.woff') format('woff'),
+		url('../font/Oxygen-Regular_gdi.ttf') format('truetype'),
+		url('../font/Oxygen-Regular_gdi.otf') format('opentype'),
+		url('../font/Oxygen-Regular_gdi.svg#Oxygen-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'DenneEtude-Regular';
+	src: url('../font/DenneEtude_gdi.eot');
+	src: url('../font/DenneEtude_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/DenneEtude_gdi.woff') format('woff'),
+		url('../font/DenneEtude_gdi.ttf') format('truetype'),
+		url('../font/DenneEtude_gdi.otf') format('opentype'),
+		url('../font/DenneEtude_gdi.svg#DenneEtude-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2265;
+}
+
+
+html{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{
+    padding-top: 120px;
+    margin: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header{
+    background-color: #e8641b;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.div-logo{
+    display: flex;
+    flex-direction: row;
+    font-family: "Oxygen-Light";
+    margin-left: 20px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-flow: row;
+    
+}
+
+.links div{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
+
+.contenedor-main{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.manageinfo{
+    background-color: #a7a7a7;
+    width: 450px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+}
+
+.post-body{
+    background-color: #d6d6d6;
+}
+
+.archivos-box{
+    background-color: #d6d6d6;
+}
+
+.div-notificaciones{
+    background-color: #818181;
+}
+
+.fotoprincipal{
+    margin: auto;
+    margin-top: 30px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 200px;
+}
+
+.usuario-nombre{
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    font-family: "Oxygen-Regular";
+}
+
+.userinfo{
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+    font-family: "Oxygen-Regular";
+}
+
+.userinfo a{
+    text-decoration: none;
+}
+
+.userinfo a:hover{
+}
+
+.misposts span{
+    padding-left: 10px;
+    color: #444444;
+    transition: all 0.13s ease 0s;
+}
+
+.misposts span:hover{
+    color: white;
+}
+
+.misposts{
+    
+}
+.misseguidores span{
+    padding-left: 10px;
+    color: #444444;
+    transition: all 0.13s ease 0s;
+}
+
+.misseguidores span:hover{
+    color: white;
+}
+.siguiendo span{
+    padding-left: 10px;
+    color: #444444;
+    transition: all 0.13sº ease 0s;
+}
+
+.siguiendo span:hover{
+    color: white;
+}
+
+.posttitle{
+    color: white;
+    font-family: "Oxygen-Bold";
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.postbox form{
+    display: flex;
+    flex-direction: column;
+}
+
+.postbox form input{
+    display: flex;
+    font-family: "Oxygen-Light";
+    margin: auto;
+}
+
+.enviar{
+    color: white;
+    margin: auto;
+    background-color: #e8641b;
+    width: 85%;
+    border-radius: 10px;
+    border: none;
+    height: 32px;
+    font-size: 19px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease 0s;
+}
+
+.postbox{
+    height: 100%;
+}
+
+.postbox form textarea{
+    margin: auto;
+    display: flex;
+    width: 80%;
+    height: 263px;
+    font-family: "Oxygen-Light";
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-top: 10px;
+    resize: none;
+    font-size: 15px;
+}

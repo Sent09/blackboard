@@ -7,52 +7,50 @@
         <meta charset="UTF-8">
         <script src="js/js.js"></script>
         <script src="js/javascriptscroll.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <title>Blackboard</title>
     </head>
     <body>
         <?php
         if(!$sesion->isAutentificado()){
         ?>
-        Login
-        <form action="usuario/phplogin.php" method="POST">            
-            User<input type="text" name="login" value="" />
-            Pass<input type="password" name="clave" value="" /> 
-            <input class="btn btn-success" style="margin-top: 7px;" type="submit" value="Entrar" />
-        </form>
-        Has olvidao la cuenta o argo vieo? Tira <a href="usuario/viewolvido.php">pacá</a><br><br>
-        
-        Registro
-        <table>
-            <form action="usuario/phpalta.php" method="POST">
-                <tr>
-                    <td><label>Login: </label></td>
-                    <td><input type="text" class="form-control" id="login" name="login" value="" required/><span id="dato"></span></td>
-                </tr>
-                <tr>
-                    <td><label>Clave: </label></td>
-                    <td><input type="password" class="form-control" name="clave" value="" required/></td>
-                </tr>
-                <tr>
-                    <td><label>Confirmar clave: </label></td>
-                    <td><input type="password" class="form-control" name="clave2" value="" required/></td>
-                </tr>
-                <tr>
-                    <td><label>Nombre: </label></td>
-                    <td><input type="text" class="form-control" name="nombre" value="" required/></td>
-                </tr>
-                <tr>
-                    <td><label>Apellidos: </label></td>
-                    <td><input type="text" class="form-control" name="apellidos" value="" required/></td>
-                </tr>
-                <tr>
-                    <td><label>E-Mail: </label></td>
-                    <td><input type="email" class="form-control" name="email" value="" required/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" class="btn btn-success" name="boton" value="Enviar" required/></td>
-                </tr>
-            </form>        
-        </table>
+        <div class="container-inicio">
+                <div class="logoprincipal">
+                    <img src="img/logoprincipal.png"/>
+                </div>
+                <div class="contenedor-central">
+                        <div class="div-registro">
+                            <div class="titulo">Registro</div>
+                            <div class="registro">
+                                <form id="form-registro" action="usuario/phpalta.php" method="POST">
+                                <input type="text" class="form-control" id="login" name="login" placeholder="Usuario" required>
+                                <input type="password" class="form-control" id="password" name="clave" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" id="repeat" name="clave2" placeholder="Repite contraseña" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                                <input type="email" class="form-control" id="correo" name="email" placeholder="Corre electrónico" required>
+                                <input type="submit" class="form-control" id="enviar" name="boton" value="Regístrame" required>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="div-entrar">
+                        <div class="titulo">Entrar</div>
+                        <div class="entrar">
+                            <form id="form-entrar" action="usuario/phplogin.php" method="POST">
+                                <input type="text" id="login" name="login" placeholder="Usuario" required>
+                                <input type="password" id="password" name="clave" placeholder="Contraseña" required>
+                                <input type="submit" id="enviar" value="Entrar">
+                            </form>
+                            <div class="olvido">¿Has olvidado tu contraseña? Recupérala <a href="usuario/viewolvido.php">aquí</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="rights">
+            <div class="privacidad"><a href="#">Política de privacidad</a></div>
+            <div class="derechos">Furo Web Graphics. Todos los derechos reservados. 2015</div>
+        </div>
         <?php }else{ 
             unset($_SESSION["cantidadcargadas"]);
             unset($_SESSION["contador"]);

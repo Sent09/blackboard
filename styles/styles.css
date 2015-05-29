@@ -1,0 +1,411 @@
+@font-face {
+	font-family:'HeydingsIcons-Regular';
+	src: url('../font/HeydingsIcons_gdi.eot');
+	src: url('../font/HeydingsIcons_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/HeydingsIcons_gdi.woff') format('woff'),
+		url('../font/HeydingsIcons_gdi.ttf') format('truetype'),
+		url('../font/HeydingsIcons_gdi.otf') format('opentype'),
+		url('../font/HeydingsIcons_gdi.svg#HeydingsIcons-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0021-0079;
+}
+
+@font-face {
+	font-family:'Oxygen-Bold';
+	src: url('../font/Oxygen-Bold_gdi.eot');
+	src: url('../font/Oxygen-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/Oxygen-Bold_gdi.woff') format('woff'),
+		url('../font/Oxygen-Bold_gdi.ttf') format('truetype'),
+		url('../font/Oxygen-Bold_gdi.otf') format('opentype'),
+		url('../font/Oxygen-Bold_gdi.svg#Oxygen-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'Oxygen-Light';
+	src: url('../font/Oxygen-Light_gdi.eot');
+	src: url('../font/Oxygen-Light_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/Oxygen-Light_gdi.woff') format('woff'),
+		url('../font/Oxygen-Light_gdi.ttf') format('truetype'),
+		url('../font/Oxygen-Light_gdi.otf') format('opentype'),
+		url('../font/Oxygen-Light_gdi.svg#Oxygen-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'Oxygen-Regular';
+	src: url('../font/Oxygen-Regular_gdi.eot');
+	src: url('../font/Oxygen-Regular_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/Oxygen-Regular_gdi.woff') format('woff'),
+		url('../font/Oxygen-Regular_gdi.ttf') format('truetype'),
+		url('../font/Oxygen-Regular_gdi.otf') format('opentype'),
+		url('../font/Oxygen-Regular_gdi.svg#Oxygen-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'DenneEtude-Regular';
+	src: url('../font/DenneEtude_gdi.eot');
+	src: url('../font/DenneEtude_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../font/DenneEtude_gdi.woff') format('woff'),
+		url('../font/DenneEtude_gdi.ttf') format('truetype'),
+		url('../font/DenneEtude_gdi.otf') format('opentype'),
+		url('../font/DenneEtude_gdi.svg#DenneEtude-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2265;
+}
+
+html{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{
+    margin: 0 auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.container-inicio{
+    background: -moz-linear-gradient(top,  rgba(232,100,27,1) 0%, rgba(232,100,27,1) 37%, rgba(232,100,27,0.84) 47%, rgba(0,0,0,0.02) 99%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,100,27,1)), color-stop(37%,rgba(232,100,27,1)), color-stop(47%,rgba(232,100,27,0.84)), color-stop(99%,rgba(0,0,0,0.02)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(232,100,27,1) 0%,rgba(232,100,27,1) 37%,rgba(232,100,27,0.84) 47%,rgba(0,0,0,0.02) 99%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(232,100,27,1) 0%,rgba(232,100,27,1) 37%,rgba(232,100,27,0.84) 47%,rgba(0,0,0,0.02) 99%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(232,100,27,1) 0%,rgba(232,100,27,1) 37%,rgba(232,100,27,0.84) 47%,rgba(0,0,0,0.02) 99%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(232,100,27,1) 0%,rgba(232,100,27,1) 37%,rgba(232,100,27,0.84) 47%,rgba(0,0,0,0.02) 99%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8641b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    margin: 0 auto;
+}
+
+.logoprincipal{
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.contenedor-central{
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.div-registro{
+    width: 38%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+.div-entrar{
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.titulo{
+    font-family: "DenneEtude-Regular";
+    width: 100%;
+    font-size: 55px;
+    text-align: center;
+    background-color: white;
+    color: #444444;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.registro{
+    width: 100%;
+    margin-top: 3px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.entrar{
+    width: 100%;
+    margin-top: 3px;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#form-registro{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form-entrar{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form-registro input{
+    height: 35px;
+    border: none;
+    color: white;
+    padding-left: 15px;
+    font-family: "Oxygen-Light";
+    width: 65%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: #444444;
+}
+
+#form-entrar input{
+    height: 35px;
+    border: none;
+    color: white;
+    padding-left: 15px;
+    font-family: "Oxygen-Light";
+    width: 65%;
+    margin: auto;
+    margin-top: 25px;
+    background-color: #444444;
+}
+
+#form-registro input[type="submit"]{
+    color: white;
+    background-color: #e8641b;
+    width: 40%;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 19px;
+    padding: 0;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease 0s;
+}
+
+#form-entrar input[type="submit"]{
+    color: white;
+    font-size: 20px;
+    background-color: #e8641b;
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease 0s;
+}
+
+#form-entrar input[type="submit"]:hover{
+    background-color: #ffb48a;
+    color: #555555;
+    transition: all 0.2s ease 0s;
+}
+
+#form-registro input[type="submit"]:hover{
+    background-color: #ffb48a;
+    color: #555555;
+    transition: all 0.2s ease 0s;
+}
+
+#login{
+    background-image: url(../img/usericon.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px;
+    text-indent: 30px;
+}
+
+#password{
+    background-image: url(../img/keyicon.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px;
+    text-indent: 28px;
+}
+
+#repeat{
+    background-image: url(../img/keyicon.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px;
+    text-indent: 28px;
+}
+
+#nombre{
+    background-image: url(../img/tagicon.png);
+    background-repeat: no-repeat;
+    background-position: 13px 8px;
+    text-indent: 28px;
+}
+
+#apellidos{
+    background-image: url(../img/tagicon.png);
+    background-repeat: no-repeat;
+    background-position: 13px 8px;
+    text-indent: 28px;
+}
+
+#correo{
+    background-image: url(../img/aticon.png);
+    background-repeat: no-repeat;
+    background-position: 11px 8px;
+    text-indent: 26px;
+}
+
+#form-registro ::-webkit-input-placeholder{
+    color: white;
+    opacity:  0.7;
+}
+#form-registro :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity:  0.7;
+}
+#form-registro ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity:  0.7;
+}
+#form-registro :-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: white;
+    opacity:  0.7;
+}
+
+#form-entrar ::-webkit-input-placeholder{
+    color: white;
+    opacity:  0.7;
+}
+#form-entrar :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity:  0.7;
+}
+#form-entrar ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity:  0.7;
+}
+#form-entrar :-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: white;
+    opacity:  0.7;
+}
+
+.olvido{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Oxygen-Light";
+    color: #444444;
+    font-size: 14px;
+}
+
+.olvido a{
+    color: #e8641b;
+    text-decoration: none;
+    font-family: "Oxygen-Bold";
+    margin-left: 3px;
+    transition: all 0.2s ease 0s;
+}
+
+.olvido a:hover{
+    color: #ffb48a;
+    transition: all 0.2s ease 0s;
+}
+
+.rights{
+    display: flex;
+    margin-top: 60px;
+    font-family: "Oxygen-Light";
+    justify-content: space-around;
+    font-size: 13px;
+    color: #444444;
+}
+
+.privacidad a{
+    text-decoration: none;
+    color: #444444;
+}
+
+.privacidad a:hover{
+    color: #888888;
+}
+
+@media (max-width: 89.06em){
+    
+    .contenedor-central{
+        width: 90%;
+    }
+    .div-registro{
+        width: 41%;
+    }
+    .div-entrar{
+        width: 41%;
+    }
+}
+
+@media (max-width: 60em){
+    .contenedor-central{
+        width: 100%;
+    }
+    .div-registro{
+        width: 47%;
+    }
+    .div-entrar{
+        width: 47%;
+    }
+}
+
+@media (max-width: 37.5em){
+    .logoprincipal img{
+        margin-top: -50px;
+        content: url("../img/logoprincipalp.png");
+    }
+    .contenedor-central{
+        flex-direction: column;
+        width: 95%;
+    }
+    .div-registro{
+        width: 95%;
+        margin-bottom: 50px;
+    }
+    
+    .div-entrar{
+        width: 95%;
+        margin-bottom: 50px;
+    }
+    .rights{
+        flex-flow: column;
+        text-align: center;
+        margin-top: 0px;
+    }
+    .derechos{
+        margin-top: 20px;
+        margin-bottom: 20px;    
+    }
+}
+
+@media (max-width: 27.25em){
+    .logoprincipal img{
+        margin-top: -50px;
+        content: url("../img/logoprincipalp2.png");
+    }
+    .olvido {
+        font-size: 12px; 
+    }
+    
+    .rights{
+        font-size: 11px; 
+    }
+}
