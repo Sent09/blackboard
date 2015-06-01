@@ -20,3 +20,5 @@ if(count($notificaciones) == 0){
     $resultado .= "<input type='button' id='mas' onclick=javascript:cargarSiguiendo('$login'); value='Cargar más'>";
 }
 echo $resultado;
+
+$bd->closeConsulta();

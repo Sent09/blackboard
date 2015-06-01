@@ -43,3 +43,5 @@ if(count($posts) == 0){
 
 
 echo $resultado;
+
+$bd->closeConsulta();

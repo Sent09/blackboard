@@ -34,11 +34,12 @@
         </ul>
     </nav>
     <div class="panel-body">
-        <form action="phpusuariodatos.php" method="POST">
+        <form action="phpusuariodatos.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="login" value="<?php echo $login; ?>"/>
             <label>Nombre: </label><input type="text" value="<?php echo $nombre;?>" class="form-control" placeholder="Nombre" name="nombre" value="" required/><br>
             <label>Apellidos: </label><input type="text" value="<?php echo $apellidos;?>" class="form-control" placeholder="Apellidos" name="apellidos" value="" required/><br>
             <label>E-Mail: </label><input type="text" value="<?php echo $email;?>" class="form-control" placeholder="E-mail" name="email" value="" required/><br>
+            <label>Foto: <input type="file" name="foto[]" /></label><br>
             <input type="submit" class="btn btn-info" value="Actualizar"/>
         </form>
     </div>

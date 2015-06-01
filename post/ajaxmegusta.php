@@ -40,6 +40,6 @@ if(count($posts) == 0){
     $resultado .= "<input type='button' id='mas' onclick=javascript:cargarIndex('$login'); value='Cargar más'>";
 }
 
-
-
 echo $resultado;
+
+$bd->closeConsulta();

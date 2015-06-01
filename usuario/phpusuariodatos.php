@@ -9,6 +9,11 @@ $modelo = new ModeloUsuario($bd);
 $usuario = $modelo->get($login);
 $usuario->setNombre($nombre);
 $usuario->setApellidos($apellidos);
+$subir = new Subir("foto");
+$nombres = $subir->subir();
+foreach($nombres as $key => $urlfoto) {
+    $usuario->setUrlfoto($urlfoto);
+}
 if($usuario->getEmail() != $email){
     $usuario->setEmail($email);
     $usuario->setIsactivo(0);

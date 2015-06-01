@@ -46,7 +46,7 @@
                 if(count($usuarios) > 0){
             ?>
                 <input type="button" id="mas" onclick="javascript:cargarUsuarios('<?php echo $value; ?>');" value="Cargar más">
-            <?php } ?>
+            <?php } $bd->closeConsulta();?>
         </div>
     </body>
 </html>

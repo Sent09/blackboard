@@ -47,7 +47,7 @@
             if(count($posts) > 0){ 
             ?>
                 <input type="button" id="mas" onclick="javascript:cargarPosts('<?php echo $value; ?>');" value="Cargar más">
-            <?php } ?>
+            <?php } $bd->closeConsulta();?>
         </div>
     </body>
 </html>

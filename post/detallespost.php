@@ -52,6 +52,6 @@
         ?>
         <?php foreach ($archivos as $key => $archivo) { ?>
             <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
-        <?php } ?>
+        <?php } $bd->closeConsulta(); ?>
     </body>
 </html>

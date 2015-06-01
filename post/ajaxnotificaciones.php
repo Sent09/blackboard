@@ -51,3 +51,5 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
 }
 
 echo $resultado;
+
+$bd->closeConsulta();

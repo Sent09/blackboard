@@ -18,3 +18,5 @@ if(count($posts) == 0){
     $resultado .= "<input type='button' id='mas' onclick=javascript:cargarPosts('$value'); value='Cargar más'>";
 }
 echo $resultado;
+
+$bd->closeConsulta();

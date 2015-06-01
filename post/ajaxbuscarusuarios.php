@@ -18,3 +18,5 @@ if(count($usuarios) == 0){
     $resultado .= "<input type='button' id='mas' onclick=javascript:cargarUsuarios('$value'); value='Cargar más'>";
 }
 echo $resultado;
+
+$bd->closeConsulta();
