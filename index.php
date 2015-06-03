@@ -5,6 +5,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <script src="js/jquery-1.7.2.min.js"></script>
         <script src="js/js.js"></script>
         <script src="js/javascriptscroll.js"></script>
         <script src="js/main.js"></script>
@@ -166,8 +167,8 @@
                         <form action="post/phpcrearpost.php" enctype="multipart/form-data" method="POST">
                             <textarea name="mensaje" type="text" placeholder="Comparte una nueva publicación..." id="post"></textarea>
                             <div>
-                                <span>Agregar archivos...</span>
-                                <input type="file" name="archivos[]" id="archivos" multiple>
+                                <span id="seleccionados">Agregar archivos...</span>
+                                <input type="file" onchange="javascript:cambiar(this)" name="archivos[]" id="archivos" multiple>
                             </div>
                             <button class="enviar" type="submit">Publicar</button>
                         </form>

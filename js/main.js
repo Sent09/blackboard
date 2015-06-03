@@ -1,4 +1,5 @@
 window.onload = function () {
+    
     var mobile = document.createElement('div');
     mobile.className = 'nav-mobile';
     document.querySelector('nav').appendChild(mobile);
@@ -42,4 +43,8 @@ window.onload = function () {
             notificacionesm.style.display = "none";
         }
     }
+};
+
+function cambiar(numero){
+    document.getElementById("seleccionados").innerText = "Archivos seleccionados - " + numero.files.length;
 };
