@@ -235,6 +235,8 @@ nav{
     color: #454342;
     overflow: auto;
     width: 100%;
+    overflow: scroll;
+    height: 250px;
 }
 
 .fotoprincipal{
