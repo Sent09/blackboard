@@ -225,7 +225,35 @@ nav{
     overflow: auto;
     width: 200px;
 }
-
+.atras{
+    background-image: url(../img/atras.png);
+    height: 32px;
+    width: 18px;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+    float:left;
+    transition: all 0.2s ease 0s;
+}
+.atras:hover{
+    background-image: url(../img/atrashover.png);
+}
+.botonesnotificaciones{
+    height: 32px;
+}
+.adelante{
+    background-image: url(../img/adelante.png);
+    height: 32px;
+    width: 18px;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+    float:right;
+    transition: all 0.2s ease 0s;
+}
+.adelante:hover{
+    background-image: url(../img/adelantehover.png);
+}
 .notificaciones-list{
     background-color: #818181;
     min-height: 100%;
@@ -238,7 +266,26 @@ nav{
     overflow: scroll;
     height: 250px;
 }
-
+.borrar{
+    color: white;
+    margin: auto;
+    background-color: #e8641b;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    height: 32px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease 0s;
+}
+.borrar:hover{
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: #fc9055;
+    color: #666666;
+}
 .fotoprincipal{
     margin: auto;
     margin-top: 20px;
@@ -542,7 +589,14 @@ section{
     line-height: 90px;
     margin-left: 30px;
 }
-
+.nombre-poster a{
+    color: #000;
+    text-decoration: none;
+}
+.nombre-poster a:hover{
+    text-decoration: underline;
+    color: #e8641b;
+}
 .bloq-inf-post{
     display: flex;
     flex-direction: column;
@@ -555,7 +609,14 @@ section{
 .fecha-post{
     margin-bottom: 25px;
 }
-
+.fecha-post a{
+    color: #000;
+    text-decoration: none;
+}
+.fecha-post a:hover{
+    text-decoration: underline;
+    color: #e8641b;
+}
 .mensaje-post{
     margin-bottom: 10px;
 }

@@ -10,6 +10,12 @@ function enviarIndex(formulario) {
         window.location.assign('post/buscaruser.php?value=' + texto);
     }
 }
+function enviarIndex2(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('post/buscaruser.php?value=' + texto);
+    }
+}
 
 function enviarPost(formulario) {
     var texto = formulario.texto.value;

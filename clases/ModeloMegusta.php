@@ -40,4 +40,15 @@ class ModeloMegusta {
         }
         return -1;
     }
+    function countMeGusta($login){
+        $sql = "select count(*) from $this->tabla where login=:login";
+        $parametros["login"] = $login;
+        $r=$this->bd->setConsulta($sql, $parametros);
+        if($r){
+            $resultado = $this->bd->getFila();
+            return $resultado[0];
+        }
+        return -1;
+    }
+    
 }

@@ -158,8 +158,13 @@ function cargarSiguiendo(valor){
     mas.parentNode.removeChild(mas);
 }
 
-function cargarNotificaciones(valor, boton){        
-    var notificaciones = document.getElementById("notificaciones");    
+function cargarNotificaciones(valor, boton, div){        
+    if(div == 1){
+        var notificaciones = document.getElementById("notificaciones");
+    }else{
+        var notificaciones = document.getElementById("notificacionesmv");
+    }
+        
     if (window.XMLHttpRequest) {
      xmlhttp = new XMLHttpRequest();
     } else {

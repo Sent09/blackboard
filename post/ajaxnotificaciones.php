@@ -17,7 +17,10 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
         foreach ($notificaciones as $key => $notificacion) {
             $modeloUsuario = new ModeloUsuario($bd);
             $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
-            $resultado .= $usuario->getNombre()." ".$usuario->getApellidos()." ".$notificacion->getNuevosposts();
+            $resultado .= "<div class='notificacion'>".
+                    "<div class='foto-not'><img src='archivos/".$usuario->getUrlfoto()."'></div>".
+                    "<div class='texto-not'><span>".$notificacion->getNuevosposts()."</span> nuevas publicaciones de ".$usuario->getNombre()." ".$usuario->getApellidos()."</div>".
+                    "</div>";
         }
     }
 }elseif(isset($_SESSION["notificaciones"]) && $_SESSION["notificaciones"] != 0 && $boton == 1) {
@@ -29,7 +32,10 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
     foreach ($notificaciones as $key => $notificacion) {
         $modeloUsuario = new ModeloUsuario($bd);
         $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
-        $resultado .= $usuario->getNombre()." ".$usuario->getApellidos()." ".$notificacion->getNuevosposts();
+        $resultado .= "<div class='notificacion'>".
+                    "<div class='foto-not'><img src='archivos/".$usuario->getUrlfoto()."'></div>".
+                    "<div class='texto-not'><span>".$notificacion->getNuevosposts()."</span> nuevas publicaciones de ".$usuario->getNombre()." ".$usuario->getApellidos()."</div>".
+                    "</div>";
     }
 }elseif($boton == 2) {
     $parametros["login"] = $login;
@@ -43,7 +49,10 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
         foreach ($notificaciones as $key => $notificacion) {
             $modeloUsuario = new ModeloUsuario($bd);
             $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
-            $resultado .= $usuario->getNombre()." ".$usuario->getApellidos()." ".$notificacion->getNuevosposts();
+            $resultado .= "<div class='notificacion'>".
+                    "<div class='foto-not'><img src='archivos/".$usuario->getUrlfoto()."'></div>".
+                    "<div class='texto-not'><span>".$notificacion->getNuevosposts()."</span> nuevas publicaciones de ".$usuario->getNombre()." ".$usuario->getApellidos()."</div>".
+                    "</div>";
         }
     }
 }else{

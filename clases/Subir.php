@@ -20,7 +20,7 @@ class Subir {
         $this->destino = "../archivos/";
         $this->nombre = "";
         $this->accion = Subir::RENOMBRAR;
-        $this->maximo = 20 * 1014 * 1024;
+        $this->maximo = 100 * 1014 * 1024;
         $this->crearCarpeta = false;
         $this->extensiones = array("jpg","png","JPG","gif","jpeg","doc","docx","pdf","avi","mp3","mp4","wav");
         $this->errorPHP = UPLOAD_ERR_OK;
