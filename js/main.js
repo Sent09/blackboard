@@ -28,9 +28,9 @@ window.onload = function () {
         if (menu.style.display =="none") {
             menu.style.display = "flex";
         } else {
-            menu.style.display = "none";
             if(notificacionesm.style.display == "block")
-                notificacionesm.style.display == "none";
+                notificacionesm.style.display = "none";
+            menu.style.display = "none";
         }
     }
     
