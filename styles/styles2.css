@@ -660,6 +660,10 @@ section{
     flex-direction: column;
     margin-bottom: 10px;
 }
+.notificacion a{
+    text-decoration: none;
+    color: #000;
+}
 
 .texto-not{
     background-color: white;

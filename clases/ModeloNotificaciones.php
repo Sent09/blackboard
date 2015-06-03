@@ -115,4 +115,13 @@ class ModeloNotificaciones {
         }
         return $this->bd->getNumeroFila();
     }
+    function notificacionA0Total($loginusuario){        
+        $consultaSql = "update $this->tabla set nuevosposts=0 where loginusuario=:loginusuario;";
+        $parametros["loginusuario"] = $loginusuario;
+        $resultado = $this->bd->setConsulta($consultaSql, $parametros);
+        if(!$resultado){
+            return -1;
+        }
+        return $this->bd->getNumeroFila();
+    }
 }

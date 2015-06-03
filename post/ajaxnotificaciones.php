@@ -19,7 +19,9 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
             $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
             $resultado .= "<div class='notificacion'>".
                     "<div class='foto-not'><img src='archivos/".$usuario->getUrlfoto()."'></div>".
+                    "<a href='post/phpvernotificacion.php?login=".$usuario->getLogin()."'>".
                     "<div class='texto-not'><span>".$notificacion->getNuevosposts()."</span> nuevas publicaciones de ".$usuario->getNombre()." ".$usuario->getApellidos()."</div>".
+                    "</a>".
                     "</div>";
         }
     }
@@ -34,7 +36,9 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
         $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
         $resultado .= "<div class='notificacion'>".
                     "<div class='foto-not'><img src='archivos/".$usuario->getUrlfoto()."'></div>".
+                    "<a href='post/phpvernotificacion.php?login=".$usuario->getLogin()."'>".
                     "<div class='texto-not'><span>".$notificacion->getNuevosposts()."</span> nuevas publicaciones de ".$usuario->getNombre()." ".$usuario->getApellidos()."</div>".
+                    "</a>".
                     "</div>";
     }
 }elseif($boton == 2) {
@@ -51,7 +55,9 @@ if (!isset($_SESSION["notificaciones"]) && $boton == 2 ){
             $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
             $resultado .= "<div class='notificacion'>".
                     "<div class='foto-not'><img src='archivos/".$usuario->getUrlfoto()."'></div>".
+                    "<a href='post/phpvernotificacion.php?login=".$usuario->getLogin()."'>".
                     "<div class='texto-not'><span>".$notificacion->getNuevosposts()."</span> nuevas publicaciones de ".$usuario->getNombre()." ".$usuario->getApellidos()."</div>".
+                    "</a>".
                     "</div>";
         }
     }

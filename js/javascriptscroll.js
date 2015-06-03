@@ -180,3 +180,26 @@ function cargarNotificaciones(valor, boton, div){
     xmlhttp.open("GET","post/ajaxnotificaciones.php?value="+valor+"&boton="+boton,true);
     xmlhttp.send(); 
 }
+
+function borrarNotificaciones(div){        
+    if(div == 1){
+        var notificaciones = document.getElementById("notificaciones");
+    }else{
+        var notificaciones = document.getElementById("notificacionesmv");
+    }
+        
+    if (window.XMLHttpRequest) {
+     xmlhttp = new XMLHttpRequest();
+    } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            if(xmlhttp.responseText != "nada"){
+                notificaciones.innerHTML = "";
+            }
+        }
+    }
+    xmlhttp.open("GET","post/ajaxborrarnotificaciones.php",true);
+    xmlhttp.send(); 
+}

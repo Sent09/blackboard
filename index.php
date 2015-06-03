@@ -150,7 +150,7 @@
                         ?>
                         <div class="notificacion">
                             <div class="foto-not"><img src="archivos/<?php echo $usuario->getUrlfoto(); ?>"></div>
-                            <div class="texto-not"><span><?php echo $notificacion->getNuevosposts(); ?></span> nuevas publicaciones de <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></div>
+                            <a href="post/phpvernotificacion.php?login=<?php echo $usuario->getLogin(); ?>"><div class="texto-not"><span><?php echo $notificacion->getNuevosposts(); ?></span> nuevas publicaciones de <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></div></a>
                         </div>
                         <?php } ?>
                     </div>
@@ -158,7 +158,7 @@
                         <input class="atras" type="button" id="notificacion_atras" onclick="javascript:cargarNotificaciones('<?php echo $login; ?>', 1, 2)" >
                         <input class="adelante" type="button" id="notificacion_siguiente" onclick="javascript:cargarNotificaciones('<?php echo $login; ?>', 2, 2)">
                     </div>                
-                    <input class="borrar" type="button" value="Borrar notificaciones">
+                    <input class="borrar" type="button" onclick="javascript:borrarNotificaciones(2)" value="Borrar notificaciones">
                 </div>
                 <div>
                     <div class="posttitle">Nuevo post</div>
@@ -260,7 +260,7 @@
                 ?>
                 <div class="notificacion">
                     <div class="foto-not"><img src="archivos/<?php echo $usuario->getUrlfoto(); ?>"></div>
-                    <div class="texto-not"><span><?php echo $notificacion->getNuevosposts(); ?></span> nuevas publicaciones de <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></div>
+                    <a href="post/phpvernotificacion.php?login=<?php echo $usuario->getLogin(); ?>"><div class="texto-not"><span><?php echo $notificacion->getNuevosposts(); ?></span> nuevas publicaciones de <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></div></a>
                 </div>
                 <?php } ?>
                 </div>
@@ -268,7 +268,7 @@
                     <input class="atras" type="button" id="notificacion_atras" onclick="javascript:cargarNotificaciones('<?php echo $login; ?>', 1, 1)" >
                     <input class="adelante" type="button" id="notificacion_siguiente" onclick="javascript:cargarNotificaciones('<?php echo $login; ?>', 2, 1)">
                 </div>                
-                <input class="borrar" type="button" value="Borrar notificaciones">
+                <input class="borrar" type="button" onclick="javascript:borrarNotificaciones(1)" value="Borrar notificaciones">
             </aside>
         </div>
         <?php $bd->closeConsulta(); }?>
