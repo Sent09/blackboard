@@ -365,7 +365,7 @@ body{
 @media (max-width: 37.5em){
     .logoprincipal img{
         margin-top: -50px;
-        content: url("../img/logoprincipalp.png");
+        -ms-content: url("../img/logoprincipalp.png");
     }
     .contenedor-central{
         flex-direction: column;
@@ -394,7 +394,7 @@ body{
 @media (max-width: 27.25em){
     .logoprincipal img{
         margin-top: -50px;
-        content: url("../img/logoprincipalp2.png");
+        -ms-content: url("../img/logoprincipalp2.png");
     }
     .olvido {
         font-size: 12px; 

@@ -9,6 +9,7 @@
 	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
+	unicode-range: U+0021-0079;
 }
 
 @font-face {
@@ -22,6 +23,7 @@
 	font-weight: 700;
 	font-style: normal;
 	font-stretch: normal;
+	unicode-range: U+0020-25CA;
 }
 
 @font-face {
@@ -35,6 +37,7 @@
 	font-weight: 300;
 	font-style: normal;
 	font-stretch: normal;
+	unicode-range: U+0020-25CA;
 }
 
 @font-face {
@@ -48,6 +51,7 @@
 	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
+	unicode-range: U+0020-25CA;
 }
 
 @font-face {
@@ -61,6 +65,7 @@
 	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
+	unicode-range: U+0020-2265;
 }
 
 
@@ -87,28 +92,99 @@ header{
     width: 100%;
     position: absolute;
     top: 0px;
+    position: fixed;
 }
 
 .div-logo{
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
     font-family: "Oxygen-Light";
     margin-left: 20px;
+    justify-content: space-around;
+}
+
+.div-logo a{
+    margin-top: 11px;
 }
 
 nav{
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
     flex-flow: row;
-    
+    font-family: "Oxygen-Light";
+    font-size; 18px;
+    margin-right: 12%;
 }
 
-.links div{
+.search{
+    margin-top: 30px;
+}
+
+.search form{
+    float: left;
+}
+
+.userpanel{
+    float: left;
+}
+
+.userpanel a{
+    text-decoration: none;
+    color: white;
+}
+
+.userpanel a span{
+    font-family: 'HeydingsIcons-Regular';
+    font-size: 30px;
+}
+
+#form-buscar input[type="search"]{
+    border-radius: 20px;
+    width: 250px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 15px;
+    border: none;
+}
+
+.links{
     display: flex;
     text-align: center;
     flex-direction: row;
+    margin: auto;
+    margin-left: 15px;
 }
+
+.links div{
+    margin-left:40px;
+}
+
+.links div a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.2s ease 0s;
+}
+
+.links div a:hover{
+    transition: all 0.2s ease 0s;
+    color: #ac5423;
+}
+
+.links div a span{
+    font-family: 'HeydingsIcons-Regular';
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+#busqueda{
+    background-image: url("../img/lupaicon.png");
+    background-position: 10px 2px;
+    background-repeat: no-repeat;
+    text-indent: 36px;
+}
+
 
 .contenedor-main{
     display: flex;
@@ -118,33 +194,61 @@ nav{
 
 .manageinfo{
     background-color: #a7a7a7;
-    width: 450px;
+    width: 300px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 100%;
-    overflow: auto;
+    position: fixed;
 }
 
 .post-body{
     background-color: #d6d6d6;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px;
+    width: 88%;
+    margin-left: 8%;
 }
 
 .archivos-box{
     background-color: #d6d6d6;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: 1px;
+    display: flex;
+    width: 88%;
+    margin-left: 8%;
 }
 
 .div-notificaciones{
     background-color: #818181;
+    min-height: 100%;
+    min-width: 100px;
+    padding: 20px;
+    font-family: "Oxygen-Light";
+    color: #454342;
+    overflow: auto;
+    width: 200px;
+}
+
+.notificaciones-list{
+    background-color: #818181;
+    min-height: 100%;
+    min-width: 100px;
+    padding: 20px;
+    font-family: "Oxygen-Light";
+    color: #454342;
+    overflow: auto;
+    width: 100%;
 }
 
 .fotoprincipal{
     margin: auto;
-    margin-top: 30px;
-    width: 250px;
-    height: 250px;
+    margin-top: 20px;
+    width: 220px;
+    height: 220px;
     overflow: hidden;
-    border-radius: 200px;
+    border-radius: 50%;
 }
 
 .usuario-nombre{
@@ -173,7 +277,7 @@ nav{
 .misposts span{
     padding-left: 10px;
     color: #444444;
-    transition: all 0.13s ease 0s;
+    transition: all 0.15s ease 0s;
 }
 
 .misposts span:hover{
@@ -186,7 +290,7 @@ nav{
 .misseguidores span{
     padding-left: 10px;
     color: #444444;
-    transition: all 0.13s ease 0s;
+    transition: all 0.15s ease 0s;
 }
 
 .misseguidores span:hover{
@@ -195,7 +299,7 @@ nav{
 .siguiendo span{
     padding-left: 10px;
     color: #444444;
-    transition: all 0.13sº ease 0s;
+    transition: all 0.15s ease 0s;
 }
 
 .siguiendo span:hover{
@@ -208,7 +312,7 @@ nav{
     font-size: 20px;
     margin: auto;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -233,9 +337,16 @@ nav{
     height: 32px;
     font-size: 19px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
     transition: all 0.2s ease 0s;
+}
+
+.enviar:hover{
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: #fc9055;
+    color: #666666;
 }
 
 .postbox{
@@ -246,11 +357,713 @@ nav{
     margin: auto;
     display: flex;
     width: 80%;
-    height: 263px;
+    height: 254px;
     font-family: "Oxygen-Light";
     border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding-left: 10px;
     padding-top: 10px;
     resize: none;
     font-size: 15px;
+}
+
+form div{
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    margin: auto;
+    width: 83.8%;
+    font-family: "Oxygen-Light";
+    height: 25px;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 5px;
+    background-color: #dcdcdc;
+    color: #444444;
+    transition: all 0.1s ease 0s;
+}
+
+form div:hover{
+    transition: all 0.1s ease 0s;
+    background-color: #666666;
+    color: #dcdcdc;
+}
+
+#archivos{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+/***************** Menú desplegable ****************/
+
+#primary_nav_wrap
+{
+	margin-top:15px
+}
+
+#primary_nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primary_nav_wrap ul a
+{
+	display:block;
+	color: white;
+	text-decoration:none;
+	font-weight:700;
+	font-size:14px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"Oxygen-Light";
+}
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+    font-family: 'HeydingsIcons-Regular';
+}
+
+#primary_nav_wrap ul li:hover
+{
+	background: gray;
+    color: white;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+}
+
+    #primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background: gray;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:200px;
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%;
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display: block;
+    transition: all 0.3s ease 0s;
+}
+
+#primar_nav_wrap ul ul li a:hover{
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+
+#primary_nav_wrap ul li ul li a:hover{
+    color: white;
+    transition: all 0.3s ease 0s;
+}
+
+#primary_nav_wrap ul li a:hover{
+    background-color: #b4b4b4;
+    transition: all 0.3s ease 0s;
+}
+
+#primary_nav_wrap ul li ul li a span{
+    margin-right: 15px;
+}
+
+/*********    Sección principal   ***********/
+
+
+section{
+    display: flex;
+    padding: 20px;
+    width: 70%;
+    flex-direction: column;
+    font-family: "Oxygen-Light";
+    overflow: hidden;
+    margin-left: 300px;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.bloq-sup-post{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.div-foto{
+    width: 95px;
+    height: 95px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.div-foto img{
+    width: 150px;
+}
+
+.nombre-poster{
+    text-align: center;
+    line-height: 90px;
+    margin-left: 30px;
+}
+
+.bloq-inf-post{
+    display: flex;
+    flex-direction: column;
+}
+
+.archivo{
+    margin-right: 30px;
+}
+
+.fecha-post{
+    margin-bottom: 25px;
+}
+
+.mensaje-post{
+    margin-bottom: 10px;
+}
+
+.boton{
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #e8641b;
+    font-family: "Oxygen-Regular";
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.2s ease 0s;
+}
+
+.boton:hover{
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: #fc9055;
+    color: #3a3a3a;
+}
+
+.foto-not{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.foto-not img{
+    width: 80px;
+    overflow: hidden;
+}
+
+.notificacion{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.texto-not{
+    background-color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    display: flex;
+    padding: 10px;
+    padding-top: 10px;
+    margin-top: 30px;
+    width: 80%;
+    margin-left: 15px;
+    margin-top: -10px;
+}
+
+.texto-not span{
+    margin-right: 8px;
+}
+
+.nav-mobile {
+  display:none; /* Hide from browsers that don't support media queries */
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  right:0;
+  background: url(../img/nav.svg) no-repeat center center;
+  height:40px;
+  width:40px;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.linksm{
+    display: none;
+}
+
+.searchm{
+    display: none;
+}
+
+.notificaciones-list{
+    display: none;
+}
+
+
+/***** media-queries *****/
+
+@media (max-width: 1700px){
+    
+    section{
+        margin-left: 250px;
+    }
+    
+    .fotoprincipal{
+     width: 180px;
+     height: 180px;
+    }
+    .fotoprincipal img{
+        width: 300px;
+        height: 200px;
+    }
+    .manageinfo{
+      width: 250px;
+    }
+    .userinfo{
+        width: 90%;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    .misposts{
+        font-size: 14px;
+    }
+    .misseguidores{
+        font-size: 14px;
+    }
+    .siguiendo{
+        font-size: 14px; 
+    }
+    
+    .usuario-nombre{
+        font-size: 18px;
+    }
+    
+    .posttitle{
+        font-size: 17px;
+        margin-top: 10px;
+        margin-bottom: 10px
+    }
+    
+    .postbox form textarea{
+        height: 190px;
+    }
+    
+    .div-foto{
+        width: 75px;
+        height: 75px;
+    }
+    
+    .div-foto img{
+        width: 115px;
+    }
+    
+    .nombre-poster{
+        line-height: 70px;
+        font-size: 14px;
+    }
+    
+    .post-body{
+        font-size: 14px;
+    }
+    
+    .texto-not{
+        font-size: 14px;
+    }
+    
+    
+}
+
+@media (max-width: 1192px){
+    
+    .contenedor-main{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        flex-direction: row;
+    }
+    
+    .fotoprincipal{
+        margin-top: 10px;
+    }
+    
+    .div-notificaciones{
+        margin-top: -15px;
+    }
+    
+    .usuario-nombre{
+        margin-top: 7px
+    }
+    
+    .div-logo a img{
+        content: url(../img/logoprincipalp2.png)
+    }
+    
+    header{
+        height: 105px;
+    }
+    
+    .links div a{
+        font-size: 14px;
+    }
+    .links div a span{
+        font-size: 22px
+    }
+    
+    .manageinfo{
+        margin-top: -15px;
+    }
+    
+    .texto-not{
+        font-size: 12px;
+    }
+    
+    .search{
+        margin-top: 20px;
+    }
+    
+    section{
+        margin-top: -15px;
+    }
+}
+
+@media (max-width: 1091px){
+    
+    .contenedor-main{
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .links div a{
+        margin-right: 10px;
+    }
+    
+    .userpanel ul li a span{
+        font-size: 25px;
+    }
+        
+    #form-buscar input[type="search"]{
+        width: 200px;
+        height: 25px;
+        background-position: 10px;
+    }
+    
+    .nav-mobile {
+        display:block;
+    }
+    .search{
+        display: none;
+    }
+    .links{
+        display: none;
+    }
+    
+    .div-logo a{
+        margin-top: 13px;
+        height: 60px;
+    }
+    
+    .div-logo a img{
+        content: url(../img/logoprincipalmobile.png);
+    }
+    
+    header{
+        height: 80px;
+    }
+    .div-notificaciones{
+        display: none;
+    }
+    
+    .manageinfo{
+        display: none;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: -40px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .bloque{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .bloqueusuario{
+        display: flex;
+    }
+    section{
+        width: 100%;
+        padding: 0;
+        margin-top: -40px;
+        margin-left: 0px;
+        order:2;
+    }
+    
+    .bloq-sup-post{
+        margin: auto;
+        margin-left: 1%;
+        margin-bottom: 5px;
+    }
+    
+    .post{
+        width: 98%;
+        margin: auto;
+        margin-top: 15px;
+    }
+    
+    .post-body{
+        margin: auto;
+        width: 94%;
+    }
+    .archivos-box{
+        margin: auto;
+        width: 94%;
+    }
+    
+    .div-foto{
+        width: 40px;
+        height: 40px;
+        
+    }
+    
+    .div-foto img{
+        width: 70px;
+    }
+    
+    .nombre-poster{
+        margin-left: 10px;
+        height: 40px;
+        line-height: 40px;
+    }
+    
+    .fotoprincipal{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .fotoprincipal img{
+        width: 60px;
+        height: auto;
+    }
+    
+    .userinfo{
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        height: 100%;
+    }
+    .links-top{
+        display: flex;
+        flex-direction: row;
+        margin-right: 10px;
+    }
+    
+    .links-top a{
+        margin-right: 5px;
+    }
+    
+    .userinfo a img{
+        margin-right: px;
+    }
+    
+    .posttitle{
+        font-size: 14px;
+    }
+    
+    .usuario-nombre{
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 30px;
+        margin-left: 10px;
+    }
+    
+    .linksm{
+        display: flex;
+        font-family: "Oxygen-Light";
+    }
+    
+    .linksm div{
+        margin-top: 7px;
+        margin-right: 10px;
+        padding-left: 10px;
+    }
+    
+    .linksm div a{
+        color: #444444;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.2s ease 0s;
+    }
+
+    .linksm div a:hover{
+        transition: all 0.2s ease 0s;
+        color: white;
+    }
+
+    .linksm div a span{
+        font-family: 'HeydingsIcons-Regular';
+        font-size: 28px;
+        margin-right: 5px;
+    }
+    
+    .postbox form textarea{
+        width: 95%;
+    }
+    
+    .postbox form div{
+        width: 96.5%;
+    }
+    
+    .enviar{
+        width: 97%;
+    }
+    
+    
+    .linksm{
+        line-height: 5px;
+    }
+
+    .linksm div{
+        margin: auto;
+        padding-top: 0px;
+        margin-right: 10px;
+    }
+    
+    .notificaciones-toggle{
+        color: #444444;
+        font-size: 14px;
+        transition: all 0.2s ease 0s;
+    }
+    
+    .notificaciones-toggle:hover{
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease 0s;
+    }
+    
+    .notificaciones-toggle span{
+        font-family: 'HeydingsIcons-Regular';
+        font-size: 30px;
+        margin-right: 5px;
+    }
+    
+    .texto-not span{
+        margin-right: 2px;
+    }
+    
+    .searchm{
+        display: flex;
+        margin: auto;
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 950px){
+    
+    .searchm{
+        margin-top: 0px;
+    }
+    
+    .post-body{
+        margin: auto;
+        width: 85%;
+    }
+    .archivos-box{
+        margin: auto;
+        width: 85%;
+    }
+    
+    .postbox form textarea{
+        width: 92%;
+    }
+    
+    .postbox form div{
+        width: 94%;
+    }
+    
+    .bloque{
+        flex-direction: column;
+    }
+    
+    .fotoprincipal{
+        margin: auto;
+        margin-right: 0px;
+        margin-top: 10px;
+    }
+    .userinfo{
+        margin: auto;
+        margin-top: 10px;
+    }
+    .linksm div{
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 450px){
+    
+    .postbox form div{
+        width: 95%;
+    }
+    
+    .posttitle{
+        font-size: 15px;
+    }
+    
+    .userinfo{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .links-top{
+        margin: auto;
+        margin-bottom: 10px;
+    }
 }
