@@ -17,9 +17,18 @@ foreach ($posts as $key => $post) {
     $modelomegusta = new ModeloMegusta($bd);
     $countmegusta = $modelomegusta->count($megusta);
     $idelemento = "seguir".$contador;
-    $resultado .= "<div>".$post->getFechapost()."</br>".
+    $modelousuariopost = new ModeloUsuario($bd);
+    $usuariopost = $modelousuariopost->get($post->getLogin());
+    
+    //Contenido del post
+    $resultado .= "<div>"."<img width='30' src='archivos/".$usuariopost->getUrlfoto()."'/>".
+            "<a href='post/verusuario.php?login=".$post->getLogin()."'>".$usuariopost->getNombre()." ".$usuariopost->getApellidos()."</a>".
+            "<a href='post/detallespost.php?id=".$post->getIdpost()."'>".$post->getFechapost()."</a></br>".
             $post->getDescripcion()."</br>".
             $post->getGusta();
+    
+    
+    
     if($countmegusta>0){
         $resultado .= "<a style='color:blue;' id='$idelemento' href=javascript:gustaindex('$idelemento','$login','$idpost')>No me gusta</a>";
     }else{
@@ -31,6 +40,7 @@ foreach ($posts as $key => $post) {
         $resultado .= "<a style='color:red;' target='_blank' href='archivos/".$archivo->getUrl()."'>archivico</a>";
     }
     $contador++;
+    //Fin contenido del post
 }
 if(count($posts) == 0){
     $resultado = "final";

@@ -106,9 +106,13 @@
                 $modelomegusta = new ModeloMegusta($bd);
                 $countmegusta = $modelomegusta->count($megusta);               
                 $idelemento = "seguir".$contador;
+                $modelousuariopost = new ModeloUsuario($bd);
+                $usuariopost = $modelousuariopost->get($post->getLogin());
             ?>
             <div>
-                <?php echo $post->getFechapost(); ?><br>
+                <img width="30" src="archivos/<?php echo $usuariopost->getUrlfoto(); ?>">
+                <a href="post/verusuario.php?login=<?php echo $post->getLogin(); ?>"><?php echo $usuariopost->getNombre()." ".$usuariopost->getApellidos(); ?></a>
+                <a href="post/detallespost.php?id=<?php echo $post->getIdpost(); ?>"><?php echo $post->getFechapost(); ?></a><br>
                 <?php echo $post->getDescripcion(); ?><br>
                 <?php echo $post->getGusta(); ?>
                 <?php if($countmegusta>0){ ?>
