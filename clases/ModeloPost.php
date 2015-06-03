@@ -72,7 +72,7 @@ class ModeloPost {
     function getList($pagina=0, $rpp=10,$condicion="1=1",$parametros=array(), $orderby = "1"){
         $list = array();
         $principio = $pagina*$rpp;
-        $sql = "select * from $this->tabla where $condicion order by $orderby limit $principio, $rpp";
+        $sql = "select * from $this->tabla where $condicion order by idpost DESC limit $principio, $rpp";
         $r = $this->bd->setConsulta($sql, $parametros);
         if($r){
             while($datos = $this->bd->getFila()){

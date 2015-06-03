@@ -16,8 +16,13 @@ foreach ($posts as $key => $post) {
     $megusta = new Megusta($login, $idpost);
     $modelomegusta = new ModeloMegusta($bd);
     $countmegusta = $modelomegusta->count($megusta);
-    $idelemento = "seguir".$contador;
-    $resultado .= "<div>".$post->getFechapost()."</br>".
+    $idelemento = "gusta".$contador;
+    $modelousuariopost = new ModeloUsuario($bd);
+    $usuariopost = $modelousuariopost->get($post->getLogin());
+    
+    $resultado .=  "<div>"."<img width='30' src='../archivos/".$usuariopost->getUrlfoto()."'/>".
+            "<a href='verusuario.php?login=".$post->getLogin()."'>".$usuariopost->getNombre()." ".$usuariopost->getApellidos()."</a> ".
+            "<a href='detallespost.php?id=".$post->getIdpost()."'>".$post->getFechapost()."</a></br>".
             $post->getDescripcion()."</br>".
             $post->getGusta();
     if($countmegusta>0){
