@@ -217,7 +217,7 @@ nav{
 
 .div-notificaciones{
     background-color: #818181;
-    min-height: 100%;
+    min-height: 795px;
     min-width: 100px;
     padding: 20px;
     font-family: "Oxygen-Light";
@@ -412,7 +412,7 @@ nav{
     font-size: 15px;
 }
 
-form div{
+.agregararchivos{
     position: relative;
     overflow: hidden;
     margin: 10px;
@@ -431,7 +431,7 @@ form div{
     transition: all 0.1s ease 0s;
 }
 
-form div:hover{
+.agregararchivos:hover{
     transition: all 0.1s ease 0s;
     background-color: #666666;
     color: #dcdcdc;
@@ -683,7 +683,7 @@ section{
 }
 
 .nav-mobile {
-  display:none; /* Hide from browsers that don't support media queries */
+  display:none;
   cursor:pointer;
   position:absolute;
   top:0;
@@ -707,6 +707,290 @@ section{
     display: none;
 }
 
+.asideusuario{
+    display: none;
+}
+
+
+/************* panel de usuario ********************/
+
+.div-registro{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+
+.titulouser{
+    font-family: "Oxygen-Bold";
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: white;
+    color: #444444;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.registro{
+    width: 100%;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-left: -20px;
+}
+
+.form-registro{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form-entrar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+.campo{
+    display: flex;
+    height: 35px;
+    border: none;
+    color: #444444;
+    padding-left: 15px;
+    font-family: "Oxygen-Light";
+    width: 100%;
+    margin: auto;
+    margin-top: 25px;
+    padding: 0px;
+}
+.campo input{
+    height: 35px;
+    border: none;
+    color: white;
+    padding-left: 15px;
+    font-family: "Oxygen-Light";
+    width: 100%;
+    margin: auto;
+    margin-top: 25px;
+    padding: 0px;
+}
+
+.campo input:hover{
+    background-color: gray;
+}
+
+.campo label{
+    width: 40%;
+}
+
+#form-entrar input{
+    height: 35px;
+    border: none;
+    color: white;
+    padding-left: 15px;
+    font-family: "Oxygen-Light";
+    width: 100%;
+    margin: auto;
+    background-color: #444444;
+}
+
+.form-registro input{
+    height: 35px;
+    border: none;
+    color: white;
+    padding-left: 15px;
+    font-family: "Oxygen-Light";
+    width: 100%;
+    margin: auto;
+    background-color: #3d3d3d;
+}
+
+.form-registro input[type="submit"]{
+    color: white;
+    background-color: #444444;
+    width: 40%;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 19px;
+    padding: 0;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease 0s;
+}
+
+#form-entrar input[type="submit"]{
+    color: white;
+    font-size: 20px;
+    background-color: #e8641b;
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0;
+    margin-top: 20px;
+    transition: all 0.2s ease 0s;
+}
+
+#form-entrar input[type="submit"]:hover{
+    background-color: #ffb48a;
+    color: #555555;
+    transition: all 0.2s ease 0s;
+}
+
+.form-registro input[type="submit"]:hover{
+    background-color: #ffb48a;
+    color: #555555;
+    transition: all 0.2s ease 0s;
+}
+
+.form-registro input[type="submit"]{
+    color: white;
+    margin: auto;
+    background-color: #e8641b;
+    width: 60%;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 19px;
+    padding: 0;
+    margin-bottom: 20px;
+    font-family: "Oxygen-Light";
+    border: none;
+    margin-top: 20px;
+    transition: all 0.2s ease 0s;
+}
+
+.form-registro input[type="submit"]:hover{
+    background-color: #ffb48a;
+    color: #555555;
+    transition: all 0.2s ease 0s;
+}
+
+#password{
+    background-image: url(../img/keyicon.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px;
+    text-indent: 28px;
+}
+
+#password2{
+    background-image: url(../img/keyicon.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px;
+    text-indent: 28px;
+}
+
+#repeat{
+    background-image: url(../img/keyicon.png);
+    background-repeat: no-repeat;
+    background-position: 15px 6px;
+    text-indent: 28px;
+}
+
+#nombre{
+    background-image: url(../img/tagicon.png);
+    background-repeat: no-repeat;
+    background-position: 13px 8px;
+    text-indent: 28px;
+}
+
+#apellidos{
+    background-image: url(../img/tagicon.png);
+    background-repeat: no-repeat;
+    background-position: 13px 8px;
+    text-indent: 28px;
+}
+
+#correo{
+    background-image: url(../img/aticon.png);
+    background-repeat: no-repeat;
+    background-position: 11px 8px;
+    text-indent: 26px;
+}
+
+.form-registro ::-webkit-input-placeholder{
+    color: white;
+    opacity:  0.7;
+}
+.form-registro :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity:  0.7;
+}
+.form-registro ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity:  0.7;
+}
+.form-registro :-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: white;
+    opacity:  0.7;
+}
+
+#form-entrar ::-webkit-input-placeholder{
+    color: white;
+    opacity:  0.7;
+}
+#form-entrar :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity:  0.7;
+}
+#form-entrar ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity:  0.7;
+}
+#form-entrar :-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: white;
+    opacity:  0.7;
+}
+
+.contenedor-panelusuario{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.panel-body{
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.titulofoto{
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    font-family: "Oxygen-Regular";
+}
+
+.agregarfoto{
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    font-family: "Oxygen-Light";
+    height: 25px;
+    background-color: #444444;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 5px;
+    background-color: #3d3d3d;
+    color: white;
+    transition: all 0.1s ease 0s;
+}
+
+.agregarfoto:hover{
+    transition: all 0.1s ease 0s;
+    background-color: #999999;
+    color: #3d3d3d;
+}
 
 /***** media-queries *****/
 

@@ -1,56 +1,120 @@
 <!DOCTYPE html>
 <?php
-    require '../require/comun.php';
-    if(!$sesion->get("__usuario") instanceof Usuario){
-        header("Location: index.php");
-        exit();
-    }
-    $fila = $sesion->get("__usuario");
-    $login = $fila->getLogin();
-    $clave = $fila->getClave();
-    $nombre = $fila->getNombre();
-    $apellidos = $fila->getApellidos();
-    $email = $fila->getEmail();
+require '../require/comun.php';
+if (!$sesion->get("__usuario") instanceof Usuario) {
+    header("Location: index.php");
+    exit();
+}
+$fila = $sesion->get("__usuario");
+$login = $fila->getLogin();
+$clave = $fila->getClave();
+$nombre = $fila->getNombre();
+$apellidos = $fila->getApellidos();
+$email = $fila->getEmail();
 ?>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Blackboard</title>
-    <script type="text/javascript" src="../js/js.js"></script>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="../index.php">Inicio</a></li>
-            <li><a href="../post/megusta.php">Me Gusta</a></li>
-            <li><a href="../post/mispost.php">Mis post</a></li>
-            <li><a href="viewperfil.php">Panel de administración</a></li>
-            <li><a href="phpcerrarsesion.php">Desloguear</a></li>
-            <li>
-                <form action="javascript:enviarUsuario(this.buscar)" name="buscar" method="post">
-                    <input type="text" placeholder="Buscar" name="texto">
-                </form>
-            </li>
-        </ul>
-    </nav>
-    <div class="panel-body">
-        <form action="phpusuariodatos.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="login" value="<?php echo $login; ?>"/>
-            <label>Nombre: </label><input type="text" value="<?php echo $nombre;?>" class="form-control" placeholder="Nombre" name="nombre" value="" required/><br>
-            <label>Apellidos: </label><input type="text" value="<?php echo $apellidos;?>" class="form-control" placeholder="Apellidos" name="apellidos" value="" required/><br>
-            <label>E-Mail: </label><input type="text" value="<?php echo $email;?>" class="form-control" placeholder="E-mail" name="email" value="" required/><br>
-            <label>Foto: <input type="file" name="foto[]" /></label><br>
-            <input type="submit" class="btn btn-info" value="Actualizar"/>
-        </form>
-    </div>
-    <div class="panel-body">
-        <form action="phpusuarioclave.php" method="POST">
-            <input type="hidden" name="login" value="<?php echo $login; ?>"/>
-            <label>Clave vieja: </label><input type="password"  class="form-control" name="clavevieja" value="" required/><br>
-            <label>Clave nueva: </label><input type="password"  class="form-control" name="clave1" value="" required/><br>
-            <label>Repite la clave nueva: </label><input type="password"  class="form-control"  name="clave2" value="" required/><br>
-            <input type="submit" class="btn btn-info" value="Cambiar"/>
-        </form>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blackboard</title>
+        <script type="text/javascript" src="../js/js.js"></script>
+        <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="../js/javascriptscroll.js"></script>
+        <script type="text/javascript" src="../js/panelusuario.js"></script>
+        <link rel="stylesheet" type="text/css" href="../styles/styles2.css">
+    </head>
+    <body>
+        <header>
+            <div class="div-logo">
+                <a href="../index.php"><img src="../img/logoprincipalm.png"/></a>
+                <div class="links">
+                    <div><a href="../post/megusta.php"><span>h</span>Me gustan</a></div>
+                    <div><a href="../post/mispost.php"><span>Y</span>Mis posts</a></div>
+                </div>
+            </div>
+            <nav>
+                <div class="search">
+                    <div class="userpanel" id="primary_nav_wrap">
+                        <ul>
+                            <li>
+                                <a href="#"><span>A</span></a>
+                                <ul>
+                                    <li><a href="viewperfil.php"><span>C</span>Panel de control</a></li>
+                                    <li><a href="phpcerrarsesion.php"><span>e</span>Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <form id="form-buscar" action="javascript:enviarIndex(this.buscar)" name="buscar" method="post">
+                        <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <aside id="manageinfo" class="manageinfo asideusuario">
+                <div class="userinfo">
+                    <div class="linksm">
+                        <div><a href="../post/megusta.php"><span>h</span>Me gustan</a></div>
+                        <div><a href="../post/mispost.php"><span>Y</span>Mis posts</a></div>
+                    </div>
+                </div>
+                <div class="searchm">
+                    <div class="userpanel" id="primary_nav_wrap">
+                        <ul>
+                            <li>
+                                <a href="#"><span>A</span></a>
+                                <ul>
+                                    <li><a href="viewperfil.php"><span>C</span>Panel de control</a></li>
+                                    <li><a href="phpcerrarsesion.php"><span>e</span>Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <form id="form-buscar" action="javascript:enviarIndex2(this.buscar2)" name="buscar2" method="post">
+                        <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                    </form>
+                </div>
+        </aside>
+        <div class="contenedor-panelusuario">
+            <div class="titulouser">Actualizar datos de usuario</div>
+            <div class="div-registro">
+                <div class="registro">
+                    <form id="form-entrar" action="phpusuariodatos.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="login" value="<?php echo $login; ?>"/>
+                        <div class="campo">
+                            <input type="text" value="<?php echo $nombre; ?>" id="nombre" placeholder="Nombre" name="nombre" value="" required/>
+                        </div>
+                        <div class="campo">
+                            <input type="text" value="<?php echo $apellidos; ?>" id="apellidos" placeholder="Apellidos" name="apellidos" value="" required/>
+                        </div>
+                        <div class="campo">
+                            <input type="text" value="<?php echo $email; ?>" id="correo" placeholder="E-mail" name="email" value="" required/>
+                        </div>
+                        <div class="agregarfoto">
+                            <span id="seleccionados">Cambiar foto...</span>
+                            <input id="archivos" onchange="javascript: cambiar(this)" type="file" name="foto[]" />
+                        </div>
+                        <input type="submit" class="btn-login" value="Actualizar"/>
+                    </form>
+                </div>
+            </div>
+            <div class="titulouser">Cambiar clave de acceso</div>
+            <div class="div-registro">
+                <div class="registro">
+                    <form class="form-registro" action="phpusuarioclave.php" method="POST">
+                        <input type="hidden" name="login" value="<?php echo $login; ?>"/>
+                        <div class="campo">
+                            <input type="password"  id="password" name="clavevieja" placeholder="Clave anterior" value="" required/>
+                        </div>
+                        <div class="campo">
+                            <input type="password"  id="password2" name="clave1" placeholder="Nueva clave" value="" required/>
+                        </div>
+                        <div class="campo">
+                            <input type="password" id="repeat" class="form-control"  name="clave2" placeholder="Repite la clave" value="" required/>
+                        </div>
+                        <input type="submit" class="btn-login" value="Cambiar"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

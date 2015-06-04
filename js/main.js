@@ -17,11 +17,6 @@ window.onload = function () {
         toggleNotificaciones();
     }
 
-        // hasClass
-    function hasClass(elem, className) {
-      return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-    }
-
     // toggleClass
     function toggleMenu() {
       var menu = document.getElementById("manageinfo");

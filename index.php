@@ -167,7 +167,7 @@
                     <div class="postbox">
                         <form action="post/phpcrearpost.php" enctype="multipart/form-data" method="POST">
                             <textarea name="mensaje" type="text" placeholder="Comparte una nueva publicación..." id="post"></textarea>
-                            <div>
+                            <div class="agregararchivos">
                                 <span id="seleccionados">Agregar archivos...</span>
                                 <input type="file" onchange="javascript:cambiar(this)" name="archivos[]" id="archivos" multiple>
                             </div>
