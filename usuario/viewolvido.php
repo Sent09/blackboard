@@ -3,42 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Blackboard</title>
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     </head>
     <body>
-        <div style="margin:0 auto;width: 400px;" >
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa"></i> Recordar clave</h3>
+        <div class="container-inicio">
+            <div class="logoprincipal">
+                <a href="../index.php"><img src="../img/logoprincipal.png"/></a>
+            </div>
+            <div class="contenedor-central">
+                <div class="div-registro">
+                    <div class="titulo"><i class="fa"></i> Recordar clave</div>
+                    <div class="registro">
+                        <form id="form-registro" action="phpolvido.php" method="post">
+                            <input id="login" class="form-control" type="text" name="login"/>
+                            <input type="submit" class="btn btn-success" value="Enviar"/>
+                        </form>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <form action="phpolvido.php" method="post">
-                        <table>
-                            <tr>
-                                <td>Login: </td>
-                                <td><input class="form-control" type="text" name="login"/></td>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" class="btn btn-success" value="Enviar"/></td>
-                            </tr>
-                        </table>  
-                   </form>
+                <div class="div-entrar">
+                    <div class="titulo">Recordar login</div>
+                    <div class="entrar">
+                        <form id="form-entrar" action="phpolvido.php" method="post">
+                            <input id="correo" class="form-control" type="email" name="email"/>
+                            <input type="submit" class="btn btn-success" value="Enviar"/>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-        <div  style="margin:0 auto;width: 400px;" >
-            <h3 class="panel-title">Recordar login</h3>
-                <form action="phpolvido.php" method="post">
-                    <table>
-                        <tr>
-                            <td>Email: </td>
-                            <td><input class="form-control" type="email" name="email"/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" class="btn btn-success" value="Enviar"/></td>
-                        </tr>
-                    </table>  
-                </form>
-        </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
