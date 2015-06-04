@@ -35,10 +35,11 @@ foreach ($posts as $key => $post) {
             "<div class='mensaje-post'>" .
             $post->getDescripcion() . "<br>" .
             $post->getGusta();
+    $numerogusta = 2;
     if ($countmegusta > 0) {
-        $resultado .= "<a style='color:blue;' id='" . $idelemento . "' href=javascript:gustaindex('" . $idelemento . "','" . $login . "','" . $idpost . "')>No me gusta</a>";
+        $resultado .= "<a style='color:blue;' id='" . $idelemento . "' href=javascript:gusta('" . $idelemento . "','" . $login . "','" . $idpost . "','".$numerogusta."')><img src='../img/megusta.png' /></a>";
     } else {
-        $resultado .= "<a style='color:blue;' id='" . $idelemento . "' href=javascript:gustaindex('" . $idelemento . "','" . $login . "','" . $idpost . "')>Me gusta</a>";
+        $resultado .= "<a style='color:blue;' id='" . $idelemento . "' href=javascript:gusta('" . $idelemento . "','" . $login . "','" . $idpost . "','".$numerogusta."')><img src='../img/nomegusta.png' /></a>";
     }
     $resultado .= "</div>" .
             "</div>" .

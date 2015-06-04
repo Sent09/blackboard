@@ -60,7 +60,7 @@ function seguir(loginsesion, login) {
     xmlhttp.send();  
 }
 
-function gusta(elemento, loginsesion, idpost) {
+function gusta(elemento, loginsesion, idpost, lugar) {
     var gusta = document.getElementById(elemento);
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -74,11 +74,11 @@ function gusta(elemento, loginsesion, idpost) {
           gusta.innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost,true);
+    xmlhttp.open("GET","ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost+"&lugar="+lugar,true);
     xmlhttp.send();  
 }
 
-function gustaindex(elemento, loginsesion, idpost) {
+function gustaindex(elemento, loginsesion, idpost, lugar) {
     var gusta = document.getElementById(elemento);
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -92,6 +92,6 @@ function gustaindex(elemento, loginsesion, idpost) {
           gusta.innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","post/ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost,true);
+    xmlhttp.open("GET","post/ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost+"&lugar="+lugar,true);
     xmlhttp.send();  
 }

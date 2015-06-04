@@ -29,8 +29,8 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
             <div class="div-logo">
                 <a href="../index.php"><img src="../img/logoprincipalm.png"/></a>
                 <div class="links">
-                    <div><a href="post/megusta.php"><span>h</span>Me gustan</a></div>
-                    <div><a href="post/mispost.php"><span>Y</span>Mis posts</a></div>
+                    <div><a href="megusta.php"><span>h</span>Me gustan</a></div>
+                    <div><a href="mispost.php"><span>Y</span>Mis posts</a></div>
                 </div>
             </div>
             <nav>
@@ -129,9 +129,9 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                                     <?php echo $post->getDescripcion(); ?><br>
                                     <?php echo $post->getGusta(); ?>
                                     <?php if ($countmegusta > 0) { ?>
-                                        <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>')"><img src="../img/megusta.png" /></a>
+                                        <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/megusta.png" /></a>
                                     <?php } else { ?>
-                                        <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>')"><img src="../img/nomegusta.png" /></a>
+                                        <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/nomegusta.png" /></a>
                                     <?php } ?>
                                 </div>
                             </div>

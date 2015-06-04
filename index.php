@@ -209,9 +209,9 @@ require 'require/comun2.php';
                                         <div class="gusta">
                                             <?php echo $post->getGusta(); ?>
                                             <?php if ($countmegusta > 0) { ?>
-                                                <a id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')"><img src="img/megusta.png" /></a>
+                                                <a id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>', '1')"><img src="img/megusta.png" /></a>
                                             <?php } else { ?>
-                                                <a id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')"><img src="img/nomegusta.png" /></a>
+                                                <a id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>', '1')"><img src="img/nomegusta.png" /></a>
         <?php } ?>
                                         </div>
                                     </div>
