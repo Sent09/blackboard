@@ -138,7 +138,6 @@ require 'require/comun2.php';
                                 <input type="search" placeholder="Buscar" id="busqueda" name="texto">
                             </form>
                         </div>
-
                     </div>
                     <div id="notificaciones-list" class="notificaciones-list">
                         <div id="notificacionesmv"> 
@@ -195,8 +194,12 @@ require 'require/comun2.php';
                         ?>
                         <article class="post">
                             <div class="bloq-sup-post">
-                                <div class="div-foto"><img src="archivos/<?php echo $usuariopost->getUrlfoto(); ?>"></div>
-                                <div class="nombre-poster"><a href="post/verusuario.php?login=<?php echo $post->getLogin(); ?>"><?php echo $usuariopost->getNombre() . " " . $usuariopost->getApellidos(); ?></a></div>
+                                <div class="div-foto">
+                                    <img src="archivos/<?php echo $usuariopost->getUrlfoto(); ?>">
+                                </div>
+                                <div class="nombre-poster">
+                                    <a href="post/verusuario.php?login=<?php echo $post->getLogin(); ?>"><?php echo $usuariopost->getNombre() . " " . $usuariopost->getApellidos(); ?></a>
+                                </div>
                             </div>
                             <div class="bloq-inf-post">
                                 <div class="post-body">

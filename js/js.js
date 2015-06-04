@@ -71,7 +71,7 @@ function gusta(elemento, loginsesion, idpost) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          gusta.innerText = xmlhttp.responseText;
+          gusta.innerHTML = xmlhttp.responseText;
         }
     }
     xmlhttp.open("GET","ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost,true);

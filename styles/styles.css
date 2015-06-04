@@ -343,7 +343,8 @@ body{
 
 .rights{
     display: flex;
-    margin-top: 60px;
+    margin-top: 200px;
+    margin-bottom: 30px;
     font-family: "Oxygen-Light";
     justify-content: space-around;
     font-size: 13px;
@@ -418,6 +419,9 @@ body{
     .derechos{
         margin-top: 20px;
         margin-bottom: 20px;    
+    }
+    .rights{
+        margin-top: 400px;
     }
 }
 

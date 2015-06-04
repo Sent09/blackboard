@@ -399,6 +399,34 @@ nav{
     color: #666666;
 }
 
+.seguir{
+    color: white;
+    margin: auto;
+    background-color: #e8641b;
+    width: 85%;
+    border-radius: 10px;
+    border: none;
+    height: 42px;
+    font-size: 19px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    transition: all 0.2s ease 0s;
+}
+
+.seguir:hover{
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+    background-color: #fc9055;
+    color: #666666;
+}
+
+.seguir a{
+    text-decoration: none;
+    color: white;
+}
+
 .postbox{
     height: 100%;
 }
@@ -997,6 +1025,11 @@ section{
     transition: all 0.1s ease 0s;
     background-color: #999999;
     color: #3d3d3d;
+}
+
+.div-seguir{
+    display: flex;
+    margin: auto;
 }
 
 /***** media-queries *****/

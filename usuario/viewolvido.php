@@ -15,7 +15,7 @@
                     <div class="titulo"><i class="fa"></i> Recordar clave</div>
                     <div class="registro">
                         <form id="form-registro" action="phpolvido.php" method="post">
-                            <input id="login" class="form-control" type="text" name="login"/>
+                            <input id="login" placeholder="Introduce tu login" class="form-control" type="text" name="login"/>
                             <input type="submit" class="btn btn-success" value="Enviar"/>
                         </form>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="titulo">Recordar login</div>
                     <div class="entrar">
                         <form id="form-entrar" action="phpolvido.php" method="post">
-                            <input id="correo" class="form-control" type="email" name="email"/>
+                            <input id="correo" placeholder="Introduce tu e-mail" class="form-control" type="email" name="email"/>
                             <input type="submit" class="btn btn-success" value="Enviar"/>
                         </form>
                     </div>
