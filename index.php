@@ -202,12 +202,14 @@
                             <div class="fecha-post"><a href="post/detallespost.php?id=<?php echo $post->getIdpost(); ?>"><?php echo $post->getFechapost(); ?></a></div>
                             <div class="mensaje-post">
                                 <?php echo $post->getDescripcion(); ?><br>
-                                <?php echo $post->getGusta(); ?>
-                                <?php if($countmegusta>0){ ?>
-                                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">No me gusta</a>
-                                <?php }else{ ?>
-                                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">Me gusta</a>
-                                <?php } ?>
+                                <div class="gusta">
+                                    <?php echo $post->getGusta(); ?>
+                                    <?php if($countmegusta>0){ ?>
+                                    <a id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')"><img src="img/megusta.png" /></a>
+                                    <?php }else{ ?>
+                                    <a id="<?php echo $idelemento; ?>" href="javascript:gustaindex('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')"><img src="img/nomegusta.png" /></a>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                         <div class="archivos-box">

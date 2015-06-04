@@ -28,6 +28,24 @@ class ModeloNotificaciones {
         }
         return $this->bd->getNumeroFila();
     }
+    function deleteSeguidores($login){
+        $consultaSql = "delete from $this->tabla where loginusuarioseguido=:loginusuarioseguido";
+        $arrayConsulta["loginusuarioseguido"] = $login;
+        $resultado = $this->bd->setConsulta($consultaSql, $arrayConsulta);
+        if(!$resultado){
+            return -1;
+        }
+        return $this->bd->getNumeroFila();
+    }
+    function deleteSiguiendo($login){
+        $consultaSql = "delete from $this->tabla where loginusuario=:loginusuario";
+        $arrayConsulta["loginusuario"] = $login;
+        $resultado = $this->bd->setConsulta($consultaSql, $arrayConsulta);
+        if(!$resultado){
+            return -1;
+        }
+        return $this->bd->getNumeroFila();
+    }
     
     function deleteForIdPost($idnotificaciones){
         return $this->delete(new Notificaciones($idnotificaciones));

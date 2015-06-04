@@ -28,7 +28,15 @@ class ModeloPost {
         }
         return $this->bd->getNumeroFila();
     }
-    
+    function deleteByLogin($login){
+        $consultaSql = "delete from $this->tabla where login=:login";
+        $arrayConsulta["login"] = $login;
+        $resultado = $this->bd->setConsulta($consultaSql, $arrayConsulta);
+        if(!$resultado){
+            return -1;
+        }
+        return $this->bd->getNumeroFila();
+    }
     function deleteForId($idpost){
         return $this->delete(new Post($idpost));
     }
@@ -85,7 +93,22 @@ class ModeloPost {
         }
         return $list;
     }
-    
+    function getAll($login){
+        $list = array();
+        $sql = "select * from $this->tabla where login=:login";
+        $parametros["login"] = $login;
+        $r = $this->bd->setConsulta($sql, $parametros);
+        if($r){
+            while($datos = $this->bd->getFila()){
+                $post = new Post();
+                $post->set($datos);
+                $list[] = $post;
+            }
+        }else{
+            return null;
+        }
+        return $list;
+    }
     function getListScroll($pagina=0, $rpp=10,$condicion="1=1",$parametros=array(), $orderby = "1"){
         $list = array();
         $sql = "select * from $this->tabla where $condicion order by $orderby limit $pagina, $rpp";

@@ -349,7 +349,13 @@ nav{
 .siguiendo span:hover{
     color: white;
 }
-
+.gusta{
+    display:flex;
+    line-height: 23px;
+}
+.gusta a{
+    margin-left:5px;
+}
 .posttitle{
     color: white;
     font-family: "Oxygen-Bold";
