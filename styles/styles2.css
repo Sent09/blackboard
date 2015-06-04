@@ -1396,7 +1396,9 @@ section{
     .searchm{
         margin-top: 0px;
     }
-    
+    .div-seguir{
+        min-width: 200px;
+    }
     .post-body{
         margin: auto;
         width: 85%;

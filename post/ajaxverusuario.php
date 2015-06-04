@@ -1,11 +1,14 @@
 <?php
+
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");
-if (!isset($_SESSION["cantidadcargadas"])) $_SESSION["cantidadcargadas"]=10;
-if (!isset($_SESSION["contador"])) $_SESSION["contador"]=10;
+if (!isset($_SESSION["cantidadcargadas"]))
+    $_SESSION["cantidadcargadas"] = 10;
+if (!isset($_SESSION["contador"]))
+    $_SESSION["contador"] = 10;
 $modeloPost = new ModeloPost($bd);
-$posts=$modeloPost->getListScroll($_SESSION["cantidadcargadas"], 10, "login='$login'");
+$posts = $modeloPost->getListScroll($_SESSION["cantidadcargadas"], 10, "login='$login'");
 $resultado = "";
 $contador = $_SESSION["contador"];
 foreach ($posts as $key => $post) {
@@ -16,33 +19,56 @@ foreach ($posts as $key => $post) {
     $megusta = new Megusta($login, $idpost);
     $modelomegusta = new ModeloMegusta($bd);
     $countmegusta = $modelomegusta->count($megusta);
-    $idelemento = "gusta".$contador;
+    $idelemento = "gusta" . $contador;
     $modelousuariopost = new ModeloUsuario($bd);
     $usuariopost = $modelousuariopost->get($post->getLogin());
-    
-    $resultado .=  "<div>"."<img width='30' src='../archivos/".$usuariopost->getUrlfoto()."'/>".
-            "<a href='verusuario.php?login=".$post->getLogin()."'>".$usuariopost->getNombre()." ".$usuariopost->getApellidos()."</a> ".
-            "<a href='detallespost.php?id=".$post->getIdpost()."'>".$post->getFechapost()."</a></br>".
-            $post->getDescripcion()."</br>".
+
+    //Contenido del post
+    $resultado .= "<article class='post'>" .
+            "<div class='bloq-sup-post'>" .
+            "<div class='div-foto'><img src='../archivos/" . $usuariopost->getUrlfoto() . "'></div>" .
+            "<div class='nombre-poster'><a href='verusuario.php?login=" . $post->getLogin() . "'>" . $usuariopost->getNombre() . " " . $usuariopost->getApellidos() . "</a></div>" .
+            "</div>" .
+            "<div class='bloq-inf-post'>" .
+            "<div class='post-body'>" .
+            "<div class='fecha-post'><a href='detallespost.php?id=" . $post->getIdpost() . "'>" . $post->getFechapost() . "</a></div>" .
+            "<div class='mensaje-post'>" .
+            $post->getDescripcion() . "<br>" .
             $post->getGusta();
-    if($countmegusta>0){
-        $resultado .= "<a style='color:blue;' id='$idelemento' href=javascript:gusta('$idelemento','$login','$idpost')>No me gusta</a>";
-    }else{
-        $resultado .= "<a style='color:blue;' id='$idelemento' href=javascript:gusta('$idelemento','$login','$idpost')>Me gusta</a>";
+    if ($countmegusta > 0) {
+        $resultado .= "<a style='color:blue;' id='" . $idelemento . "' href=javascript:gustaindex('" . $idelemento . "','" . $login . "','" . $idpost . "')>No me gusta</a>";
+    } else {
+        $resultado .= "<a style='color:blue;' id='" . $idelemento . "' href=javascript:gustaindex('" . $idelemento . "','" . $login . "','" . $idpost . "')>Me gusta</a>";
     }
-    $resultado .= "</div>";
-    
+    $resultado .= "</div>" .
+            "</div>" .
+            "<div class='archivos-box'>";
+
     foreach ($archivos as $key => $archivo) {
-        $resultado .= "<a style='color:red;' target='_blank' href='archivos/".$archivo->getUrl()."'>archivico</a>";
+        if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
+            $resultado .= "<div class='archivo'><a target='_blank' href='archivos/" . $archivo->getUrl() . "'><img src='img/ficheroicon.png'></a></div>";
+        }
+        if (strtolower($archivo->getExtension()) == ".doc" || strtolower($archivo->getExtension()) == ".docx" || strtolower($archivo->getExtension()) == ".pdf") {
+            $resultado .= "<div class='archivo'><a target='_blank' href='archivos/" . $archivo->getUrl() . "'><img src='img/ficheroicon.png'></a></div>";
+        }
+        if (strtolower($archivo->getExtension()) == ".avi" || strtolower($archivo->getExtension()) == ".mp4") {
+            $resultado .= "<div class='archivo'><a target='_blank' href='archivos/" . $archivo->getUrl() . "'><img src='img/videoicon.png'></a></div>";
+        }
+        if (strtolower($archivo->getExtension()) == ".mp3" || strtolower($archivo->getExtension()) == ".wav") {
+            $resultado .= "<div class='archivo'><a target='_blank' href='archivos/" . $archivo->getUrl() . "'><img src='img/soundicon.png'></a></div>";
+        }
     }
+
+    $resultado .= "</div></div></article>";
+
     $contador++;
 }
-if(count($posts) == 0){
+if (count($posts) == 0) {
     $resultado = "final";
-}else{
+} else {
     $_SESSION["cantidadcargadas"]+=10;
-    $_SESSION["contador"]=$contador;
-    $resultado .= "<input type='button' id='mas' onclick=javascript:cargarVerUsuario('$login'); value='Cargar más'>";
+    $_SESSION["contador"] = $contador;
+    $resultado .= "<button id='mas' onclick=javascript:cargarVerUsuario('".$login."') class='boton'>Cargar más</button>";
 }
 
 echo $resultado;

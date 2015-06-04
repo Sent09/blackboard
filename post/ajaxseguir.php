@@ -8,7 +8,7 @@ $cantidad = $modelo->count("loginusuario='$loginsesion' AND loginusuarioseguido=
 if($cantidad==0){
     $notificaciones = new Notificaciones(null, $loginsesion, $login, 0);
     $modelo->add($notificaciones);
-    $r = "Seguido";
+    $r = "Siguiendo";
 }else{
     $notificaciones = $modelo->getCondicion("loginusuario='$loginsesion' AND loginusuarioseguido='$login'");
     $modelo->delete($notificaciones);

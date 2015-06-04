@@ -11,9 +11,6 @@ $modeloPost = new ModeloPost($bd);
 $posts = $modeloPost->getList(0, 10, "login='$login'");
 
 $modeloNotificaciones = new ModeloNotificaciones($bd);
-$seguidoresmios = $modeloNotificaciones->count("loginusuarioseguido='$login'");
-$siguiendo = $modeloNotificaciones->count("loginusuario='$login'");
-
 $loginsesion = $sesion->getUsuario()->getLogin();
 $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' and loginusuarioseguido='$login'");
 ?>
@@ -66,14 +63,10 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                             <?php echo $usuario->getNombre() . " " . $usuario->getApellidos(); ?>
                         </div>
                     </div>
-                    <div class="userinfo">
-                        <div class="links-top">
-                            <a href="post/seguidores.php"><div class="misseguidores" title="Seguidores"><img src="../img/cara1.png" width="25" height="25"/><span><?php echo $seguidoresmios; ?></span></div></a>
-                            <a href="post/siguiendo.php"><div class="siguiendo" title="Siguiendo"><img src="../img/cara2.png" width="25" height="25"/><span><?php echo $siguiendo; ?></span></div></a>
-                        </div>
-                    </div>
+
                     <div class="linksm">
-                        <div><a href="post/megusta.php"><span>h</span>Me gustan</a></div>
+                        <div><a href="mispost.php"><span>Y</span>Mis posts</a></div>
+                        <div><a href="megusta.php"><span>h</span>Me gustan</a></div>
                     </div>
                     <div class="searchm">
                         <div class="userpanel" id="primary_nav_wrap">
@@ -176,7 +169,7 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                 }
                 if (count($posts) > 0) {
                     ?>
-                    <button id="mas" onclick="javascript:cargarIndex('<?php echo $login; ?>');" class="boton">Cargar más</button>
+                    <button id="mas" onclick="javascript:cargarVerUsuario('<?php echo $login; ?>');" class="boton">Cargar más</button>
                     <?php
                 }
                 $bd->closeConsulta();
