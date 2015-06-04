@@ -114,8 +114,8 @@
                     <div class="userinfo">
                         <div class="links-top">
                             <a href="post/mispost.php"><div class="misposts"><img src="img/postsicon2.png"/><span><?php echo $misposts; ?></span></div></a>
-                            <a href="post/seguidores.php"><div class="misseguidores"><img src="img/smileicon.png"/><span><?php echo $seguidoresmios; ?></span></div></a>
-                            <a href="post/siguiendo.php"><div class="siguiendo"><img src="img/staricon.png"/><span><?php echo $siguiendo; ?></span></div></a>
+                            <a href="post/seguidores.php"><div class="misseguidores"><img src="img/cara1.png" width="25" height="25"/><span><?php echo $seguidoresmios; ?></span></div></a>
+                            <a href="post/siguiendo.php"><div class="siguiendo"><img src="img/cara2.png" width="25" height="25"/><span><?php echo $siguiendo; ?></span></div></a>
                         </div>
                         <div class="linksm">
                            <div><a href="post/megusta.php"><span>h</span>Me gustan</a></div>
