@@ -128,7 +128,7 @@ class ModeloPost {
     function postYoSigo($pagina=0, $rpp=10,$login=null, $parametros=array()){
         $list = array();
         $principio = $pagina*$rpp;
-        $sql = "select * from post INNER JOIN notificaciones ON post.login=notificaciones.loginusuarioseguido where notificaciones.loginusuario='$login' order by post.fechapost DESC limit $principio, $rpp";
+        $sql = "select * from post INNER JOIN notificaciones ON post.login=notificaciones.loginusuarioseguido where notificaciones.loginusuario='$login' order by post.idpost DESC limit $principio, $rpp";
         $r = $this->bd->setConsulta($sql, $parametros);
         if($r){
             while($datos = $this->bd->getFila()){
@@ -144,7 +144,7 @@ class ModeloPost {
     
     function postYoSigoScroll($pagina=0, $rpp=10,$login=null, $parametros=array()){
         $list = array();
-        $sql = "select * from post INNER JOIN notificaciones ON post.login=notificaciones.loginusuarioseguido where notificaciones.loginusuario='$login' order by post.fechapost DESC limit $pagina, $rpp";
+        $sql = "select * from post INNER JOIN notificaciones ON post.login=notificaciones.loginusuarioseguido where notificaciones.loginusuario='$login' order by post.idpost DESC limit $pagina, $rpp";
         $r = $this->bd->setConsulta($sql, $parametros);
         if($r){
             while($datos = $this->bd->getFila()){
@@ -161,7 +161,7 @@ class ModeloPost {
     function postMeGustan($pagina=0, $rpp=10,$login=null, $parametros=array()){
         $list = array();
         $principio = $pagina*$rpp;
-        $sql = "select * from post INNER JOIN megusta ON post.idpost=megusta.idpost where megusta.login='$login' order by post.fechapost DESC limit $principio, $rpp";
+        $sql = "select * from post INNER JOIN megusta ON post.idpost=megusta.idpost where megusta.login='$login' order by post.idpost DESC limit $principio, $rpp";
         $r = $this->bd->setConsulta($sql, $parametros);
         if($r){
             while($datos = $this->bd->getFila()){
@@ -177,7 +177,7 @@ class ModeloPost {
     
     function postMeGustanScroll($pagina=0, $rpp=10,$login=null, $parametros=array()){
         $list = array();
-        $sql = "select * from post INNER JOIN megusta ON post.idpost=megusta.idpost where megusta.login='$login' order by post.fechapost DESC limit $pagina, $rpp";
+        $sql = "select * from post INNER JOIN megusta ON post.idpost=megusta.idpost where megusta.login='$login' order by post.idpost DESC limit $pagina, $rpp";
         $r = $this->bd->setConsulta($sql, $parametros);
         if($r){
             while($datos = $this->bd->getFila()){

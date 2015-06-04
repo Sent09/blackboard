@@ -2,6 +2,7 @@
 
 require '../require/comun.php';
 $mensaje = Leer::post("mensaje");
+if(!empty($mensaje)){
 $usuario = $sesion->getUsuario();
 $baseDatos = new BaseDatos();
 $modelo = new ModeloPost($baseDatos);
@@ -19,5 +20,6 @@ foreach($nombres as $key => $urlfoto) {
     $modeloArchivo->add($archivo);
 }
 $baseDatos->closeConexion();
+}
 header("Location: ../index.php");
 

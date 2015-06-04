@@ -37,7 +37,15 @@ class ModeloMegusta {
         }
         return $this->bd->getNumeroFila();
     }
-    
+    function deleteByIdPost($idpost){
+        $consultaSql = "delete from $this->tabla where idpost=:idpost";
+        $parametros["idpost"] = $idpost;
+        $resultado = $this->bd->setConsulta($consultaSql, $parametros);
+        if(!$resultado){
+            return -1;
+        }
+        return $this->bd->getNumeroFila();
+    }
     function count(Megusta $gusta){
         $sql = "select count(*) from $this->tabla where login=:login AND idpost=:idpost";
         $parametros["login"] = $gusta->getLogin();

@@ -14,6 +14,8 @@ if($postBuscado->getLogin() == $usuario->getLogin()){
         unlink("../archivos/$url");
         $modeloArchivos->delete($archivo);
     }
+    $modeloGusta = new ModeloMegusta($bd);
+    $modeloGusta->deleteByIdPost($idpost);
     $modeloPost2 = new ModeloPost($bd);
     $modeloPost2->delete($postBuscado);
     header("Location: ../post/mispost.php");

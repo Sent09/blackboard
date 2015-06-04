@@ -16,7 +16,18 @@ function enviarIndex2(formulario) {
         window.location.assign('post/buscaruser.php?value=' + texto);
     }
 }
-
+function enviarPerfil(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('../post/buscaruser.php?value=' + texto);
+    }
+}
+function enviarPerfil2(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('../post/buscaruser.php?value=' + texto);
+    }
+}
 function enviarPost(formulario) {
     var texto = formulario.texto.value;
     if (texto.length > 0) {
@@ -78,7 +89,7 @@ function gustaindex(elemento, loginsesion, idpost) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          gusta.innerText = xmlhttp.responseText;
+          gusta.innerHTML = xmlhttp.responseText;
         }
     }
     xmlhttp.open("GET","post/ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost,true);
