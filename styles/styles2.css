@@ -652,6 +652,7 @@ section{
 
 .titulo-estandar{
     margin: auto;
+    text-align: center;
     margin-bottom: 40px;
     margin-top: 10px;
     font-size: 30px;
@@ -1290,6 +1291,10 @@ section{
 
 @media (max-width: 1091px){
     
+    .titulo-estandar{
+        font-size: 25px;
+    }
+    
     .borrarpost{
         margin-left: 5px;
     }
@@ -1543,6 +1548,10 @@ section{
 }
 
 @media (max-width: 950px){
+    
+    .titulo-estandar{
+        font-size: 20px;
+    }
     
     .siguiendo{
         margin-right: -50px;
