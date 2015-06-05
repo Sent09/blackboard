@@ -19,7 +19,7 @@ $idelemento = "seguir0";
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
         <title>Blackboard</title>
         <script src="../js/js.js"></script>
         <script src="../js/main2.js"></script>

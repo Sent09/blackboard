@@ -18,7 +18,7 @@ $email = $fila->getEmail();
 ?>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
         <title>Blackboard</title>
         <script type="text/javascript" src="../js/js.js"></script>
         <script type="text/javascript" src="../js/javascriptscroll.js"></script>
