@@ -109,3 +109,10 @@ function gustaindex(elemento, loginsesion, idpost, lugar) {
     xmlhttp.open("GET","post/ajaxgusta.php?loginusuario="+loginsesion+"&idpost="+idpost+"&lugar="+lugar,true);
     xmlhttp.send();  
 }
+
+function confirmar(e){
+    var respuesta = confirm("¿Estás seguro de eliminar el post?");
+    if(!respuesta){
+        e.preventDefault();
+    }
+}
