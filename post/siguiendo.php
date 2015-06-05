@@ -74,9 +74,9 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                     </div>
                 </div>
             </aside>
-            <section class="siguiendo2" id="lista_posts">
+            <section class="siguiendo2">
                 <div class="titulo-estandar">Siguiendo</div>
-                <div class="siguiendo-div">
+                <div class="siguiendo-div" id="lista_posts">
                 <?php if (count($notificaciones) == 0) { ?>
                     <h2>No hay usuarios</h2>
                     <?php

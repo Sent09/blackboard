@@ -143,25 +143,25 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                                     foreach ($archivos as $key => $archivo) {
                                         if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
                                             ?>
-                                            <div class="archivo"><a target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
                                         <?php } ?>
 
                                         <?php
                                         if (strtolower($archivo->getExtension()) == ".doc" || strtolower($archivo->getExtension()) == ".docx" || strtolower($archivo->getExtension()) == ".pdf") {
                                             ?>
-                                            <div class="archivo"><a target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
                                         <?php } ?>
 
                                         <?php
                                         if (strtolower($archivo->getExtension()) == ".avi" || strtolower($archivo->getExtension()) == ".mp4") {
                                             ?>
-                                            <div class="archivo"><a target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/videoicon.png"></a></div>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/videoicon.png"></a></div>
                                         <?php } ?>
 
                                         <?php
                                         if (strtolower($archivo->getExtension()) == ".mp3" || strtolower($archivo->getExtension()) == ".wav") {
                                             ?>
-                                            <div class="archivo"><a target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/soundicon.png"></a></div>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/soundicon.png"></a></div>
                                         <?php } ?>
 
         <?php } ?>

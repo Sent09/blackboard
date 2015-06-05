@@ -75,10 +75,9 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                     </div>
                 </div>
             </aside>
-            <section class="siguiendo2" id="lista_posts">
+            <section class="siguiendo2" >
                 <div class="titulo-estandar">Seguidores</div>
-                <div class="siguiendo-div">
-                    <div id="lista_posts">
+                <div class="siguiendo-div" id="lista_posts">
                         <?php
                         if (count($notificaciones) == 0)
                             echo "No hay usuarios";
@@ -97,13 +96,13 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                         <?php
                             } 
                         ?>
-                        </div>
                         <?php if (count($notificaciones) > 0) {
                             ?>
-                    <div class="div-cargar">
-                        <button class="boton-cargar" id="mas" onclick="javascript:cargarSeguidores('<?php echo $login; ?>');">Cargar más</button>
+                    <div class="div-cargar" id="mas">
+                        <button class="boton-cargar"  onclick="javascript:cargarSeguidores('<?php echo $login; ?>');">Cargar más</button>
                     </div>
                         <?php } ?>
+                
             </section>
         </div>
     </body>
