@@ -95,14 +95,15 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                     <?php
                 }
                 ?>
-                </div>
+                
                 <?php
                 if (count($notificaciones) > 0) {
                     ?>
-                    <div clas="div-cargar">
-                        <button class="boton-cargar" id="mas" onclick="javascript:cargarSiguiendo('<?php echo $login; ?>');">Cargar más</button>
+                    <div class="div-cargar" id="mas">
+                        <button class="boton-cargar" onclick="javascript:cargarSiguiendo('<?php echo $login; ?>');">Cargar más</button>
                     </div>
                 <?php } ?>
+                </div>
             </section>
         </div>
     </body>

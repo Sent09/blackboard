@@ -102,7 +102,7 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                         <button class="boton-cargar"  onclick="javascript:cargarSeguidores('<?php echo $login; ?>');">Cargar más</button>
                     </div>
                         <?php } ?>
-                
+                </div>
             </section>
         </div>
     </body>
