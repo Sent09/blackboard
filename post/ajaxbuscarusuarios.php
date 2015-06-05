@@ -9,13 +9,25 @@ $condicion = "(login like :value or nombre like :value or apellidos like :value)
 $usuarios=$modeloUsuario->getListScroll($_SESSION["cantidadcargadas"], 10, $condicion, $parametros);
 $resultado = "";
 foreach ($usuarios as $key => $usuario) {
-    $resultado .= "<a href=verusuario.php?login=".$usuario->getLogin()." > ".$usuario->getNombre()." ".$usuario->getApellidos()."</a><small>".$usuario->getLogin()."</small></br>";
+    $resultado .= "<div class='div-usuario'>".
+"<div class='div-foto'>".
+"<img src='../archivos/".$usuario->getUrlfoto()."'>".
+"</div>".
+"<div class='nombre-poster'>".
+"<a href='verusuario.php?login=".$usuario->getLogin()."'>".$usuario->getNombre() . " " . $usuario->getApellidos()."</a>".
+"</div>".
+"</div>";
+    
+    
+    
 }
 if(count($usuarios) == 0){
     $resultado = "final";
 }else{
     $_SESSION["cantidadcargadas"]+=10;
-    $resultado .= "<input type='button' id='mas' onclick=javascript:cargarUsuarios('$value'); value='Cargar más'>";
+    $resultado .= "<div class='div-cargar' id='mas' >".
+            "<button class='boton-cargar' onclick=javascript:cargarUsuarios('".$value."')>Cargar más</button>".
+            "</div>";
 }
 echo $resultado;
 

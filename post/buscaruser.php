@@ -74,12 +74,12 @@ $usuarios = $modeloUsuario->getList(0, 10, $condicion, $parametros);
                     </div>
                 </div>
             </aside>
-            <section class="siguiendo2" id="lista_posts">
+            <section class="siguiendo2">
                 <div class="titulo-estandar">Resultado de la búsqueda de usuarios</div>
                 <div class="siguiendo-div">
                     <span style="margin-right: 5px; text-align: center;">¿No has encontrado lo que querías? Prueba buscando en</span><a href="buscarposts.php?value=<?php echo $value; ?>">los posts</a>
                 </div>
-                <div class="siguiendo-div">
+                <div class="siguiendo-div" id="lista_posts">
                     <?php
                     if (count($usuarios) == 0)
                         echo "No hay coincidencias";
@@ -96,14 +96,15 @@ $usuarios = $modeloUsuario->getList(0, 10, $condicion, $parametros);
                         <?php
                     }
                     ?>
-                </div>
+                
                 <?php
                 if (count($usuarios) > 0) {
                     ?>
-                    <div class="div-cargar">
-                        <button class="boton-cargar" id="mas" onclick="javascript:cargarUsuarios('<?php echo $value; ?>');">Cargar más</button>
+                    <div class="div-cargar" id="mas" >
+                        <button class="boton-cargar" onclick="javascript:cargarUsuarios('<?php echo $value; ?>');">Cargar más</button>
                     </div>
                 <?php } $bd->closeConsulta(); ?>
+                </div>
             </section>
 
     </body>
