@@ -650,6 +650,15 @@ section{
     margin-bottom: 30px;
 }
 
+.siguiendo-div a{
+    text-decoration: none; 
+    color: #e8641b;
+}
+
+.siguiendo-div a:hover{
+    text-decoration: underline;
+}
+
 .titulo-estandar{
     margin: auto;
     text-align: center;
@@ -1471,6 +1480,8 @@ section{
         margin-top: 5px;
         margin-left: 10px;
     }
+    
+    
     
     .linksm div{
         padding-top: -20px;
