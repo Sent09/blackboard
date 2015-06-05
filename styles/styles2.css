@@ -304,6 +304,7 @@ nav{
     height: 220px;
     overflow: hidden;
     border-radius: 50%;
+    background: white;
 }
 
 .usuario-nombre{
@@ -1180,6 +1181,7 @@ section{
     .fotoprincipal{
      width: 180px;
      height: 180px;
+     
     }
     .fotoprincipal img{
         width: 300px;

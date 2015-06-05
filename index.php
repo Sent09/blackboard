@@ -106,7 +106,7 @@ require 'require/comun2.php';
                     <div class="bloque">
                         <div class="bloqueusuario">
                             <div class="fotoprincipal">
-                                <img  width= "350px" height="250px" src="archivos/<?php echo $sesionusuario->getUrlfoto(); ?>">
+                                <img height="220px" src="archivos/<?php echo $sesionusuario->getUrlfoto();?>">
                             </div>
                             <div class="usuario-nombre"><?php echo $sesionusuario->getNombre() . " " . $sesionusuario->getApellidos(); ?></div>
                         </div>
