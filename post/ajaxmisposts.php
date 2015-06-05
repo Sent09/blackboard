@@ -48,7 +48,9 @@ if(count($posts) == 0){
     $resultado = "final";
 }else{
     $_SESSION["cantidadcargadas"]+=10;
-    $resultado .= "<input type='button' id='mas' onclick=javascript:cargarMisPosts('$login'); value='Cargar más'>";
+    $resultado .= "<div class='div-cargar' id='mas'>".
+    "<button class='boton-cargar' onclick=javascript:cargarMisPosts('".$login."')>Cargar más</button>".
+    "</div>";
 }
 echo $resultado;
 

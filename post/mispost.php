@@ -137,8 +137,8 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
         <?php
         if (count($posts) > 0) {
             ?>
-            <div class="div-cargar">
-                <button class="boton-cargar" id="mas" onclick="javascript:cargarMisPosts('<?php echo $login; ?>');">Cargar más</button>
+            <div class="div-cargar" id="mas">
+                <button class="boton-cargar" onclick="javascript:cargarMisPosts('<?php echo $login; ?>');">Cargar más</button>
             </div>
             <?php
         }
