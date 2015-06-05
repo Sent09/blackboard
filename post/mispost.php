@@ -90,7 +90,7 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
                         <div class="bloq-inf-post">
                             <div class="post-body">
                                 <div class="fecha-post">
-                                    
+                                    <a href="detallespost.php?id=<?php echo $post->getIdpost(); ?>"><?php echo $post->getFechapost(); ?></a>
                                 </div>
                                 <div class="mensaje-post">
                                     <?php echo $post->getDescripcion(); ?>
@@ -98,7 +98,7 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
 
 
                                 <div class="div-megusta">
-                                    Me gusta: <?php echo $post->getGusta(); ?>
+                                    <img src="../img/megusta.png"><?php echo $post->getGusta(); ?>
                                 </div>
                             </div>
                             <div class="archivos-box">
@@ -137,8 +137,8 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
         <?php
         if (count($posts) > 0) {
             ?>
-            <div class="div-cargar">
-                <button class="boton-cargar" id="mas" onclick="javascript:cargarMisPosts('<?php echo $login; ?>');">Cargar más</button>
+            <div class="div-cargar" id="mas">
+                <button class="boton-cargar" onclick="javascript:cargarMisPosts('<?php echo $login; ?>');">Cargar más</button>
             </div>
             <?php
         }
