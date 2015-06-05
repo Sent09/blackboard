@@ -47,7 +47,7 @@ foreach ($posts as $key => $post) {
 
     foreach ($archivos as $key => $archivo) {
         if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
-            $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/" . $archivo->getUrl() . "'><img src='../img/ficheroicon.png'></a></div>";
+            $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/" . $archivo->getUrl() . "'><img src='../img/imgicon.png'></a></div>";
         }
         if (strtolower($archivo->getExtension()) == ".doc" || strtolower($archivo->getExtension()) == ".docx" || strtolower($archivo->getExtension()) == ".pdf") {
             $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/" . $archivo->getUrl() . "'><img src='../img/ficheroicon.png'></a></div>";

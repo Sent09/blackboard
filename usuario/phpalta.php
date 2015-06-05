@@ -13,7 +13,7 @@ if($claveConfirmada != $clave){
 }
 $baseDatos = new BaseDatos();
 $modelo = new ModeloUsuario($baseDatos);
-$usuario = new Usuario($login, $clave, $nombre, $apellidos, $email, null, 0, 0, 'usuario', null, "default.jpg");
+$usuario = new Usuario($login, $clave, $nombre, $apellidos, $email, null, 0, 0, 'usuario', null, "default.png");
 $r = $modelo->add($usuario);
 if($r==1){
     $id = md5($email.Configuracion::PEZARANA.$login);

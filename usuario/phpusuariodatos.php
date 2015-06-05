@@ -12,6 +12,9 @@ $usuario->setApellidos($apellidos);
 $subir = new Subir("foto");
 $nombres = $subir->subir();
 foreach($nombres as $key => $urlfoto) {
+    if($usuario->getUrlfoto() != "default.png"){
+        unlink("../archivos/".$usuario->getUrlfoto());
+    }
     $usuario->setUrlfoto($urlfoto);
 }
 if($usuario->getEmail() != $email){

@@ -90,7 +90,7 @@ $email = $fila->getEmail();
                         </div>
                         <div class="agregarfoto">
                             <span id="seleccionados">Cambiar foto...</span>
-                            <input id="archivos" onchange="javascript: cambiar(this)" type="file" name="foto[]" />
+                            <input id="archivos" onchange="javascript:cambiar(this)" type="file" name="foto[]" />
                         </div>
                         <input type="submit" class="btn-login" value="Actualizar"/>
                     </form>

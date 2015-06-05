@@ -220,7 +220,7 @@ require 'require/comun2.php';
                                     foreach ($archivos as $key => $archivo) {
                                         if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
                                             ?>
-                                            <div class="archivo"><a target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>"><img src="img/ficheroicon.png"></a></div>
+                                            <div class="archivo"><a target="_blank" href="archivos/<?php echo $archivo->getUrl(); ?>"><img src="img/imgicon.png"></a></div>
                                         <?php } ?>
 
                                         <?php
