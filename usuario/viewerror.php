@@ -15,5 +15,8 @@ $error = Leer::get("r");
         <?php if($error == 2){ ?>
         Las contraseñas no coinciden
         <?php } ?>
+        <?php if($error == 3){ ?>
+        Las contraseñas no coinciden
+        <?php } ?>
     </body>
 </html>

@@ -9,7 +9,10 @@ $claveConfirmada = Leer::post("clave2");
 $nombre = Leer::post("nombre");
 $apellidos = Leer::post("apellidos");
 $email = Leer::post("email");
-
+if(empty($login) || empty($clave) || empty($claveConfirmada) || empty($nombre) || empty($apellidos) || empty($email)){
+    header("Location: viewerror.php?r=3");
+    exit();
+}
 if($claveConfirmada != $clave){
     header("Location: viewerror.php?r=2");
     exit();
