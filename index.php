@@ -96,7 +96,7 @@ require 'require/comun2.php';
                             </ul>
                         </div>
                         <form id="form-buscar" action="javascript:enviarIndex(this.buscar)" name="buscar" method="post">
-                            <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                            <input type="search" placeholder="Buscar usuarios" id="busqueda" name="texto">
                         </form>
                     </div>
                 </nav>

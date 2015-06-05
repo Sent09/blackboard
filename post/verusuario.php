@@ -47,7 +47,7 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                         </ul>
                     </div>
                     <form id="form-buscar" action="javascript:enviar(this.buscar)" name="buscar" method="post">
-                        <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                        <input type="search" placeholder="Buscar usuarios" id="busqueda" name="texto">
                     </form>
                 </div>
             </nav>
@@ -81,7 +81,7 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                             </ul>
                         </div>
                         <form id="form-buscar" action="javascript:enviarIndex2(this.buscar2)" name="buscar2" method="post">
-                            <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                            <input type="search" placeholder="Buscar usuarios" id="busqueda" name="texto">
                         </form>
                     </div>
                     <div class="div-seguir">

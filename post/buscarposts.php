@@ -45,7 +45,7 @@ $posts = $modeloPost->getList(0, 10, $condicion, $parametros);
                         </ul>
                     </div>
                     <form id="form-buscar" action="javascript:enviarPost(this.buscar)" name="buscar" method="post">
-                        <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                        <input type="search" placeholder="Buscar posts" id="busqueda" name="texto">
                     </form>
                 </div>
             </nav>
@@ -72,7 +72,7 @@ $posts = $modeloPost->getList(0, 10, $condicion, $parametros);
                             </ul>
                         </div>
                         <form id="form-buscar" action="javascript:enviarPost2(this.buscar2)" name="buscar2" method="post">
-                            <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                            <input type="search" placeholder="Buscar posts" id="busqueda" name="texto">
                         </form>
                     </div>
                 </div>
@@ -83,9 +83,11 @@ $posts = $modeloPost->getList(0, 10, $condicion, $parametros);
                     <span style="margin-right: 5px; text-align: center;">¿No has encontrado lo que querías? Prueba buscando</span><a href="buscaruser.php?value=<?php echo $value; ?>">usuarios</a>
                 </div>
                 <?php
-                if (count($posts) == 0)
-                    echo "No hay coincidencias";
-                $contador = 0;
+                if (count($posts) == 0) {?>
+                    <div class="siguiendo-div">
+                        No hay coincidencias
+                    </div>
+                <?php }$contador = 0;
                 foreach ($posts as $key => $post) {
                     $idpost = $post->getIdpost();
                     $modeloArchivo = new ModeloArchivospost($bd);
