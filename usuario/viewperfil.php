@@ -17,7 +17,6 @@ $email = $fila->getEmail();
         <meta charset="UTF-8">
         <title>Blackboard</title>
         <script type="text/javascript" src="../js/js.js"></script>
-        <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="../js/javascriptscroll.js"></script>
         <script type="text/javascript" src="../js/panelusuario.js"></script>
         <link rel="stylesheet" type="text/css" href="../styles/styles2.css">

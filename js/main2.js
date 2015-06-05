@@ -20,7 +20,7 @@ window.onload = function () {
 
     // toggleClass
     function toggleMenu() {
-      var menu = document.getElementById("manageinfo");
+      var menu = document.getElementById("manageinfo2");
       var notificacionesm = document.getElementById("notificaciones-list");
         if (menu.style.display =="none") {
             menu.style.display = "flex";

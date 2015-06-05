@@ -197,6 +197,17 @@ nav{
     position: fixed;
 }
 
+.manageinfo2{
+    display: none;
+    background-color: #a7a7a7;
+    width: 300px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    position: fixed;
+}
+
 .post-body{
     background-color: #d6d6d6;
     border-radius: 20px 20px 0px 0px;
@@ -305,7 +316,9 @@ nav{
 }
 
 .userinfo{
+    display: flex;
     margin: auto;
+    margin-right: -10px;
     margin-top: 20px;
     width: 60%;
     font-family: "Oxygen-Regular";
@@ -316,6 +329,13 @@ nav{
 }
 
 .userinfo a:hover{
+}
+
+.links-top{
+    margin: auto;
+    display: flex;
+    width: 200px;
+    flex-direction: column; 
 }
 
 .misposts span{
@@ -329,8 +349,14 @@ nav{
 }
 
 .misposts{
-    
+    margin: auto;
+    margin-bottom: 10px;
 }
+
+.misposts img{
+    margin-right: 10px;
+}
+
 .misseguidores span{
     padding-left: 10px;
     color: #444444;
@@ -340,18 +366,24 @@ nav{
 .misseguidores span:hover{
     color: white;
 }
-.siguiendo span{
-    padding-left: 10px;
+.siguiendo img{
     color: #444444;
+    margin-right: 10px;
     transition: all 0.15s ease 0s;
 }
 
 .siguiendo span:hover{
     color: white;
 }
+
+.misseguidores{
+    margin-bottom: 5px;
+}
+
 .gusta{
     display:flex;
-    line-height: 23px;
+    line-height: 50px;
+    margin-top: 20px;
 }
 .gusta a{
     margin-left:5px;
@@ -483,6 +515,7 @@ nav{
     filter: alpha(opacity=0);
 }
 
+
 /***************** Menú desplegable ****************/
 
 #primary_nav_wrap
@@ -593,6 +626,79 @@ section{
     font-family: "Oxygen-Light";
     overflow: hidden;
     margin-left: 300px;
+}
+
+.siguiendo2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    line-height: 30px;
+    max-width: 1300px;
+}
+
+.misseguidores img{
+    margin-right: 10px;
+}
+
+.siguiendo-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.titulo-estandar{
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: "Oxygen-Bold";
+    color: #3a3a3a;
+}
+
+.div-usuario{
+    background: #DDDDDD;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    min-width: 240px;
+}
+
+.div-cargar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.boton-cargar{
+    display: flex;
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    height: 35px;
+    background: #e8641b;
+    font-size: 16px;
+    font-family: "Oxygen-Light";
+    color: white;
+    transition: all 0.1s ease 0s;
+    padding-left: 58px;
+    border-radius: 10px;
+    border: none;
+}
+
+.boton-cargar:hover{
+    transition: all 0.1s ease 0s;
+    cursor: pointer;
+    background-color: #fc9055;
+    color: #3a3a3a;
 }
 
 .post{
@@ -1032,6 +1138,17 @@ section{
     margin: auto;
 }
 
+.div-megusta{
+    margin-top: 30px;
+}
+
+.borrar{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    fill: red;
+}
+
 /***** media-queries *****/
 
 @media (max-width: 1700px){
@@ -1051,10 +1168,13 @@ section{
     .manageinfo{
       width: 250px;
     }
+    .manageinfo2{
+      width: 250px;
+    }
     .userinfo{
         width: 90%;
         margin-top: 10px;
-        margin-left: 30px;
+        margin-right: -55px;
     }
     .misposts{
         font-size: 14px;
@@ -1145,6 +1265,10 @@ section{
         margin-top: -15px;
     }
     
+    .manageinfo2{
+        margin-top: -15px;
+    }
+    
     .texto-not{
         font-size: 12px;
     }
@@ -1163,6 +1287,11 @@ section{
     .contenedor-main{
         flex-direction: column;
         width: 100%;
+    }
+    
+    .div-seguir{
+        margin-top: -10px;
+        width: 250px;
     }
     
     .links div a{
@@ -1206,6 +1335,15 @@ section{
     }
     
     .manageinfo{
+        display: none;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: -40px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .manageinfo2{
         display: none;
         flex-direction: column;
         flex-wrap: wrap;
@@ -1294,9 +1432,9 @@ section{
     .links-top a{
         margin-right: 5px;
     }
-    
-    .userinfo a img{
-        margin-right: px;
+
+    .searchm{
+        padding-top: 15px;
     }
     
     .posttitle{
@@ -1313,10 +1451,13 @@ section{
     .linksm{
         display: flex;
         font-family: "Oxygen-Light";
+        margin-top: 5px;
+        margin-left: 10px;
     }
     
     .linksm div{
-        margin-top: 7px;
+        padding-top: -20px;
+        margin-top: -10px;
         margin-right: 10px;
         padding-left: 10px;
     }
@@ -1387,11 +1528,15 @@ section{
     .searchm{
         display: flex;
         margin: auto;
-        margin-top: -10px;
+        margin-top: -15px;
     }
 }
 
 @media (max-width: 950px){
+    
+    .siguiendo{
+        margin-right: -50px;
+    }
     
     .searchm{
         margin-top: 0px;
@@ -1427,7 +1572,7 @@ section{
     }
     .userinfo{
         margin: auto;
-        margin-top: 10px;
+        margin-top: 10px;   
     }
     .linksm div{
         margin: auto;
@@ -1448,10 +1593,17 @@ section{
     .userinfo{
         display: flex;
         flex-direction: column;
+        margin: auto;
     }
     
     .links-top{
+        display: flex;
+        justify-content: center;
         margin: auto;
+        margin-top: 10px;
         margin-bottom: 10px;
+    }
+    .siguiendo{
+        margin: auto;
     }
 }

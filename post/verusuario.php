@@ -127,12 +127,15 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                                 </div>
                                 <div class="mensaje-post">
                                     <?php echo $post->getDescripcion(); ?><br>
+                                    <div class="div-megusta">
                                     <?php echo $post->getGusta(); ?>
+                                    
                                     <?php if ($countmegusta > 0) { ?>
-                                        <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/megusta.png" /></a>
+                                        <a class="megusta-numero" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/megusta.png" /></a>
                                     <?php } else { ?>
-                                        <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/nomegusta.png" /></a>
+                                        <a class="megusta-icono" 20px;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $loginsesion; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/nomegusta.png" /></a>
                                     <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                             <div class="archivos-box">

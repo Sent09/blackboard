@@ -4,6 +4,13 @@ function enviar(formulario) {
         window.location.assign('buscaruser.php?value=' + texto);
     }
 }
+
+function enviar2(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('buscaruser.php?value=' + texto);
+    }
+}
 function enviarIndex(formulario) {
     var texto = formulario.texto.value;
     if (texto.length > 0) {
