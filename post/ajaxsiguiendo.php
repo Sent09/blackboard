@@ -11,13 +11,23 @@ $resultado = "";
 foreach ($notificaciones as $key => $notificacion) {
     $modeloUsuario = new ModeloUsuario($bd);
     $usuario = $modeloUsuario->get($notificacion->getLoginusuarioseguido());
-    $resultado .= "<a href=verusuario.php?login=".$usuario->getLogin()." > ".$usuario->getNombre()." ".$usuario->getApellidos()."</a><small>".$usuario->getLogin()."</small></br>";
+    $resultado .= "<div class='div-usuario'>".
+    "<div class='div-foto'>".
+    "<img src='../archivos/".$usuario->getUrlfoto()."' />".
+    "</div>".
+    "<div class='nombre-poster'>".
+    "<a href='verusuario.php?login=".$usuario->getLogin()."'>".$usuario->getNombre() . " " . $usuario->getApellidos()."</a>".
+    "</div>".
+    "</div>";
+    
 }
 if(count($notificaciones) == 0){
     $resultado = "final";
 }else{
     $_SESSION["cantidadcargadas"]+=10;
-    $resultado .= "<input type='button' id='mas' onclick=javascript:cargarSiguiendo('$login'); value='Cargar más'>";
+    $resultado .= "<div class='div-cargar' id='mas'>".
+    "<button class='boton-cargar' id='mas' onclick=javascript:cargarSiguiendo('".$login."')>Cargar más</button>".
+    "</div>";
 }
 echo $resultado;
 
