@@ -42,6 +42,13 @@ function enviarPost(formulario) {
     }
 }
 
+function enviarPost2(formulario) {
+    var texto = formulario.texto.value;
+    if (texto.length > 0) {
+        window.location.assign('buscarposts.php?value=' + texto);
+    }
+}
+
 function enviarUsuario(formulario) {
     var texto = formulario.texto.value;
     if (texto.length > 0) {
