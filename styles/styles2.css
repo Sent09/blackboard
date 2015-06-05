@@ -708,7 +708,9 @@ section{
     flex-direction: column;
     margin-bottom: 20px;
 }
-
+.post a{
+    width: 0px;
+}
 .bloq-sup-post{
     display: flex;
     margin-bottom: 20px;
