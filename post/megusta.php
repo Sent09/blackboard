@@ -110,30 +110,53 @@ $posts = $modeloPost->postMeGustan(0, 10, $login);
                                     <?php echo $post->getDescripcion(); ?>
                                 </div>
                                 <div class="div-megusta">
-                                    Me gusta: <?php echo $post->getGusta(); ?>
+                                    <?php echo $post->getGusta(); ?>
+                                    <?php if ($countmegusta > 0) { ?>
+                                        <a class="megusta-numero" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/megusta.png" /></a>
+                                    <?php } else { ?>
+                                        <a class="megusta-icono" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>', '2')"><img src="../img/nomegusta.png" /></a>
+                                    <?php } ?>
                                 </div>
-                                <?php if ($countmegusta > 0) { ?>
-                                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">No me gusta</a>
-                                <?php } else { ?>
-                                    <a style="color:blue;" id="<?php echo $idelemento; ?>" href="javascript:gusta('<?php echo $idelemento; ?>','<?php echo $login; ?>','<?php echo $idpost; ?>')">Me gusta</a>
-                                <?php } ?>
                             </div>
                         </div>
                         <div class="archivos-box">
-                            <?php foreach ($archivos as $key => $archivo) { ?>
-                                <a style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
+                            <?php
+                            foreach ($archivos as $key => $archivo) {
+                                if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
+                                    ?>
+                                    <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
+                                <?php } ?>
+
+                                <?php
+                                if (strtolower($archivo->getExtension()) == ".doc" || strtolower($archivo->getExtension()) == ".docx" || strtolower($archivo->getExtension()) == ".pdf") {
+                                    ?>
+                                    <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
+                                <?php } ?>
+
+                                <?php
+                                if (strtolower($archivo->getExtension()) == ".avi" || strtolower($archivo->getExtension()) == ".mp4") {
+                                    ?>
+                                    <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/videoicon.png"></a></div>
+                                <?php } ?>
+
+                                <?php
+                                if (strtolower($archivo->getExtension()) == ".mp3" || strtolower($archivo->getExtension()) == ".wav") {
+                                    ?>
+                                    <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/soundicon.png"></a></div>
+                                <?php } ?>
                             <?php } ?>
                         </div>
+                    </article>
                         <?php
                         $contador++;
                     }
                     $bd->closeConsulta();
                     ?>
-                </article>
+                
                 <?php if (count($posts) > 0) {
                     ?>
-                    <div class="div-cargar">
-                        <button class="boton-cargar" id="mas" onclick="javascript:cargarMeGusta('<?php echo $login; ?>');">Cargar más</button>
+                    <div class="div-cargar" id="mas">
+                        <button class="boton-cargar" onclick="javascript:cargarMeGusta('<?php echo $login; ?>');">Cargar más</button>
                     </div>
                 <?php } ?>
             </section>
