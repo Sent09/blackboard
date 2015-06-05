@@ -307,6 +307,11 @@ nav{
     background: white;
 }
 
+.fotoprincipal img{
+    height: 220px;
+    width: auto;
+}
+
 .usuario-nombre{
     margin: auto;
     margin-top: 20px;
@@ -737,7 +742,8 @@ section{
 }
 
 .div-foto img{
-    width: 150px;
+    width: auto;
+    height: 95px;
 }
 
 .nombre-poster{
@@ -1184,7 +1190,7 @@ section{
      
     }
     .fotoprincipal img{
-        width: 300px;
+        width: auto;
         height: 200px;
     }
     .manageinfo{
@@ -1228,7 +1234,8 @@ section{
     }
     
     .div-foto img{
-        width: 115px;
+        height: 75px;
+        width: auto;
     }
     
     .nombre-poster{
@@ -1426,7 +1433,8 @@ section{
     }
     
     .div-foto img{
-        width: 70px;
+        width: auto;
+        height: 40px;
     }
     
     .nombre-poster{
