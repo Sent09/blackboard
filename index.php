@@ -17,6 +17,7 @@ require 'require/comun2.php';
     </head>
     <body>
         <?php
+        //pantalla que se carga si no estás logueado
         if (!$sesion->isAutentificado()) {
             ?>
             <div class="container-inicio">
@@ -59,6 +60,13 @@ require 'require/comun2.php';
             
         <?php
         } else {
+            /* Pantalla que se muestra cuando estás logueado. Al principio se vacian 
+             * variables de sesión necesarias para la paginación por ajax y 
+             * que así funcionen los botones de me gusta.
+             * 
+             * El primer foreach es para los posts, el segundo para los archivos
+             * del post y por otro lado están las notificaciones
+             */
             unset($_SESSION["cantidadcargadas"]);
             unset($_SESSION["contador"]);
             unset($_SESSION["notificaciones"]);

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Muestra los usuarios que nos siguen.
+ */
 require '../require/comun.php';
 $sesion->autentificado("../index.php");
 unset($_SESSION["cantidadcargadas"]);

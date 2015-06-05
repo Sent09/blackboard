@@ -1,4 +1,7 @@
 <?php
+/**
+ * Muestra los datos del usuario que estamos visitando junto con todos sus posts.
+ */
 require '../require/comun.php';
 unset($_SESSION["cantidadcargadas"]);
 unset($_SESSION["contador"]);

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Segun los datos que llegan manda un mail con los login del usuario o 
+ * un link para cambiar la contraseña.
+ */
 require '../require/comun.php';
 $login = Leer::post("login");
 $email = Leer::post("email");

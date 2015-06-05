@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+/**
+ * Muestra mis posts. Estos pueden ser borrados en esta pantalla.
+ */
 require '../require/comun.php';
 unset($_SESSION["cantidadcargadas"]);
 $sesion->autentificado("../index.php");

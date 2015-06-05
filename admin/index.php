@@ -1,4 +1,8 @@
 <?php 
+/**
+ * Muestra una tabla con todos los usuarios y 3 opciones que se pueden
+ * hacer con los usuarios. Activar el usuario, desactivarlo y borrarlo.
+ */
     require '../require/comun.php';
     $sesion->administrador("../index.php");
     $yo = $sesion->getUsuario();

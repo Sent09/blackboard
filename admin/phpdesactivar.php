@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Desactiva un usuario.
+ */
     require '../require/comun.php';
     $sesion->administrador("../index.php");
     $bd = new BaseDatos();

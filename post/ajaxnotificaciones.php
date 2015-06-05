@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Devuelve las notificaciones al usuario. Antes de esto se compreba
+ * que la acción se pueda realizar.
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");

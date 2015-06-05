@@ -1,4 +1,7 @@
 <?php 
+/*
+ * Se borra un usuario junto con sus posts, sus archivos, sus seguidores y los posts que le gustan.
+ */
     require '../require/comun.php';
     $sesion->administrador("../index.php");
     $bd = new BaseDatos();

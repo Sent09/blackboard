@@ -1,4 +1,7 @@
 <?php
+/**
+ * Esta pantalla es para hacer el registro de usuario.
+ */
 require '../require/comun.php';
 $login = Leer::post("login");
 $clave = Leer::post("clave");

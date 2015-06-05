@@ -1,4 +1,8 @@
 <?php
+/**
+ * Si el usuario no sigue al usuario que visita  pues lo empieza a seguir, en caso
+ * contrario deja de seguirle.
+ */
 require '../require/comun.php';
 $loginsesion = Leer::get("loginusuario");
 $login = Leer::get("login");

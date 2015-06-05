@@ -1,3 +1,4 @@
+<!-- Formularios para recordar via mail los datos de usuario y por otro lado un link para recuperar la clave -->
 <!DOCTYPE html>
 <html>
     <head>

@@ -1,4 +1,8 @@
 <?php
+/*
+ * Devuelve los 10 siguientes posts que coincidan con las palabras clave que manda 
+ * el usuario.
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $value = Leer::get("value");

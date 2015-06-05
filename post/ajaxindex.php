@@ -1,4 +1,8 @@
 <?php
+/**
+ * Devuelve los 10 siguientes posts que devuelve un join de todos los posts de los
+ * la gente que sigue el usuario.
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");

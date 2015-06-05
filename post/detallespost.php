@@ -1,4 +1,7 @@
 <?php
+/**
+ * Ver los detalles de un solo post junto con sus archivos.
+ */
 require '../require/comun.php';
 $sesion->autentificado("../index.php");
 $bd = new BaseDatos();

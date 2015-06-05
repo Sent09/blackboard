@@ -1,4 +1,7 @@
 <?php
+/**
+ * Si los datos son correctos se cambia la contraseña.
+ */
 require '../require/comun.php';
 $id = Leer::post("id");
 $login = Leer::post("login");

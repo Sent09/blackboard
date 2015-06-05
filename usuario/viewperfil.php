@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?php
+/**
+ * Pantalla para ver los datos del perfil de usuario con 2 formularios utilizados
+ * para cambiar datos de la cuenta del usuario.
+ */
 require '../require/comun.php';
 if (!$sesion->get("__usuario") instanceof Usuario) {
     header("Location: index.php");

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Si los datos son correctos se hace un login y en la sesión se introduce
+ * el objeto usuario.
+ */
 require '../require/comun.php';
 $login = Leer::post("login");
 $clave = Leer::post("clave");

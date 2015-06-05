@@ -1,4 +1,8 @@
 <?php
+/**
+ * Al borrar el post se borran los archivos del post y se borra de la lista
+ * de "me gusta" de los usuarios
+ */
 require '../require/comun.php';
 $idpost = Leer::get("idpost");
 $bd = new BaseDatos();

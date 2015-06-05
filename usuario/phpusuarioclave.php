@@ -1,4 +1,8 @@
 <?php
+/**
+ * Se manda la clave vieja y la nueva y si todo es correcto se cambia la contraseña
+ * por la nueva que quiere el usuario.
+ */
 require_once '../require/comun.php';
 $claveVieja = Leer::post("clavevieja");
 $login = Leer::post("login");

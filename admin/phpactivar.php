@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Activa un usuario de forma manual.
+ */
     require '../require/comun.php';
     $sesion->administrador("../index.php");
     $bd = new BaseDatos();

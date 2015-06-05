@@ -1,4 +1,8 @@
 <?php
+/**
+ * Muestra los 10 siguientes posts que me gustan junto con sus archivos correspondientes 
+ * y el boton de me gusta
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");

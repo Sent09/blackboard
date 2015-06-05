@@ -1,4 +1,8 @@
 <?php
+/*
+ * Pantalla que se muestra tras recibir el mail que se pide cuando no recuerdas
+ * tu contraseña. Aquí se cambia la contraseña por una nueva.
+ */
 require '../require/comun.php';
 $id = Leer::get("id");
 $login = Leer::get("login");

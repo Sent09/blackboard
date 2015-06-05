@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+/**
+ * Muestra los posts que le gustan al usuario y da la posibilidad de quitarle el "me gusta"
+ */
 require '../require/comun.php';
 $sesion->autentificado("../index.php");
 unset($_SESSION["cantidadcargadas"]);

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Devuelve los 10 siguientes usuarios que sigue el usuario.
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Tras recibir las palabras clave del usuario, se guscan todos los post
+ * que tengan coincidencias con las palabras claves.
+ */
 require '../require/comun.php';
 $sesion->autentificado("../index.php");
 unset($_SESSION["cantidadcargadas"]);

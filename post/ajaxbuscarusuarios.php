@@ -1,4 +1,8 @@
 <?php
+/**
+ * Devuelve los 10 siguientes usuarios que coincidan en nombre apellido o login 
+ * con las palabras clave
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $value = Leer::get("value");

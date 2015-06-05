@@ -1,4 +1,8 @@
 <?php
+/**
+ * Muestra los 10 siguientes posts que ha puesto el usuario junto con sus
+ * archivos y la cantidad de me gusta que tienen los posts.
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");

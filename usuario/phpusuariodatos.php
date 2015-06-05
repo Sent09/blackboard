@@ -1,4 +1,9 @@
 <?php
+/**
+ * Recibe los datos de usuario y los actualiza.
+ * Si la foto era la default y se cambia, esta no se borra.
+ * Si se cambia el mail la cuenta se desactiva y se envia un mail para activarla.
+ */
 require_once '../require/comun.php';
 $login = Leer::post("login");
 $nombre = Leer::post("nombre");

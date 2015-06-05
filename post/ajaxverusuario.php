@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Devuelve los 10 siguientes post junto con sus archivos y el boton de me gusta.
+ * Se devuelve por ajax
+ */
 require '../require/comun.php';
 $bd = new BaseDatos();
 $login = Leer::get("value");

@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Crea el post con el texto correspondiente y subiendo todos los archivos.
+ * Tras esto, se notifica a todos los usuarios que siguen al usuario creador
+ * del post.
+ */
 require '../require/comun.php';
 $mensaje = Leer::post("mensaje");
 if(!empty($mensaje)){

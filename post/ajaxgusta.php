@@ -1,4 +1,7 @@
 <?php
+/**
+ * Si no gusta un post se cambia a que si le gusta al usuario y viceversa.
+ */
 require '../require/comun.php';
 $login = Leer::get("loginusuario");
 $idpost = Leer::get("idpost");
