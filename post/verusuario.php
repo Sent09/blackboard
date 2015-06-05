@@ -6,7 +6,11 @@ require '../require/comun.php';
 unset($_SESSION["cantidadcargadas"]);
 unset($_SESSION["contador"]);
 $sesion->autentificado("../index.php");
+$loginsesion = $sesion->getUsuario()->getLogin();
 $login = Leer::get("login");
+if($login == $loginsesion){
+    header("Location: ../index.php");
+}
 $bd = new BaseDatos();
 $modeloUsuario = new ModeloUsuario($bd);
 $usuario = $modeloUsuario->get($login);
@@ -14,7 +18,7 @@ $modeloPost = new ModeloPost($bd);
 $posts = $modeloPost->getList(0, 10, "login='$login'");
 
 $modeloNotificaciones = new ModeloNotificaciones($bd);
-$loginsesion = $sesion->getUsuario()->getLogin();
+
 $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' and loginusuarioseguido='$login'");
 ?>
 <!DOCTYPE html>

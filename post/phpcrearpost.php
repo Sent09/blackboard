@@ -6,7 +6,7 @@
  */
 require '../require/comun.php';
 $mensaje = Leer::post("mensaje");
-if(!empty($mensaje)){
+if(!empty($mensaje) && strlen($mensaje) < 201){
 $usuario = $sesion->getUsuario();
 $baseDatos = new BaseDatos();
 $modelo = new ModeloPost($baseDatos);

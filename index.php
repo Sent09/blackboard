@@ -173,7 +173,7 @@ require 'require/comun2.php';
                         <div class="posttitle">Nuevo post</div>
                         <div class="postbox">
                             <form action="post/phpcrearpost.php" enctype="multipart/form-data" method="POST">
-                                <textarea name="mensaje" type="text" placeholder="Comparte una nueva publicación..." id="post"></textarea>
+                                <textarea maxlength="200" name="mensaje" type="text" placeholder="Comparte una nueva publicación..." id="post"></textarea>
                                 <div class="agregararchivos">
                                     <span id="seleccionados">Agregar archivos...</span>
                                     <input type="file" onchange="javascript:cambiar(this)" name="archivos[]" id="archivos" multiple>
