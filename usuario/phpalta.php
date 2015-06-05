@@ -11,7 +11,7 @@ $apellidos = Leer::post("apellidos");
 $email = Leer::post("email");
 
 if($claveConfirmada != $clave){
-    header("Location: viewalta.php?r=-1");
+    header("Location: viewerror.php?r=2");
     exit();
 }
 $baseDatos = new BaseDatos();
@@ -25,5 +25,5 @@ if($r==1){
     header("Location: ../index.php?r=1");
     exit();
 }else{
-    header("Location: viewalta.php?r=-1");
+    header("Location: viewerror.php?r=1");
 } 
