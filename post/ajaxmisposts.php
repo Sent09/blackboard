@@ -13,11 +13,36 @@ foreach ($posts as $key => $post) {
     $modeloArchivo = new ModeloArchivospost($bd);
     $archivos = $modeloArchivo->getListTotal($idpost);
     
-    $resultado .= "<div>".$post->getFechapost()."</br>".$post->getDescripcion().
-            "</br>".$post->getGusta()."<a href='phpborrarpost.php?idpost=".$post->getIdpost()."'>Borrar</a></div>";
-    foreach ($archivos as $key => $archivo) { 
-         $resultado .= "<a style='color:red;' target='_blank' href='../archivos/".$archivo->getUrl()."'>archivico</a> ";
-    }
+    $resultado .= "<article class='post'>".
+        "<a href='phpborrarpost.php?idpost=".$post->getIdpost()."'><img src='../img/close-circled.png' class='borrarpost'></a>".
+        "<div class='bloq-inf-post'>".
+        "<div class='post-body'>".
+        "<div class='fecha-post'>".
+        "<a href='detallespost.php?id=".$post->getIdpost()."'>".$post->getFechapost()."</a>".
+        "</div>".
+        "<div class='mensaje-post'>".$post->getDescripcion().
+        "</div>".
+        "<div class='div-megusta'>".
+        "<img src='../img/megusta.png'>".$post->getGusta().
+        "</div>".
+        "</div>".
+        "<div class='archivos-box'>";
+        foreach ($archivos as $key => $archivo) {
+            if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
+                $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/".$archivo->getUrl()."'><img src='../img/ficheroicon.png'></a></div>";
+            }
+            if (strtolower($archivo->getExtension()) == ".doc" || strtolower($archivo->getExtension()) == ".docx" || strtolower($archivo->getExtension()) == ".pdf") {
+                $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/".$archivo->getUrl()."'><img src='../img/ficheroicon.png'></a></div>";
+            }
+            if (strtolower($archivo->getExtension()) == ".avi" || strtolower($archivo->getExtension()) == ".mp4") {
+                $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/".$archivo->getUrl()."'><img src='../img/videoicon.png'></a></div>";
+            }
+            if (strtolower($archivo->getExtension()) == ".mp3" || strtolower($archivo->getExtension()) == ".wav") {
+                $resultado .= "<div class='archivo'><a target='_blank' href='../archivos/".$archivo->getUrl()."'><img src='../img/soundicon.png'></a></div>";
+            }
+        }
+        $resultado .= "</div></div></article>";
+
 }
 if(count($posts) == 0){
     $resultado = "final";
