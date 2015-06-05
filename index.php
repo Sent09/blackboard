@@ -51,11 +51,12 @@ require 'require/comun2.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="rights">
+                <div class="rights">
                 <div class="privacidad"><a href="#">Política de privacidad</a></div>
                 <div class="derechos">Furo Web Graphics. Todos los derechos reservados. 2015</div>
             </div>
+            </div>
+            
         <?php
         } else {
             unset($_SESSION["cantidadcargadas"]);

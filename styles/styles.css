@@ -98,12 +98,36 @@ body{
 }
 
 .contenedor-central{
+    display: block;
     margin: auto;
     margin-top: 50px;
     display: flex;
     width: 70%;
     justify-content: space-around;
     flex-direction: row;
+}
+
+.titulo-estandar{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: "Oxygen-Bold";
+    color: #444444;
+}
+
+.titulo-recuperar{
+    font-family: "DenneEtude-Regular";
+    width: 100%;
+    font-size: 55px;
+    text-align: center;
+    background-color: white;
+    color: #444444;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .div-registro{
@@ -118,6 +142,31 @@ body{
     flex-direction: column;
     margin: auto;
 }
+
+.div-recuperar-superior{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    max-width: 400px;
+    margin-top: 50px;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.div-recuperar-inferior{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    margin-top: 2px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 .titulo{
     font-family: "DenneEtude-Regular";
     width: 100%;
@@ -343,12 +392,17 @@ body{
 
 .rights{
     display: flex;
-    margin-top: 200px;
-    margin-bottom: 30px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 20px;
     font-family: "Oxygen-Light";
-    justify-content: space-around;
     font-size: 13px;
     color: #444444;
+}
+.privacidad{
+    display: flex;
+    width: 50%;
 }
 
 .privacidad a{
@@ -391,6 +445,10 @@ body{
     .titulo{
         font-size: 40px;
     }
+    
+    .titulo-recuperar{
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 600px){
@@ -412,16 +470,23 @@ body{
         margin-bottom: 50px;
     }
     .rights{
-        flex-flow: column;
+        margin-top: -30px;
+        flex-direction: column;
         text-align: center;
-        margin-top: 0px;
     }
+    
+    .privacidad{
+        width: 100%;
+        margin: auto;
+    }
+    
+    .privacidad a{
+        margin: auto;
+    }
+    
     .derechos{
+        margin: auto;
         margin-top: 20px;
-        margin-bottom: 20px;    
-    }
-    .rights{
-        margin-top: 400px;
     }
 }
 
@@ -435,6 +500,10 @@ body{
     }
     
     .titulo{
+        font-size: 35px;
+    }
+    
+    .titulo-recuperar{
         font-size: 35px;
     }
     

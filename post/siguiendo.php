@@ -12,7 +12,7 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
         <title>Blackboard</title>
         <script type="text/javascript" src="../js/javascriptscroll.js"></script>
         <script type="text/javascript" src="../js/js.js"></script>
@@ -42,7 +42,7 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                         </ul>
                     </div>
                     <form id="form-buscar" action="javascript:enviar(this.buscar)" name="buscar" method="post">
-                        <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                        <input type="search" placeholder="Buscar siguiendo" id="busqueda" name="texto">
                     </form>
                 </div>
             </nav>
@@ -69,7 +69,7 @@ $notificaciones = $modeloNotificaciones->getListScroll(0, 10, $condicion, $param
                             </ul>
                         </div>
                         <form id="form-buscar" action="javascript:enviar2(this.buscar2)" name="buscar2" method="post">
-                            <input type="search" placeholder="Buscar" id="busqueda" name="texto">
+                            <input type="search" placeholder="Buscar siguiendo" id="busqueda" name="texto">
                         </form>
                     </div>
                 </div>
