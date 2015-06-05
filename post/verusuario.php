@@ -164,7 +164,7 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
                                             <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/soundicon.png"></a></div>
                                         <?php } ?>
 
-        <?php } ?>
+                                <?php } ?>
                             </div>
                     </article>
                     <?php

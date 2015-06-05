@@ -90,7 +90,7 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
                         <div class="bloq-inf-post">
                             <div class="post-body">
                                 <div class="fecha-post">
-                                    <?php echo $post->getFechapost(); ?>
+                                    
                                 </div>
                                 <div class="mensaje-post">
                                     <?php echo $post->getDescripcion(); ?>
@@ -102,8 +102,30 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
                                 </div>
                             </div>
                             <div class="archivos-box">
-                                <?php foreach ($archivos as $key => $archivo) { ?>
-                                    <a class="borrar-a" style="color:red;" target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>">archivico</a>
+                                <?php
+                                    foreach ($archivos as $key => $archivo) {
+                                        if (strtolower($archivo->getExtension()) == ".jpg" || strtolower($archivo->getExtension()) == ".png" || strtolower($archivo->getExtension()) == ".gif" || strtolower($archivo->getExtension()) == ".jpeg") {
+                                            ?>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
+                                        <?php } ?>
+
+                                        <?php
+                                        if (strtolower($archivo->getExtension()) == ".doc" || strtolower($archivo->getExtension()) == ".docx" || strtolower($archivo->getExtension()) == ".pdf") {
+                                            ?>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/ficheroicon.png"></a></div>
+                                        <?php } ?>
+
+                                        <?php
+                                        if (strtolower($archivo->getExtension()) == ".avi" || strtolower($archivo->getExtension()) == ".mp4") {
+                                            ?>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/videoicon.png"></a></div>
+                                        <?php } ?>
+
+                                        <?php
+                                        if (strtolower($archivo->getExtension()) == ".mp3" || strtolower($archivo->getExtension()) == ".wav") {
+                                            ?>
+                                            <div class="archivo"><a target="_blank" href="../archivos/<?php echo $archivo->getUrl(); ?>"><img src="../img/soundicon.png"></a></div>
+                                        <?php } ?>
                                 <?php } ?>
                             </div>
                         </div>
@@ -111,7 +133,7 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
 
                 <?php }
                 ?>
-        </div>
+            
         <?php
         if (count($posts) > 0) {
             ?>
@@ -122,6 +144,8 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
         }
         $bd->closeConsulta();
         ?>
+            </section>
+        </div>
     </body>
 </html>
 <?php $bd->closeConexion(); ?>
