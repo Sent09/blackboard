@@ -1142,11 +1142,16 @@ section{
     margin-top: 30px;
 }
 
-.borrar{
-    width: 50px;
-    height: 50px;
-    border-radius: 30px;
-    fill: red;
+.borrarpost{
+    max-width: 120px;
+    height: 40px;
+    margin-left: 40px;
+    transition: all 0.2s ease 0s;
+}
+
+.borrarpost:hover{
+    content: url("../img/close-circledh.png");
+    transition: all 0.2s ease 0s;
 }
 
 /***** media-queries *****/
@@ -1283,6 +1288,10 @@ section{
 }
 
 @media (max-width: 1091px){
+    
+    .borrarpost{
+        margin-left: 5px;
+    }
     
     .contenedor-main{
         flex-direction: column;

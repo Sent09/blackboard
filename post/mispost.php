@@ -86,9 +86,7 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
                     $archivos = $modeloArchivo->getListTotal($idpost);
                     ?>
                     <article class="post">
-                        <div class="bloq-sup-post">
-                            <a href="phpborrarpost.php?idpost=<?php echo $post->getIdpost(); ?>"><img src="../img/close-circled.svg" class="borrar"></a>
-                        </div>
+                        <a href="phpborrarpost.php?idpost=<?php echo $post->getIdpost(); ?>"><img src="../img/close-circled.png" class="borrarpost"></a>
                         <div class="bloq-inf-post">
                             <div class="post-body">
                                 <div class="fecha-post">
