@@ -244,6 +244,7 @@ nav{
     border:none;
     cursor:pointer;
     float:left;
+    
     transition: all 0.2s ease 0s;
 }
 .atras:hover{
@@ -260,6 +261,7 @@ nav{
     border:none;
     cursor:pointer;
     float:right;
+    margin-right: 2%;
     transition: all 0.2s ease 0s;
 }
 .adelante:hover{
@@ -281,7 +283,7 @@ nav{
     color: white;
     margin: auto;
     background-color: #e8641b;
-    width: 100%;
+    width: 95%;
     border-radius: 10px;
     border: none;
     height: 32px;

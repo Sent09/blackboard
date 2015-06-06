@@ -448,6 +448,14 @@ body{
 
 @media (max-width: 1424px){
     
+    .logoprincipal a img{
+        content: url("../img/logoprincipalp.png");
+    }
+    
+    .logoprincipal{
+        margin-bottom: -20px;
+    }
+    
     .contenedor-central{
         width: 90%;
     }

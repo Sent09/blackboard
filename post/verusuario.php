@@ -104,9 +104,11 @@ $comprobarsiguiendo = $modeloNotificaciones->count("loginusuario='$loginsesion' 
             <section id="lista_posts">
                 <?php
                 $contador = 0;
-                if (count($posts) == 0)
-                    echo "No hay posts para mostrar";
-                foreach ($posts as $key => $post) {
+                if (count($posts) == 0){ ?>
+                <div class="siguiendo-div">
+                    No hay posts para mostrar
+                </div>
+               <?php }foreach ($posts as $key => $post) {
                     $idpost = $post->getIdpost();
                     $modeloArchivo = new ModeloArchivospost($bd);
                     $archivos = $modeloArchivo->getListTotal($idpost);

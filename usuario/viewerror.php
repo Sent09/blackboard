@@ -12,7 +12,7 @@ $error = Leer::get("r");
     <body>
         <div class="container-inicio">
             <div class="logoprincipal">
-                <a href="index.php"><img src="../img/logoprincipal.png"/></a>
+                <a href="../index.php"><img src="../img/logoprincipal.png"/></a>
             </div>
             <?php if ($error == 1) { ?>
                 <div class="div-error">
