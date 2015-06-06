@@ -80,10 +80,11 @@ $posts = $modeloPost->getList(0, 10, "login='$login'");
             <section class="siguiendo2" id="lista_posts">
                 <div class="titulo-estandar">Mis posts</div>
 
-                <?php
-                if (count($posts) == 0)
-                    echo "No hay posts para mostrar";
-                foreach ($posts as $key => $post) {
+                <?php if (count($posts) == 0){ ?>
+                    <div class="div-cargar">
+                        No hay posts para mostrar
+                    </div>
+                <?php } foreach ($posts as $key => $post) {
                     $idpost = $post->getIdpost();
                     $modeloArchivo = new ModeloArchivospost($bd);
                     $archivos = $modeloArchivo->getListTotal($idpost);

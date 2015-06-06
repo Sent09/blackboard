@@ -414,6 +414,38 @@ body{
     color: #888888;
 }
 
+.div-error{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    font-family: "Oxygen-Bold";
+    text-align: center;
+    font-size: 30px;
+    color: #222222;
+}
+
+.div-volver{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Oxygen-Light";
+    color: #222222;
+}
+
+.div-volver a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+}
+
+.div-volver a:hover{
+    color: #cccccc;
+    transition: all 0.2s ease 0s;
+}
+
 @media (max-width: 1424px){
     
     .contenedor-central{
@@ -448,6 +480,10 @@ body{
     
     .titulo-recuperar{
         font-size: 40px;
+    }
+    
+    .div-error{
+        font-size: 25px;
     }
 }
 
@@ -488,6 +524,7 @@ body{
         margin: auto;
         margin-top: 20px;
     }
+    
 }
 
 @media (max-width: 436px){
@@ -509,5 +546,9 @@ body{
     
     .rights{
         font-size: 11px; 
+    }
+    
+    .div-error{
+        font-size: 18px;
     }
 }

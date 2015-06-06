@@ -187,8 +187,11 @@ require 'require/comun2.php';
                 <section id="lista_posts">
                     <?php
                     $contador = 0;
-                    if (count($posts) == 0)
-                        echo "No hay posts para mostrar";
+                    if (count($posts) == 0){ ?>
+                    <div class="div-cargar">
+                        No hay posts para mostrar
+                    </div>
+                    <?php }
                     foreach ($posts as $key => $post) {
                         $idpost = $post->getIdpost();
                         $modeloArchivo = new ModeloArchivospost($bd);
